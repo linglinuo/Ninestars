@@ -27,6 +27,12 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!--許願板輪播套件https://blog.7netic.com/2017/11/16/%E8%BC%95%E9%AC%86%E4%BD%BF%E7%94%A8jquery-%E5%9C%96%E7%89%87%E8%BC%AA%E6%92%AD%E5%A4%96%E6%8E%9B-owl-carousel-%E5%B5%8C%E5%85%A5%E8%87%B3%E7%B6%B2%E9%A0%81%E8%88%87%E9%83%A8%E8%90%BD%E6%A0%BC/-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.theme.default.min.css"></link>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js"></script>
+
   <!-- =======================================================
   * Template Name: Ninestars - v4.7.0
   * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
@@ -43,6 +49,44 @@
       background-size: cover;
     }
     
+    
+    .enterstore{
+      background-color: #eb5d1e;
+      color: #fef8f5;
+      font-size: large;
+      border-radius: 10px;
+    }
+    .memberimg{
+      width: 70%;
+      border-radius: 50%;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
+    .card{
+      padding: 1.5em .5em .5em;
+      border-radius: 2em;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    }
+    .card-title{
+      padding-top: 10px;
+      color: #eb5d1e;
+      font-weight: 1000;
+      font-size: 1.5em;
+    }
+    .card-name{
+      padding-top: 10px;
+    }
+    .item{
+      width: 250px;
+      height: 250px;
+    }
+    .enterwish{
+      color: #fef8f5;
+      background-color: #eb5d1e;
+      border-radius: 5px;
+      margin-left: 130px;
+    }
     .wish{
       width: 200px;
       height: 200px;
@@ -52,17 +96,15 @@
       color: white;
     }
     .name{
-      font-size: 20px;
+      font-size: 30px;
     }
     .sentence{
-      font-size: 18px;
+      font-size: 25px;
     }
     .date{
-      font-size: 15px;
+      font-size: 25px;
       text-align: right;
     }
-    
-
   </style>
 </head>
 
@@ -80,11 +122,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">首頁</a></li>
+          <li><a class="nav-link scrollto active" href="#bg-img">首頁</a></li>
           <li><a class="nav-link scrollto" href="#about">介紹</a></li>
           <li><a class="nav-link scrollto" href="#store">小舖</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">求籤</a></li>
-          <li><a class="nav-link scrollto" href="#team">許願版</a></li>
+          <li><a class="nav-link scrollto" href="#pray">求籤</a></li>
+          <li><a class="nav-link scrollto" href="">解籤</a></li>
+          <li><a class="nav-link scrollto" href="#wish">許願版</a></li>
           <li><a class="getstarted scrollto" href="#about">會員登入</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -150,13 +193,14 @@
         </div>
         <div class="row ">
           <div class="col-lg-6 d-flex align-items-center justify-content-center about-img">
-            <img src="assets/img/鳥居.jpg" class="img-fluid" alt="" data-aos="zoom-in">
+            <img src="assets/img/雷門.jpg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
-          <div class="col-lg-6 pt-5 pt-lg-5">
-            <h3 data-aos="fade-up">傳說中常被認為是狐狸的神 —— 稻荷大神</h3>
-            <p class="py-3" data-aos="fade-up" data-aos-delay="100">
-              關於稻荷大神的起源有多種版本，簡單來說是某對（很多組合）神明夫妻在肚子餓時所生下的孩子，為人腳踏實地。稻荷大神的正名為宇迦之御魂神，「宇迦」的意思為穀物，換言之稻荷大神所掌管的為農作物生長，為日本人民食物之神，而以米食為主的日本，總以虔誠祈願之心祈求豐收與一年風調雨順，全國稻荷神社供奉此。
-              狐狸則是陪伴稻荷大神驅趕害蟲與老鼠的靈獸，因此與狐狸有許多趣事傳說，在稻荷神社中也常有狐狸雕像擺設，所以稻荷大神不是狐狸啦！
+          <div class="col-lg-6 pt-4 pt-lg-5">
+            <h3 data-aos="fade-up">淺草，東京的象徵・雷門</h3>
+            <p class="py-2" data-aos="fade-up" data-aos-delay="100">
+              到了淺草首先映入眼簾的，就是「雷門」。它是淺草的象徵，也是淺草寺的大門。它的正式名稱是「風神雷門」，正如其名大門的右手祭祀著風神，左手祭祀著雷神。
+              <br>門寬11.4公尺，高11.7公尺，在門正中懸掛著重700公斤重的大紅提燈。只要走近，就會感受到強烈的壓迫感。
+              <br>提燈基本一年四季都被懸掛著，5月同時設立的淺草神社裏舉行三社祭的時候，為了讓供奉神牌位的轎子通過，提燈會被收起。特別挑這個時候去看的話，想必能夠體會到有別於以往的新鮮感吧！
             </p>
             <a href="" class="btn-get-started scrollto">閱讀更多</a>
           </div>
@@ -188,136 +232,128 @@
             </ul>
           </div>
         </div>
-
+        <!--照片大小800X600-->
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/a1.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
+                <h4>御守</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/c1.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
+                <h4>紀念品</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/a2.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
+                <h4>御守</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/b1.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
+                <h4>佛具</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/c2.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
+                <h4>紀念品</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/a3.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
+                <h4>御守</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/b2.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
+                <h4>佛具</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/b3.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
+                <h4>佛具</h4>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/c3.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
+                <h4>紀念品</h4>
               </div>
             </div>
           </div>
-
         </div>
-
+        <div class="row">
+          <a href="" class="btn-get-started scrollto enterstore" align="center">進入商城</a>
+        </div>
       </div>
     </section><!-- End Portfolio Section -->
 
@@ -328,35 +364,51 @@
           <h2>會員排行榜</h2>
           <p>願你在其中得到救贖</p>
         </div>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">排名</th>
-              <th scope="col">名字</th>
-              <th scope="col">等級</th>
-              <th scope="col">交易次數</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>58</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>45</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>39</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-lg-4" align="center">
+            <div class="card d-flex mt-2" style="width: 20rem;">
+              <img src="assets/img/team/team-1.jpg" class="card-img-top memberimg" alt="">
+              <div class="card-body" style="padding-bottom: 5px;">
+                <h5 class="card-title">第一名</h5>
+                <h3 class="card-name">Jason</h3>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">會員等級</li>
+                <li class="list-group-item"><p class="card-text">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4" align="center">
+            <div class="card d-flex mt-2" style="width: 20rem;">
+              <img src="assets/img/team/team-2.jpg" class="card-img-top memberimg" alt="...">
+              <div class="card-body" style="padding-bottom: 5px;">
+                <h5 class="card-title">第二名</h5>
+                <h3 class="card-name">Betty</h3>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">會員等級</li>
+                <li class="list-group-item"><p class="card-text">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4" align="center">
+            <div class="card d-flex mt-2" style="width: 20rem;">
+              <img src="assets/img/team/team-3.jpg" class="card-img-top memberimg" alt="...">
+              <div class="card-body" style="padding-bottom: 5px;">
+                <h5 class="card-title">第三名</h5>
+                <h3 class="card-name">Jack</h3>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">會員等級</li>
+                <li class="list-group-item"><p class="card-text">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
 
       </div>
     </section><!-- End membersort Section -->
@@ -389,60 +441,149 @@
     <!-- ======= Wish Section ======= -->
     <section id="wish" class="clients section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>許願版</h2>
           <p>願你在其中得到力量</p>
         </div>
-
-        <div class="justify-content-center">
-          <div class="row">
-            <div class="col-3" align="center">
-              <table width="250px" height="250px" class="wishboard">
-                <th height="30px" class="name">會員姓名</th>
-                <tr>
-                  <td class="sentence">我希望可以.....</td>
-                </tr>
-                <tr>
-                  <td height="30px" class="date">2022.03.28</td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-3" align="center">
-              <table width="250px" height="250px" class="wishboard">
-                <th height="30px" class="name">會員姓名</th>
-                <tr>
-                  <td class="sentence">我希望可以.....</td>
-                </tr>
-                <tr>
-                  <td height="30px" class="date">2022.03.28</td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-3" align="center">
-              <table width="250px" height="250px" class="wishboard">
-                <th height="30px" class="name">會員姓名</th>
-                <tr>
-                  <td class="sentence">我希望可以.....</td>
-                </tr>
-                <tr>
-                  <td height="30px" class="date">2022.03.28</td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-3" align="center">
-              <table width="250px" height="250px" class="wishboard">  
-                <th height="30px" class="name">會員姓名</th>
-                <tr>
-                  <td class="sentence">我希望可以.....</td>
-                </tr>
-                <tr>
-                  <td height="30px" class="date">2022.03.28</td>
-                </tr>
-              </table>
-            </div>
+        <div class="row">
+          <div class="col-12 justify-content-center">
+            <div class="c0l-12 owl-carousel owl-theme"> <!--總共12張輪波-->
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <tr>
+                        <td class="sentence">
+                          <h2 class="py-2">絲扇淒許願區<br></h2>
+                          <h4 class="pt-2">希望在這邊你能勇敢大聲地說出你的願望</h4>
+                          <h4 class="pt-3 align-content-center"><a href="" class="btn-get-started scrollto enterwish">前往許願</a></h4>
+                        </td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名1</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名2</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名3</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名4</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名5</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                  </table>        
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名6</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名7</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名8</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名9</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名10</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="item" style="max-width: 250px; margin-right: 10px;">
+                  <table width="250px" height="250px" class="wishboard">
+                      <th height="30px" class="name">會員姓名11</th>
+                      <tr>
+                        <td class="sentence">我希望可以.....</td>
+                      </tr>
+                      <tr>
+                        <td height="30px" class="date">2022.03.28</td>
+                      </tr>
+                    </table>
+              </div>
+          </div>   
           </div>
-          <div class="swiper-pagination"></div>
+        </div>
+         
           
         </div>
       </div>
@@ -451,69 +592,19 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Ninestars</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
-
+    <div class="footer-top" style="padding-top: 20px;">
+      <div class="container py-4">
+        <div class="copyright">
+          <h6>謝謝光臨  <strong><span>絲扇淒神社</span></strong></h6>
         </div>
-      </div>
-    </div>
-
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/ -->
+          &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved<br>
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -530,6 +621,30 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    autoWidth:true,
+    item:4,
+    autoplay:true,
+    autoTimeout:2000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+          item:1
+        },
+        600:{
+          item:3
+        },
+        1000:{
+          item:5
+        }
+    }
+})
+  </script>
 </body>
 
 </html>

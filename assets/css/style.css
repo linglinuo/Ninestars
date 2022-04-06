@@ -853,11 +853,11 @@ section {
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
-.clients .clients-slider .swiper-slide img {
+.clients .clients-slider .swiper-slide{
   opacity: 0.5;
   transition: 0.3s;
 }
-.clients .clients-slider .swiper-slide img:hover {
+.clients .clients-slider .swiper-slide{
   opacity: 1;
 }
 .clients .clients-slider .swiper-pagination {

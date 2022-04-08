@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>絲扇淒神社</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+
+
+  <!-- =======================================================
+  * Template Name: Ninestars - v4.7.0
+  * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    .name{
+      font-size: 25px;
+      font-weight: bolder;
+    }
+    .detail{
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    .addcart{
+      background-color: #eb5d1e;
+      color: #fef8f5;
+      font-size: 20px;
+      border-radius: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 50px;
+    }
+    .numbutton{
+      background-color: #eb5d1e;
+      color: #fef8f5;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+  </div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <i class="fas fa-film mr-2"></i>
+            絲扇淒神社
+        </a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">首頁</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">介紹</a></li>
+          <li><a class="nav-link scrollto active" href="store-page.html">小舖</a></li>
+          <li><a class="nav-link scrollto" href="index.html#pray">求籤</a></li>
+          <li><a class="nav-link scrollto" href="解籤1.html">解籤</a></li>
+          <li><a class="nav-link scrollto" href="index.html#wish">許願池</a></li>
+          <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px;">登入/註冊</button></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+<!--Login-->
+<div id="id01" class="modal" style="z-index:100;">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <div class="cont">
+        <div class="form sign-in">
+          <h2>歡迎回來</h2>
+          <label>
+            <span class="tm-text-gray">信箱</span>
+            <input type="email" />
+          </label>
+          <label>
+            <span class="tm-text-gray">密碼</span>
+            <input type="password" />
+          </label>
+          <p class="forgot-pass tm-text-gray">忘記密碼?</p>
+          <button type="button" class="submit button1">登入</button>
+        </div>
+        <div class="sub-cont">
+          <div class="img">
+            <div class="img__text m--up">
+              <h2>新信徒?</h2>
+              <h5>歡迎加入神社的大家庭</h5>
+            </div>
+            <div class="img__text m--in">
+              <h2>已經是信徒了?</h2>
+              <h5>若您已為信徒請直接登入</h5>
+              <h5>我們想念您~</h5>
+            </div>
+            <div class="img__btn">
+              <span class="m--up">註冊</span>
+              <span class="m--in">登入</span>
+            </div>
+          </div>
+          <div class="form sign-up">
+            <h2>歡迎加入大家庭</h2>
+            <label>
+              <span class="tm-text-gray">信徒名稱</span>
+              <input type="text" />
+            </label>
+            <label>
+              <span class="tm-text-gray">信箱</span>
+              <input type="email" />
+            </label>
+            <label>
+              <span class="tm-text-gray">密碼</span>
+              <input type="password" />
+            </label>
+            <button type="button" class="submit button1">註冊</button>
+          </div>
+        </div>
+      </div>
+      <!-- partial -->
+      <script  src="js/script.js"></script>
+    </div>
+  </form>
+</div>
+<!--login end-->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="text-align: left;">商品細節</h2>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+                <img src="img/portfolio/c3.png" alt="">   
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <span class="name">御守護太刀守</span>
+              <ul>
+                <div class="container" style="padding-left: 0px;padding-right: 0px;padding-left: 0px;">
+                  <div class="row mt-3">
+                    <div class="col-6">
+                      <span class="detail"><strong>分類</strong>: 紀念品</span>
+                    </div>
+                    <div class="col-6">
+                      <span class="detail"><strong>價錢</strong>: $650</span>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center align-items-center mt-3">
+                    <div class="col-6 ">
+                      <span class="detail"><strong>數量</strong></span>
+                    </div>
+                    <div class="col-6">
+                      <button id="minus" class="btn numbutton"> - </button>
+                      <span id="num">1</span>
+                      <button id="plus" class="btn numbutton"> + </button>  
+                    </div>
+                  </div>
+                  <div class="row justify-content-center align-items-center mt-3">
+                    <div class="col-6 align-items-center">
+                      <span class="detail"><strong>種類</strong></span>
+                    </div>
+                    <div class="col-6 align-items-center">
+                      <select name="color">
+                        <option>金色</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+              <a class="addcart">加入購物車</a>
+            </div>
+            <div class="portfolio-description">
+              <p>
+                祀奉初代將軍德川家康的日光東照宮，寺境內的寶物館中，擁有2,000件藏品，其中兩把被列為國寶的太刀「銘助真」與「銘国宗」，尤其具有代表性。雖然這些寶物只能隔著櫥窗欣賞，但旅人們卻能夠把金色太刀造型的「御守護太刀守」買回家珍藏，當成擺設超有氣勢！
+            </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+    <div class="container-fluid tm-container-small">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
+                <h3 class="tm-text-primary mb-4 tm-footer-title">關於絲扇淒神社</h3>
+                <p>歡迎蒞臨本神社。我們將為各位信徒呈上最好的祝福。祝大家擁有美好的一天！</p>
+                <p>~~絲扇淒神社關心您~~</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
+                <h3 class="tm-text-primary mb-4 tm-footer-title"></h3>
+                <ul class="tm-footer-links pl-0">
+                    <li><a href="index.html#about">介紹</a></li>
+                    <li><a href="store-page.html">小舖</a></li>
+                    <li><a href="index.html#pray">求籤</a></li>
+                    <li><a href="解籤1.html">解籤</a></li>
+                    <li><a href="許願池.html">許願池</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
+                <ul class="tm-social-links d-flex justify-content-end pl-0 mb-5">
+                    <li class="mb-2"><a href="https://facebook.com"><i class="fab fa-facebook"></i></a></li>
+                    <li class="mb-2"><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                    <li class="mb-2"><a href="https://instagram.com/437god?utm_medium=copy_link"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-12 px-5 mb-3">
+                Copyright 2020 437god Company. All rights reserved.
+            </div>
+            <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
+                Designed by <a href="https://templatemo.com" class="tm-text-gray" rel="sponsored" target="_parent">絲扇淒神社</a>
+            </div>
+        </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+  <script src="js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+  <script>
+    $(function () {
+      var x=1;
+      $("#plus").click(function(){
+        x++;
+        document.getElementById("num").innerHTML = x;
+        if(x<=0){
+            document.getElementById("num").innerHTML = 0;
+        }
+      });
+      $("#minus").click(function(){
+        x--;
+        document.getElementById("num").innerHTML = x;
+        if(x<=0){
+            document.getElementById("num").innerHTML = 0;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

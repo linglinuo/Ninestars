@@ -9,8 +9,25 @@
     <link rel="stylesheet" href="css/templatemo-style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style1.css">
-
-    
+    <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <style>
+    .error {
+            color: #D82424;
+            font-weight: normal;
+            font-family: "微軟正黑體";
+            display: inline;
+            padding: 1px;
+        }
+  </style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+<!--additional method - for checkbox .. ,require_from_group method ...-->
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<!--中文錯誤訊息-->
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
 </head>
 <body>
     <!-- Page Loader -->
@@ -40,76 +57,83 @@
           <li><a class="nav-link scrollto" href="求籤.html">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.html">解籤</a></li>
           <li><a class="nav-link scrollto" href="許願池.html">許願池</a></li>
+          <li><a class="nav-link scrollto" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
           <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
-          <li><a class="nav-link scrollto" href="cart.html">購物車</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
 <!--Login-->
-  <div id="id01" class="modal" style="z-index:100;">
+<div id="id01" class="modal" style="z-index:1000;">
   
-    <form class="modal-content animate" action="/action_page.php" method="post">
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      </div>
-  
-      <div class="container">
-        <div class="cont">
-          <div class="form sign-in">
+  <form id="login" class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <div class="cont">
+        <form name="sign" id="sign">
+          <div class="form sign">
             <h2>歡迎回來</h2>
             <label>
-              <span class="tm-text-gray">信箱</span>
-              <input type="email" />
+              <input type="email" name="email1">信箱
+              <label for="email1" class="error"></label>
             </label>
             <label>
-              <span class="tm-text-gray">密碼</span>
-              <input type="password" />
+              <input type="password" name="pwd1">密碼
+              <label for="pwd1" class="error"></label>
             </label>
             <p class="forgot-pass tm-text-gray">忘記密碼?</p>
-            <button type="button" class="submit button1">登入</button>
+            <button class="submit button1">登入</button>
           </div>
-          <div class="sub-cont">
-            <div class="img">
-              <div class="img__text m--up">
-                <h2>新信徒?</h2>
-                <h5>歡迎加入神社的大家庭</h5>
-              </div>
-              <div class="img__text m--in">
-                <h2>已經是信徒了?</h2>
-                <h5>若您已為信徒請直接登入</h5>
-                <h5>我們想念您~</h5>
-              </div>
-              <div class="img__btn">
-                <span class="m--up">註冊</span>
-                <span class="m--in">登入</span>
-              </div>
+        </form>
+        
+        
+        <div class="sub-cont">
+          <div class="img">
+            <div class="img__text m--up">
+              <h2>新信徒?</h2>
+              <h5>歡迎加入神社的大家庭</h5>
             </div>
-            <div class="form sign-up">
+            <div class="img__text m--in">
+              <h2>已經是信徒了?</h2>
+              <h5>若您已為信徒請直接登入</h5>
+              <h5>我們想念您~</h5>
+            </div>
+            <div class="img__btn">
+              <span class="m--up">註冊</span>
+              <span class="m--in">登入</span>
+            </div>
+          </div>
+
+          <form name="register" id="register">
+            <div class="form resister">
               <h2>歡迎加入大家庭</h2>
               <label>
-                <span class="tm-text-gray">信徒名稱</span>
-                <input type="text" />
+                <input type="text" name="name">信徒名稱
+                <label for="name" class="error"></label>
               </label>
               <label>
-                <span class="tm-text-gray">信箱</span>
-                <input type="email" />
+                <input type="email" name="email">信箱
+                <label for="email" class="error"></label>
               </label>
               <label>
-                <span class="tm-text-gray">密碼</span>
-                <input type="password" />
+                <input type="password" name="pwd">密碼
+                <label for="pwd" class="error"></label>
               </label>
-              <button type="button" class="submit button1">註冊</button>
+              <button class="submit button1">註冊</button>
             </div>
-          </div>
+          </form>
         </div>
-        <!-- partial -->
-        <script  src="js/script.js"></script>
       </div>
-    </form>
-  </div>
-  <!--login end-->
+      <!-- partial -->
+      <script  src="js/script.js"></script>
+    </div>
+  </form>
+</div>
+<!--login end-->
 
     <div class="tm-hero d-flex justify-content-center align-items-center mt-5" data-parallax="scroll" data-image-src="img/hero.jpg">
         <form class="d-flex tm-search-form">
@@ -215,5 +239,70 @@
             $('body').addClass('loaded');
         });
     </script>
+    <script>
+      $.noConflict();
+      //for select
+      $.validator.addMethod("notEqualsto", function(value, element, arg) {
+        return arg != value;
+      }, "您尚未選擇!");
+  
+      $("#register").validate({
+        submitHandler: function(form) {
+          alert("success!");
+          form.submit();
+        },
+        rules: {
+          name: {
+            required:true
+          },
+          email: {
+            required:true
+          },
+          pwd: {
+            required:true
+          },
+        },
+        messages: {
+          name: {
+            required: "必填"
+          },
+          email: {
+            required: "必填"
+          },
+          pwd: {
+            required: "必填"
+          }
+        }
+      });
+  
+      $.noConflict();
+        //for select
+      $.validator.addMethod("notEqualsto", function(value, element, arg) {
+        return arg != value;
+      }, "您尚未選擇!");
+  
+      $("#sign").validate({
+        submitHandler: function(form) {
+          alert("success!");
+          form.submit();
+        },
+        rules: {
+          email1: {
+            required:true
+          },
+          pwd1: {
+            required:true
+          },
+        },
+        messages: {
+          email1: {
+            required: "必填"
+          },
+          pwd1: {
+            required: "必填"
+          }
+        }
+      });
+      </script>
 </body>
 </html>

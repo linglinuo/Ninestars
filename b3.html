@@ -29,15 +29,14 @@
   <link href="css/style1.css" rel="stylesheet">
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="stylesheet" href="css/templatemo-style.css">
-
-
-  <!-- =======================================================
-  * Template Name: Ninestars - v4.7.0
-  * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+<!--additional method - for checkbox .. ,require_from_group method ...-->
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<!--中文錯誤訊息-->
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
   <style>
     .name{
       font-size: 25px;
@@ -63,6 +62,13 @@
       color: #fef8f5;
       border-radius: 10px;
     }
+    .error {
+            color: #D82424;
+            font-weight: normal;
+            font-family: "微軟正黑體";
+            display: inline;
+            padding: 1px;
+        }
   </style>
 </head>
 
@@ -94,36 +100,40 @@
           <li><a class="nav-link scrollto" href="求籤.html">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.html">解籤</a></li>
           <li><a class="nav-link scrollto" href="許願池.html">許願池</a></li>
+          <li><a class="nav-link scrollto" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
           <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
-          <li><a class="nav-link scrollto" href="cart.html">購物車</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
 <!--Login-->
-<div id="id01" class="modal" style="z-index:100;">
+<div id="id01" class="modal" style="z-index:1000;">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form id="login" class="modal-content animate">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
       <div class="cont">
-        <div class="form sign-in">
-          <h2>歡迎回來</h2>
-          <label>
-            <span class="tm-text-gray">信箱</span>
-            <input type="email" />
-          </label>
-          <label>
-            <span class="tm-text-gray">密碼</span>
-            <input type="password" />
-          </label>
-          <p class="forgot-pass tm-text-gray">忘記密碼?</p>
-          <button type="button" class="submit button1">登入</button>
-        </div>
+        <form name="sign" id="sign">
+          <div class="form sign">
+            <h2>歡迎回來</h2>
+            <label>
+              <input type="email" name="email1">信箱
+              <label for="email1" class="error"></label>
+            </label>
+            <label>
+              <input type="password" name="pwd1">密碼
+              <label for="pwd1" class="error"></label>
+            </label>
+            <p class="forgot-pass tm-text-gray">忘記密碼?</p>
+            <button class="submit button1">登入</button>
+          </div>
+        </form>
+        
+        
         <div class="sub-cont">
           <div class="img">
             <div class="img__text m--up">
@@ -140,22 +150,25 @@
               <span class="m--in">登入</span>
             </div>
           </div>
-          <div class="form sign-up">
-            <h2>歡迎加入大家庭</h2>
-            <label>
-              <span class="tm-text-gray">信徒名稱</span>
-              <input type="text" />
-            </label>
-            <label>
-              <span class="tm-text-gray">信箱</span>
-              <input type="email" />
-            </label>
-            <label>
-              <span class="tm-text-gray">密碼</span>
-              <input type="password" />
-            </label>
-            <button type="button" class="submit button1">註冊</button>
-          </div>
+
+          <form name="register" id="register">
+            <div class="form resister">
+              <h2>歡迎加入大家庭</h2>
+              <label>
+                <input type="text" name="name">信徒名稱
+                <label for="name" class="error"></label>
+              </label>
+              <label>
+                <input type="email" name="email">信箱
+                <label for="email" class="error"></label>
+              </label>
+              <label>
+                <input type="password" name="pwd">密碼
+                <label for="pwd" class="error"></label>
+              </label>
+              <button class="submit button1">註冊</button>
+            </div>
+          </form>
         </div>
       </div>
       <!-- partial -->
@@ -279,7 +292,7 @@
                 Copyright 2020 437god Company. All rights reserved.
             </div>
             <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
-                Designed by <a href="https://templatemo.com" class="tm-text-gray" rel="sponsored" target="_parent">絲扇淒神社</a>
+                Designed by <a href="#" class="tm-text-gray" rel="sponsored" target="_parent">絲扇淒神社</a>
             </div>
         </div>
     </div>
@@ -323,6 +336,71 @@
       });
     });
   </script>
+  <script>
+    $.noConflict();
+    //for select
+    $.validator.addMethod("notEqualsto", function(value, element, arg) {
+      return arg != value;
+    }, "您尚未選擇!");
+
+    $("#register").validate({
+      submitHandler: function(form) {
+        alert("success!");
+        form.submit();
+      },
+      rules: {
+        name: {
+          required:true
+        },
+        email: {
+          required:true
+        },
+        pwd: {
+          required:true
+        },
+      },
+      messages: {
+        name: {
+          required: "必填"
+        },
+        email: {
+          required: "必填"
+        },
+        pwd: {
+          required: "必填"
+        }
+      }
+    });
+
+    $.noConflict();
+      //for select
+    $.validator.addMethod("notEqualsto", function(value, element, arg) {
+      return arg != value;
+    }, "您尚未選擇!");
+
+    $("#sign").validate({
+      submitHandler: function(form) {
+        alert("success!");
+        form.submit();
+      },
+      rules: {
+        email1: {
+          required:true
+        },
+        pwd1: {
+          required:true
+        },
+      },
+      messages: {
+        email1: {
+          required: "必填"
+        },
+        pwd1: {
+          required: "必填"
+        }
+      }
+    });
+    </script>
 </body>
 
 </html>

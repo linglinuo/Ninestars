@@ -313,7 +313,7 @@ p, .tm-text-gray { color: #999; }
 }
 
 .tm-video-item figcaption > a {
-	z-index: 1000;
+	z-index: 900;
 	text-indent: 200%;
 	white-space: nowrap;
 	font-size: 0;

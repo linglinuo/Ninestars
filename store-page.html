@@ -29,13 +29,17 @@
   <link href="css/style1.css" rel="stylesheet">
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="stylesheet" href="css/templatemo-style.css">
+
+  <!--頁面載入-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-<!--additional method - for checkbox .. ,require_from_group method ...-->
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-<!--中文錯誤訊息-->
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
+
+  <!--表單驗證-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+  <!--additional method - for checkbox .. ,require_from_group method ...-->
+  <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+  <!--中文錯誤訊息-->
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
   <style>
     .error {
             color: #D82424;
@@ -361,12 +365,6 @@
     });
 </script>
   <script>
-    $.noConflict();
-    //for select
-    $.validator.addMethod("notEqualsto", function(value, element, arg) {
-      return arg != value;
-    }, "您尚未選擇!");
-
     $("#register").validate({
       submitHandler: function(form) {
         alert("success!");
@@ -395,12 +393,6 @@
         }
       }
     });
-
-    $.noConflict();
-      //for select
-    $.validator.addMethod("notEqualsto", function(value, element, arg) {
-      return arg != value;
-    }, "您尚未選擇!");
 
     $("#sign").validate({
       submitHandler: function(form) {

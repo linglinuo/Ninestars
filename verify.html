@@ -1,62 +1,62 @@
 <!--登入-->
 <script>
-    $.noConflict();
-    //for select
-    $.validator.addMethod("notEqualsto", function(value, element, arg) {
-      return arg != value;
-    }, "您尚未選擇!");
-    
-    $("#sign").validate({
-      submitHandler: function(form) {
-        alert("success!");
-        form.submit();
-      },
-      rules: {
-        email1: {
-          required:true
-        },
-        pwd1: {
-          required:true
-        },
-      },
-      messages: {
-        email1: {
-          required: "必填",
-          email:'Email格式不正確'
-        },
-        pwd1: {
-          required: "必填"
-        }
-      }
-    });
+  $.noConflict();
+  //for select
+  $.validator.addMethod("notEqualsto", function(value, element, arg) {
+    return arg != value;
+  }, "您尚未選擇!");
   
-    $("#register").validate({
-      submitHandler: function(form) {
-        alert("success!");
-        form.submit();
+  $("#sign").validate({
+    submitHandler: function(form) {
+      alert("success!");
+      form.submit();
+    },
+    rules: {
+      email1: {
+        required:true
       },
-      rules: {
-        name: {
-          required:true
-        },
-        email: {
-          required:true
-        },
-        pwd: {
-          required:true
-        },
+      pwd1: {
+        required:true
       },
-      messages: {
-        name: {
-          required: "必填"
-        },
-        email: {
-          required: "必填",
-          email:'Email格式不正確'
-        },
-        pwd: {
-          required: "必填"
-        }
+    },
+    messages: {
+      email1: {
+        required: "必填",
+        email:'Email格式不正確'
+      },
+      pwd1: {
+        required: "必填"
       }
-    });
-  </script>
+    }
+  });
+
+  $("#register").validate({
+    submitHandler: function(form) {
+      alert("success!");
+      form.submit();
+    },
+    rules: {
+      name: {
+        required:true
+      },
+      email: {
+        required:true
+      },
+      pwd: {
+        required:true
+      },
+    },
+    messages: {
+      name: {
+        required: "必填"
+      },
+      email: {
+        required: "必填",
+        email:'Email格式不正確'
+      },
+      pwd: {
+        required: "必填"
+      }
+    }
+  });
+</script>

@@ -86,7 +86,7 @@
   <div class="container d-flex align-items-center justify-content-between">
 
     <div class="container-fluid">
-      <a class="navbar-brand" href="first.html">
+      <a class="navbar-brand" href="first.php">
           <i class="fas fa-film mr-2"></i>
           絲扇淒神社
       </a>
@@ -95,87 +95,22 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="index.html">首頁</a></li>
-        <li><a class="nav-link scrollto" href="index.html">介紹</a></li>
-        <li><a class="nav-link scrollto" href="store-page.html">小舖</a></li>
-        <li><a class="nav-link scrollto" href="求籤.html">求籤</a></li>
-        <li><a class="nav-link scrollto" href="解籤1.html">解籤</a></li>
-        <li><a class="nav-link scrollto" href="許願池.html">許願池</a></li>
-        <li><a class="nav-link scrollto" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a class="nav-link scrollto" href="first.php">介紹</a></li>
+        <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
+        <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
+        <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
+        <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
+        <li><a class="nav-link scrollto" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
   </div>
 </header><!-- End Header -->
-<!--Login-->
-<div id="id01" class="modal" style="z-index:1000;">
-  
-  <form id="login" class="modal-content animate">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-
-    <div class="container">
-      <div class="cont">
-        <form name="sign" id="sign">
-          <div class="form sign">
-            <h2>歡迎回來</h2>
-            <label>
-              <input type="email" name="email1">信箱
-              <label for="email1" class="error"></label>
-            </label>
-            <label>
-              <input type="password" name="pwd1">密碼
-              <label for="pwd1" class="error"></label>
-            </label>
-            <p class="forgot-pass tm-text-gray">忘記密碼?</p>
-            <button class="submit button1">登入</button>
-          </div>
-        </form>
-        
-        
-        <div class="sub-cont">
-          <div class="img">
-            <div class="img__text m--up">
-              <h2>新信徒?</h2>
-              <h5>歡迎加入神社的大家庭</h5>
-            </div>
-            <div class="img__text m--in">
-              <h2>已經是信徒了?</h2>
-              <h5>若您已為信徒請直接登入</h5>
-              <h5>我們想念您~</h5>
-            </div>
-            <div class="img__btn">
-              <span class="m--up">註冊</span>
-              <span class="m--in">登入</span>
-            </div>
-          </div>
-
-          <form name="register" id="register">
-            <div class="form resister">
-              <h2>歡迎加入大家庭</h2>
-              <label>
-                <input type="text" name="name">信徒名稱
-                <label for="name" class="error"></label>
-              </label>
-              <label>
-                <input type="email" name="email">信箱
-                <label for="email" class="error"></label>
-              </label>
-              <label>
-                <input type="password" name="pwd">密碼
-                <label for="pwd" class="error"></label>
-              </label>
-              <button class="submit button1">註冊</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- partial -->
-      <script  src="js/script.js"></script>
-    </div>
-  </form>
-</div>
+<!--login-->
+<?php
+include ("login.html");
+?>
 <!--login end-->
   
 
@@ -261,42 +196,10 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
-    <div class="container-fluid tm-container-small">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
-                <h3 class="tm-text-primary mb-4 tm-footer-title">關於絲扇淒神社</h3>
-                <p>歡迎蒞臨本神社。我們將為各位信徒呈上最好的祝福。祝大家擁有美好的一天！</p>
-                <p>~~絲扇淒神社關心您~~</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
-                <h3 class="tm-text-primary mb-4 tm-footer-title"></h3>
-                <ul class="tm-footer-links pl-0">
-                    <li><a href="index.html#about">介紹</a></li>
-                    <li><a href="store-page.html">小舖</a></li>
-                    <li><a href="index.html#pray">求籤</a></li>
-                    <li><a href="解籤1.html">解籤</a></li>
-                    <li><a href="許願池.html">許願池</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
-                <ul class="tm-social-links d-flex justify-content-end pl-0 mb-5">
-                    <li class="mb-2"><a href="https://facebook.com"><i class="fab fa-facebook"></i></a></li>
-                    <li class="mb-2"><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
-                    <li class="mb-2"><a href="https://instagram.com/437god?utm_medium=copy_link"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-md-7 col-12 px-5 mb-3">
-                Copyright 2020 437god Company. All rights reserved.
-            </div>
-            <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
-                Designed by <a href="#" class="tm-text-gray" rel="sponsored" target="_parent">絲扇淒神社</a>
-            </div>
-        </div>
-    </div>
-  </footer><!-- End Footer -->
+  <?php
+  include ("footer.html");
+  ?>
+  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -335,71 +238,10 @@
       });
     });
   </script>
-  <script>
-    $.noConflict();
-    //for select
-    $.validator.addMethod("notEqualsto", function(value, element, arg) {
-      return arg != value;
-    }, "您尚未選擇!");
-
-    $("#register").validate({
-      submitHandler: function(form) {
-        alert("success!");
-        form.submit();
-      },
-      rules: {
-        name: {
-          required:true
-        },
-        email: {
-          required:true
-        },
-        pwd: {
-          required:true
-        },
-      },
-      messages: {
-        name: {
-          required: "必填"
-        },
-        email: {
-          required: "必填"
-        },
-        pwd: {
-          required: "必填"
-        }
-      }
-    });
-
-    $.noConflict();
-      //for select
-    $.validator.addMethod("notEqualsto", function(value, element, arg) {
-      return arg != value;
-    }, "您尚未選擇!");
-
-    $("#sign").validate({
-      submitHandler: function(form) {
-        alert("success!");
-        form.submit();
-      },
-      rules: {
-        email1: {
-          required:true
-        },
-        pwd1: {
-          required:true
-        },
-      },
-      messages: {
-        email1: {
-          required: "必填"
-        },
-        pwd1: {
-          required: "必填"
-        }
-      }
-    });
-    </script>
+  <!--verify-->
+<?php
+  include ("verify.html");
+  ?>
+<!--verify end-->
 </body>
-
 </html>

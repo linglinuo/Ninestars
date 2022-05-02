@@ -1,0 +1,60 @@
+<!--登入-->
+<script>
+    $.noConflict();
+    //for select
+    $.validator.addMethod("notEqualsto", function(value, element, arg) {
+      return arg != value;
+    }, "您尚未選擇!");
+    
+    $("#sign").validate({
+      submitHandler: function(form) {
+        alert("success!");
+        form.submit();
+      },
+      rules: {
+        email1: {
+          required:true
+        },
+        pwd1: {
+          required:true
+        },
+      },
+      messages: {
+        email1: {
+          required: "必填"
+        },
+        pwd1: {
+          required: "必填"
+        }
+      }
+    });
+  
+    $("#register").validate({
+      submitHandler: function(form) {
+        alert("success!");
+        form.submit();
+      },
+      rules: {
+        name: {
+          required:true
+        },
+        email: {
+          required:true
+        },
+        pwd: {
+          required:true
+        },
+      },
+      messages: {
+        name: {
+          required: "必填"
+        },
+        email: {
+          required: "必填"
+        },
+        pwd: {
+          required: "必填"
+        }
+      }
+    });
+  </script>

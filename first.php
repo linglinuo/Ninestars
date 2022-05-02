@@ -49,8 +49,6 @@
       background-position: center;
       background-size: cover;
     }
-    
-    
     .enterstore{
       background-color: #eb5d1e;
       color: #fef8f5;
@@ -117,11 +115,10 @@
 </head>
 
 <body>
-  <!--loader-->
   <?php
-  include ("loader.html");
+  include ("template.php");
+  echo $pageloader ;
   ?>
-  <!--loader end-->
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -609,13 +606,10 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="vendor/aos/aos.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
+  <?php
+  include ("template.php");
+  echo $vendorjs ;
+  ?>
 
   <!-- Template Main JS File -->
   
@@ -648,13 +642,10 @@
   include ("verify.html");
   ?>
   <!--verify end-->
-  <script src="js/main.js"></script>
-  <script src="js/plugins.js"></script>
-  <script>
-    $(window).on("load", function() {
-        $('body').addClass('loaded');
-    });
-  </script>
+  <?php
+  include ("template.php");
+  echo $mainjs ;
+  ?>
   
 </body>
 

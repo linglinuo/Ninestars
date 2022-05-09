@@ -6,13 +6,8 @@
     include ("template.php");
     echo $top ;
     echo $vendorcss;
+    echo $maincss;
   ?>
-
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="css/templatemo-style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
     @import url(https://fonts.googleapis.com/css?family=Noto+Sans+TC);

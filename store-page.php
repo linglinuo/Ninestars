@@ -6,13 +6,8 @@
     include ("template.php");
     echo $top ;
     echo $vendorcss;
+    echo $maincss;
   ?>
-
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style1.css" rel="stylesheet">
-  <link rel="stylesheet" href="fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="css/templatemo-style.css">
 
   <!--頁面載入-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -25,13 +20,14 @@
   <!--中文錯誤訊息-->
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
   <style>
-    .error {
-            color: #D82424;
-            font-weight: normal;
-            font-family: "微軟正黑體";
-            display: inline;
-            padding: 1px;
-        }
+    .error
+    {
+      color: #D82424;
+      font-weight: normal;
+      font-family: "微軟正黑體";
+      display: inline;
+      padding: 1px;
+    }
   </style>
 </head>
 
@@ -53,9 +49,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">首頁</a></li>
+          <li><a class="nav-link scrollto" href="index.html">首頁</a></li>
           <li><a class="nav-link scrollto" href="first.php">介紹</a></li>
-          <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
+          <li><a class="nav-link scrollto active" href="store-page.php">小舖</a></li>
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
           <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>

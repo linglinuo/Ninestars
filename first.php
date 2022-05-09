@@ -6,13 +6,9 @@
     include ("template.php");
     echo $top ;
     echo $vendorcss;
+    echo $maincss;
   ?>
 
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style1.css" rel="stylesheet">
-  <link rel="stylesheet" href="fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="css/templatemo-style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
   <!--additional method - for checkbox .. ,require_from_group method ...-->

@@ -4,28 +4,27 @@
     <?php
         include ("template.php");
         echo $top ;
+        echo $extracss;
+        echo $maincss;
     ?>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="css/templatemo-style.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/style1.css" rel="stylesheet">
-<style>
-    .error {
+    
+    <style>
+        .error 
+        {
             color: #D82424;
             font-weight: normal;
             font-family: "微軟正黑體";
             display: inline;
             padding: 1px;
         }
-  </style>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-<!--additional method - for checkbox .. ,require_from_group method ...-->
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-<!--中文錯誤訊息-->
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <!--additional method - for checkbox .. ,require_from_group method ...-->
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <!--中文錯誤訊息-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
 </head>
 <body>
     <?php
@@ -37,7 +36,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="container-fluid">
-        <a class="navbar-brand" href="first.php">
+        <a class="navbar-brand" href="index.php">
             <i class="fas fa-film mr-2"></i>
             絲扇淒神社
         </a>
@@ -45,12 +44,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">首頁</a></li>
+          <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
           <li><a class="nav-link scrollto" href="first.php">介紹</a></li>
           <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
-          <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
+          <li><a class="nav-link scrollto active" href="許願池.php">許願池</a></li>
           <li><a class="nav-link scrollto" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
           <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
         </ul>

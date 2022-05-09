@@ -30,14 +30,10 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
 </head>
 <body>
-    <!-- Page Loader -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-
-    </div>
+    <?php
+    include ("template.php");
+    echo $pageloader ;
+    ?>
     <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -252,16 +248,14 @@ include ("login.html");
     ?>
     <!-- End Footer -->
     
-    <script src="js/plugins.js"></script>
-    <script>
-        $(window).on("load", function() {
-            $('body').addClass('loaded');
-        });
-    </script>
+    <?php
+    include ("template.php");
+    echo $mainjs ;
+    ?>
     <!--verify-->
-  <?php
-  include ("verify.html");
-  ?>
-  <!--verify end-->
+    <?php
+    include ("verify.html");
+    ?>
+    <!--verify end-->
 </body>
 </html>

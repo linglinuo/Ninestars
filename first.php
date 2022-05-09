@@ -7,20 +7,9 @@
     echo $top ;
     echo $vendorcss;
     echo $maincss;
+    echo $sourcejs;
+    echo $wish;
   ?>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-  <!--additional method - for checkbox .. ,require_from_group method ...-->
-  <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-  <!--中文錯誤訊息-->
-
-  <!--許願板輪播套件https://blog.7netic.com/2017/11/16/%E8%BC%95%E9%AC%86%E4%BD%BF%E7%94%A8jquery-%E5%9C%96%E7%89%87%E8%BC%AA%E6%92%AD%E5%A4%96%E6%8E%9B-owl-carousel-%E5%B5%8C%E5%85%A5%E8%87%B3%E7%B6%B2%E9%A0%81%E8%88%87%E9%83%A8%E8%90%BD%E6%A0%BC/-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css"></link>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.theme.default.min.css"></link>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js"></script>
-
   <style>
     #about{
       background-image: url(gif/背景-01-01-01.png); 

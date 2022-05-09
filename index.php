@@ -7,8 +7,9 @@
     echo $top ;
     echo $vendorcss;
     echo $maincss;
+    echo $extrajs;
+
   ?>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
     @import url(https://fonts.googleapis.com/css?family=Noto+Sans+TC);
       .bgcolor{

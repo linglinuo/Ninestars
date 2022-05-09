@@ -6,8 +6,8 @@
         echo $top ;
         echo $extracss;
         echo $maincss;
+        echo $sourcejs;
     ?>
-    
     <style>
         .error 
         {
@@ -18,13 +18,6 @@
             padding: 1px;
         }
     </style>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-    <!--additional method - for checkbox .. ,require_from_group method ...-->
-    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-    <!--中文錯誤訊息-->
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
 </head>
 <body>
     <?php

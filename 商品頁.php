@@ -10,6 +10,90 @@
     echo $extrajs;
     echo $sourcejs;
   ?>
+  <!--商品-->
+  <?php
+  $link = mysqli_connect("localhost", "root", "root123456", "437god") // 建立MySQL的資料庫連結
+  or die("無法開啟MySQL資料庫連結!<br>");
+  
+  // 送出編碼的MySQL指令
+  mysqli_query($link, 'SET CHARACTER SET utf8');
+  mysqli_query($link, "SET collation_connection = 'utf8_unicode_ci'");
+  
+  // 送出查詢的SQL指令
+  if ($result = mysqli_query($link, "SELECT * FROM `products` WHERE `product_id`=".$_GET['id'])) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    $data .= "
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id=\"portfolio-details\" class=\"portfolio-details\">
+        <div class=\"container\">
+
+            <div class=\"row gy-4\">
+
+            <div class=\"col-lg-8\">
+                <div class=\"portfolio-details-slider swiper\">
+                <div class=\"swiper-wrapper align-items-center\">
+                    <img src=\"$row[product_picture]\" alt=\"\">   
+                </div>
+                </div>
+            </div>
+
+            <div class=\"col-lg-4\">
+                <div class=\"portfolio-info\">
+                <span class=\"name\">$row[product_name]</span>
+                <ul>
+                    <div class=\"container\" style=\"padding-left: 0px;padding-right: 0px;padding-left: 0px;\">
+                    <div class=\"row mt-3\">
+                        <div class=\"col-6\">
+                        <span class=\"detail\"><strong>分類: </strong>$row[product_categories]</span>
+                        </div>
+                        <div class=\"col-6\">
+                        <span class=\"detail\"><strong>價錢: </strong>$$row[product_price]</span>
+                        </div>
+                    </div>
+
+                    <div class=\"row justify-content-center align-items-center mt-3\">
+                        <div class=\"col-6 \">
+                        <span class=\"detail\"><strong>數量</strong></span>
+                        </div>
+                        <div class=\"col-6\">
+                        <button id=\"minus\" class=\"btn numbutton\"> - </button>
+                        <span id=\"num\">1</span>
+                        <button id=\"plus\" class=\"btn numbutton\"> + </button>  
+                        </div>
+                    </div>
+                    <div class=\"row justify-content-center align-items-center mt-3\">
+                        <div class=\"col-6 align-items-center\">
+                        <span class=\"detail\"><strong>種類</strong></span>
+                        </div>
+                        <div class=\"col-6 align-items-center\">
+                        <select name=\"color\">
+                            $row[product_type]
+                        </select>
+                        </div>
+                    </div>
+                    </div>
+                </ul>
+                <a class=\"addcart\">加入購物車</a>
+                </div>
+                <div class=\"portfolio-description\">
+                <p>
+                    $row[product_instruction]
+                </p>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        </section><!-- End Portfolio Details Section -->
+    ";
+    }
+    mysqli_free_result($result); // 釋放佔用的記憶體
+    }
+    mysqli_close($link); // 關閉資料庫連結
+?>
+<!--商品結束-->
+
   <style>
     .name{
       font-size: 25px;
@@ -81,7 +165,6 @@
 include ("login.html");
 ?>
 <!--login end-->
-
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
@@ -91,72 +174,10 @@ include ("login.html");
         <div class="d-flex justify-content-between align-items-center">
           <h2 style="text-align: left;">商品細節</h2>
         </div>
-
       </div>
     </section><!-- Breadcrumbs Section -->
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-                <img src="img/portfolio/b2.png" alt="">   
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <span class="name">刮痧板</span>
-              <ul>
-                <div class="container" style="padding-left: 0px;padding-right: 0px;padding-left: 0px;">
-                  <div class="row mt-3">
-                    <div class="col-6">
-                      <span class="detail"><strong>分類</strong>: 佛具</span>
-                    </div>
-                    <div class="col-6">
-                      <span class="detail"><strong>價錢</strong>: $180</span>
-                    </div>
-                  </div>
-
-                  <div class="row justify-content-center align-items-center mt-3">
-                    <div class="col-6 ">
-                      <span class="detail"><strong>數量</strong></span>
-                    </div>
-                    <div class="col-6">
-                      <button id="minus" class="btn numbutton"> - </button>
-                      <span id="num">1</span>
-                      <button id="plus" class="btn numbutton"> + </button>  
-                    </div>
-                  </div>
-                  <div class="row justify-content-center align-items-center mt-3">
-                    <div class="col-6 align-items-center">
-                      <span class="detail"><strong>種類</strong></span>
-                    </div>
-                    <div class="col-6 align-items-center">
-                      <select name="color">
-                        <option>黃金色</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </ul>
-              <a class="addcart">加入購物車</a>
-            </div>
-            <div class="portfolio-description">
-              <p>
-                這座無教派的千年古寺，供奉著傳說中日本最古老的佛像「一光三尊阿弥陀如来像」，境內的本堂被指定為日本佛教建築國寶。而參拜完後，除了可以購買佛珠或御守回家之外，這裡還販售了寺方原創的「刮痧板」，透明的牛角形狀印上象徵善光寺的「善」字，兼具實用性與紀念性。</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Details Section -->
+    <?php echo $data;?><!--商品-->
 
   </main><!-- End #main -->
 
@@ -168,6 +189,7 @@ include ("login.html");
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  
   <?php
   include ("template.php");
   echo $vendorjs ;

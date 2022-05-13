@@ -12,6 +12,7 @@
   ?>
   <!--商品-->
   <?php
+  $num=1;
   $link = mysqli_connect("localhost", "root", "root123456", "437god") // 建立MySQL的資料庫連結
   or die("無法開啟MySQL資料庫連結!<br>");
   
@@ -50,30 +51,9 @@
                         <span class=\"detail\"><strong>價錢: </strong>$$row[product_price]</span>
                         </div>
                     </div>
-
-                    <div class=\"row justify-content-center align-items-center mt-3\">
-                        <div class=\"col-6 \">
-                        <span class=\"detail\"><strong>數量</strong></span>
-                        </div>
-                        <div class=\"col-6\">
-                        <button id=\"minus\" class=\"btn numbutton\"> - </button>
-                        <span id=\"num\">1</span>
-                        <button id=\"plus\" class=\"btn numbutton\"> + </button>  
-                        </div>
-                    </div>
-                    <div class=\"row justify-content-center align-items-center mt-3\">
-                        <div class=\"col-6 align-items-center\">
-                        <span class=\"detail\"><strong>種類</strong></span>
-                        </div>
-                        <div class=\"col-6 align-items-center\">
-                        <select name=\"color\">
-                            $row[product_type]
-                        </select>
-                        </div>
-                    </div>
                     </div>
                 </ul>
-                <a class=\"addcart\">加入購物車</a>
+                <button class=\"btn numbutton my-cart-btn\" data-id=\"$row[product_id]\" data-name=\"$row[product_name]\" data-price=\"$row[product_price]\" data-quantity=\"1\" data-image=\"$row[product_picture]\" style=\"margin-top: 0px;\">加入購物車</button>
                 </div>
                 <div class=\"portfolio-description\">
                 <p>
@@ -126,6 +106,18 @@
             display: inline;
             padding: 1px;
         }
+    .badge-notify{
+      background:red;
+      position:relative;
+      top: -20px;
+      right: 10px;
+    }
+    .modal-backdrop {
+      z-index: -1;
+    }
+    .test{
+      z-index: 999;
+    }
   </style>
 </head>
 
@@ -153,8 +145,11 @@
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
           <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
-          <li><a class="nav-link scrollto" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
+          <li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <i class="fas fa-shopping-cart my-cart-icon"></i>
+              <span class="badge badge-notify my-cart-badge"></span></a></li>
+          <li>
+          <button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -195,7 +190,7 @@ include ("login.html");
   echo $vendorjs ;
   echo $mainjs ;
   ?>
-  <script>
+  <!-- <script>
     $(function () {
       var x=1;
       $("#plus").click(function(){
@@ -213,12 +208,17 @@ include ("login.html");
         }
       });
     });
-  </script>
+  </script> -->
   <!--verify-->
-<?php
-  include ("verify.html");
+  <?php
+    include ("verify.html");
   ?>
-<!--verify end-->
+  <!--verify end-->
+  <!--mycart-->
+  <?php
+    include ("mycart.html");
+  ?>
+  <!--mycart end-->
 </body>
 
 </html>

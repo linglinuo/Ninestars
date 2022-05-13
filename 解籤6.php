@@ -83,7 +83,7 @@ include ("login.html");
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤002a.jpg" alt="Image" class="img-fluid">
+                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤082a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第八十二支籤</h2>
                         <a href="籤詩1.php">View more</a>

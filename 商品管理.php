@@ -105,7 +105,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <i class="fas fa-film mr-2"></i>
             絲扇淒神社
         </a>
@@ -113,13 +113,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">首頁</a></li>
-          <li><a class="nav-link scrollto" href="index.html">介紹</a></li>
-          <li><a class="nav-link scrollto" href="store-page.html">小舖</a></li>
-          <li><a class="nav-link scrollto" href="求籤.html">求籤</a></li>
-          <li><a class="nav-link scrollto" href="解籤1.html">解籤</a></li>
-          <li><a class="nav-link scrollto" href="許願池.html">許願池</a></li>
-          <li><a class="nav-link scrollto" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+          <li><a class="nav-link scrollto active" href="index.php">首頁</a></li>
+          <li><a class="nav-link scrollto" href="index.php">介紹</a></li>
+          <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
+          <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
+          <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
+          <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
+          <li><a class="nav-link scrollto" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
           <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -339,11 +339,11 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
                 <h3 class="tm-text-primary mb-4 tm-footer-title"></h3>
                 <ul class="tm-footer-links pl-0">
-                    <li><a href="index.html#about">介紹</a></li>
-                    <li><a href="store-page.html">小舖</a></li>
-                    <li><a href="index.html#pray">求籤</a></li>
-                    <li><a href="解籤1.html">解籤</a></li>
-                    <li><a href="許願池.html">許願池</a></li>
+                    <li><a href="index.php#about">介紹</a></li>
+                    <li><a href="store-page.php">小舖</a></li>
+                    <li><a href="index.php#pray">求籤</a></li>
+                    <li><a href="解籤1.php">解籤</a></li>
+                    <li><a href="許願池.php">許願池</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">

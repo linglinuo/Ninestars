@@ -45,23 +45,40 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <!--送出表單不重新整理頁面-->
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-  
-    <?php
-    //商品管理
-    $link = mysqli_connect("localhost", "root", "root123456", "437god") // 建立MySQL的資料庫連結
-    or die("無法開啟MySQL資料庫連結!<br>");
 
-    // 送出編碼的MySQL指令
-    mysqli_query($link, 'SET CHARACTER SET utf8');
-    mysqli_query($link, "SET collation_connection = 'utf8_unicode_ci'");
+    <?php 
+    //新增資料庫
+        if (isset($_POST['pname'])) {
+        //上傳檔案
+        $tmp_name = $_FILES['Myfile']['tmp_name'];
+        $file_name = $_FILES['Myfile']['name'];
+        $file_type = $_FILES['Myfile']['type'];
+        $fp = fopen($tmp_name, "rb");
+        $file = addslashes(fread($fp, filesize($tmp_name)));
+        
+        $id = $_POST['pid'];
+        $name = $_POST['pname'];
+        
+        $array_category = array(1=>"御守","佛具","紀念品");
+        $post_category = $_POST['pcategory'];
+        $category = $array_category[$post_category];
 
-    // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM products")) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      $data .= "<tr><th scope=\"row\">$row[product_id]</th><td>$row[product_name]</td><td><img src=\"$row[product_picture]\" width=\"100px\"></td><td>$row[product_categories]</td><td>$row[product_type]</td><td>$row[product_price]</td></tr>";
-    }
-    mysqli_free_result($result); // 釋放佔用的記憶體
-    }
+        $price = $_POST['pprice'];
+        $type = $_POST['ptype'];
+        $intro = $_POST['pintro'];
+
+        
+        //寫入資料庫
+        $link = mysqli_connect("localhost", "root", "root123456", "437god") // 建立MySQL的資料庫連結
+        or die("無法開啟MySQL資料庫連結!<br>");
+        mysqli_query($link, 'SET CHARACTER SET utf8');
+        mysqli_query($link, "SET collation_connection = 'utf8_unicode_ci'");
+        $sql = "insert into products(product_id,product_picture,product_name,product_categories,product_price,product_type,product_instruction)values('$id','img/portfolio/$file_name','$name','$category','$price','$type','$intro')";
+        
+        mysqli_query($link, $sql);
+        mysqli_close($link);
+        $msg = "<span style='color:#0000FF'>資料新增成功</span>";
+        }
     ?>
 
 
@@ -233,94 +250,73 @@
                     <div id="product-table">
                         <div class="row">
                             <div class="col-9">
-                                <h2 style="text-align:left;">商品管理</h2>  
-                            </div>
-                            <div class="col-3">
-                              <button type="button" id="newProduct" class="btn flex-end"><a href="新增商品.php"><h5>新增商品<h5></button>
+                                <h2 style="text-align:left;">新增商品</h2>  
                             </div>
                         </div>
-                        <table id="table-product" class="table table-bordered" style="table-layout:fixed">
-                            <thead>
-                                <tr>
-                                <th scope="col">商品編號</th>
-                                <th scope="col">商品名</th>
-                                <th scope="col">圖片</th>
-                                <th scope="col">分類</th>
-                                <th scope="col">種類</th>
-                                <th scope="col">價格</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php echo $data;?>
-                            </tbody>
+
+                        <form id="new-product" name="new-product" action="" method="POST" enctype="multipart/form-data"> 
+                        <table id="table-product" class="table table-bordered">
+                            <tr>
+                                <th scope="row">商品編號</th>
+                                <td><input type="text" name="pid"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">商品圖片</th>
+                                <td>
+                                  <input type="hidden" name="MAX_FILE_SIZE" value="1024000">
+                                  <input type="file" name="Myfile">
+                                  <label for="Myfile" class="error"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">商品名稱</th>
+                                <td>
+                                  <input type="text" name="pname">
+                                  <label for="pname" class="error"></label>
+                                </td> 
+                            </tr>
+                            <tr>
+                                <th scope="row">分類</th>
+                                <td>
+                                  <input type="radio" name="pcategory" value="1" <?php if($_POST['pcategory']==1) echo"checked" ?>>御守<label for="input" class="pcategory"></label>
+                                  <input type="radio" name="pcategory" value="2" <?php if($_POST['pcategory']==2) echo"checked" ?>>佛具<label for="input" class="pcategory"></label>
+                                  <input type="radio" name="pcategory" value="3" <?php if($_POST['pcategory']==3) echo"checked" ?>>紀念品<label for="input" class="pcategory"></label>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <th scope="row">價格</th>
+                                <td>
+                                  <input type="text" name="pprice">
+                                  <label for="pprice" class="pcategory"></label>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <th scope="row">種類</th>
+                                <td>
+                                  <input type="textarea" name="ptype">
+                                  <label for="ptype" class="pcategory"></label>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <th scope="row">敘述</th>
+                                <td>
+                                  <input type="textarea" name="pintro">
+                                  <label for="pintro" class="pcategory"></label>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                  <input type="submit" value="確定上傳" /><br>
+                                  <?php echo $msg ?>
+                                </td>
+                            </tr>
                         </table>
+                        </form>
                         <!--product table end-->
                     </div>
                 </div>
             </div>
         </div><!--container end-->
-
-        <!--product-modal start-->
-        <form id="new-product-modal" name="new-product-modal" action="" method="POST" enctype="multipart/form-data"> 
-            <div class="container">
-                <!-- Modal -->
-                <div class="modal fade bd-example-modal-lg" id="product-modal" role="dialog">
-                    <div class="modal-dialog modal-lg">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">新增商品</h4>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">商品編號</th>
-                                        <td><input type="text" name="pid"></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">商品圖片</th>
-                                        <td><input type="hidden" name="MAX_FILE_SIZE" value="1024000">
-                                        <input type="file" name="Myfile"></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">商品名稱</th>
-                                        <td><input type="text" name="pname"></td> 
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">分類</th>
-                                        <td>
-                                          <input type="text" name="pcategory">
-                                        </td>  
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">顏色</th>
-                                        <td><input type="text" name="pcolor"></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">價格</th>
-                                        <td><input type="text" name="pprice"></td>  
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">敘述</th>
-                                        <td><input type="textarea" name="pintro"></td>  
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="submit" name="btn btn-default" id="product-save" value="儲存" onclick="Submit()">
-                            <input type="button" name="btn btn-default" id="closemodal" value="關閉">
-                            <!-- <button type="button" class="btn btn-default closemodal" data-dismiss="modal">關閉</button> -->
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <!--product-modal end-->
-
     </section><!-- End Portfolio Section -->
     
 
@@ -433,6 +429,57 @@
           required: "必填"
         }
       }
+    });
+  </script>
+
+  <script>
+    $(document).ready(function($){
+      $("#new-product").validate({
+        submitHandler: function(form) {
+          alert("success!");
+          form.submit();
+        },
+        rules: {
+          Myfile: {
+            required: true
+          },
+          pname: {
+            required: true
+          },
+          pcategory: {
+            required: true
+          },
+          pprice: {
+            required: true
+          },
+          ptype: {
+            required: true
+          },
+          pintro: {
+            required: true
+          }
+        },
+        messages: {
+          Myfile: {
+            required: "必需填寫"
+          },
+          pname: {
+            required: "必需填寫"
+          },
+          pcategory: {
+            required: "必需填寫"
+          },
+          pprice: {
+            required: "必需填寫"
+          },
+          ptype: {
+            required: "必需填寫"
+          },
+          pintro: {
+            required: "必需填寫"
+          }
+        }
+      });
     });
   </script>
 </body>

@@ -20,9 +20,9 @@
     mysqli_query($link, "SET collation_connection = 'utf8_unicode_ci'");
 
     // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM products")) {
+    if ($result = mysqli_query($link, "SELECT * FROM `order`")) {
     while ($row = mysqli_fetch_assoc($result)) {
-      $data .= "<tr><th scope=\"row\">$row[product_id]</th><td>$row[product_name]</td><td><img src=\"$row[product_picture]\" width=\"100px\"></td><td>$row[product_categories]</td><td>$row[product_type]</td><td>$row[product_price]</td></tr>";
+      $data .= "<tr><th scope=\"row\"><a href=\"cart.php\">$row[order_id]</th><td>$row[order_price]</td><td>$row[order_time]</td></tr>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }
@@ -45,6 +45,12 @@
       padding-bottom: 3px;
       padding-left: 10px;
       padding-right: 10px;
+    }
+    .modal-backdrop {
+      z-index: -1;
+    }
+    #myModal{
+      z-index: 999;
     }
   </style>
 </head>
@@ -96,11 +102,9 @@
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
         <div class="container">
-  
           <div class="d-flex justify-content-between align-items-center">
-            <h2>管理中心</h2>
+            <h2>訂單查詢</h2>
           </div>
-  
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
@@ -108,40 +112,15 @@
     <section id="store" class="portfolio">
         <div class="container" data-aos="fade-up">
             <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <!--左側-->
-                <div class="col-3">
-                    <table class="table table-bordered">
-                        <tr>
-                        <th><button id="product-manager"><a href="商品管理.php"><h4>商品管理</h4></button></th>
-                        </tr>
-                        <tr>
-                        <th>
-                          <button id="member-manager"><h4><a href="會員管理.php">會員管理</a></h4></button>
-                        </th>
-                        </tr>
-                    </table>
-                </div>
-                <!--右側-->
-                <div class="col-9">
-                    <!--product table start-->
-                    <div id="product-table">
-                        <div class="row">
-                            <div class="col-9">
-                                <h2 style="text-align:left;">商品管理</h2>  
-                            </div>
-                            <div class="col-3">
-                              <button type="button" id="newProduct" class="btn flex-end"><a href="新增商品.php"><h5>新增商品<h5></button>
-                            </div>
-                        </div>
-                        <table id="table-product" class="table table-bordered" style="table-layout:fixed">
+                <div class="col-12">
+                    <!--order table start-->
+                    <div id="order-table">
+                        <table class="table table-bordered" style="table-layout:fixed">
                             <thead>
                                 <tr>
-                                <th scope="col">商品編號</th>
-                                <th scope="col">商品名</th>
-                                <th scope="col">圖片</th>
-                                <th scope="col">分類</th>
-                                <th scope="col">種類</th>
-                                <th scope="col">價格</th>
+                                    <th scope="col">訂單編號</th>
+                                    <th scope="col">應付金額</th>
+                                    <th scope="col">建檔日期</th>
                                 </tr>
                             </thead>
                             <tbody>

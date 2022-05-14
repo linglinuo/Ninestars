@@ -48,12 +48,6 @@
       padding-left: 10px;
       padding-right: 10px;
     }
-    .modal-backdrop {
-      z-index: -1;
-    }
-    #myModal{
-      z-index: 999;
-    }
   </style>
 </head>
 

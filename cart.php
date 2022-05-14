@@ -24,12 +24,12 @@
       border-radius: 10px;
     }
     .error {
-            color: #D82424;
-            font-weight: normal;
-            font-family: "微軟正黑體";
-            display: inline;
-            padding: 1px;
-        }
+      color: #D82424;
+      font-weight: normal;
+      font-family: "微軟正黑體";
+      display: inline;
+      padding: 1px;
+    }
   </style>
 </head>
 
@@ -82,7 +82,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2 style="text-align: left;">購物車</h2>
+          <h2 style="text-align: left;">訂單內容</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
@@ -91,82 +91,61 @@
       <div class="container">
         <!--title-->
         <div class="row">
-          <div class="col-4">
+          <div class="col-3">
             <h4>商品名</h4>
           </div>
-          <div class="col-2">
-            <h4>種類</h4>
-          </div>
-          <div class="col-2">
+          <div class="col-3">
             <h4>單價</h4>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <h4>數量</h4>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <h4>總計</h4>
           </div>
         </div>
         <!--item1-->
         <div class="row mt-3">
-          <div class="col-4 d-flex">
+          <div class="col-3 d-flex">
             <img src="img/portfolio/a1.png" alt="" style="width: 100px; height: 75px;">
             <h5 class="px-4">考試御守</h5>
           </div>
-          <div class="col-2">
-            <select name="color">
-              <option>藍色</option>
-              <option>紅色</option>
-            </select>
-          </div>
-          <div class="col-2">
+          <div class="col-3">
             <span>$</span><h5 id="price" style="display: inline;">80</h5>
           </div>
-          <div class="col-2">
-            <button id="minus" class="btn numbutton"> - </button>
+          <div class="col-3">
               <span id="num">1</span>
-              <button id="plus" class="btn numbutton"> + </button>  
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <span>$</span><h5 id="totalprice" style="display: inline;"></h5>
           </div>
         </div>
 
         <!--item1-->
         <div class="row mt-3">
-          <div class="col-4 d-flex">
+          <div class="col-3 d-flex">
             <img src="img/portfolio/a2.png" alt="" style="width: 100px; height: 75px;">
             <h5 class="px-4">戀愛御守</h5>
           </div>
-          <div class="col-2">
-            <select name="color">
-              <option>粉紅色</option>
-            </select>
-          </div>
-          <div class="col-2">
+          <div class="col-3">
             <span>$</span><h5 id="price2" style="display: inline;">80</h5>
           </div>
-          <div class="col-2">
-            <button id="minus2" class="btn numbutton"> - </button>
-              <span id="num2">1</span>
-              <button id="plus2" class="btn numbutton"> + </button>  
+          <div class="col-3">
+            <span id="num2">1</span>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <span>$</span><h5 id="totalprice2" style="display: inline;"></h5>
           </div>
         </div>
 
         <div class="row mt-3">
-          <div class="col-3"></div>
-          <div class="col-3">
+          <div class="col-4"></div>
+          <div class="col-4">
             <h3>總金額</h3>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <span>$</span>
             <h2 id="payment" style="display: inline;">160</h2>
-          </div>
-          <div class="col-3">
-            <button class="btn buybtn">去買單</button>
           </div>
         </div>
 

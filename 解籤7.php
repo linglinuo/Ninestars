@@ -84,7 +84,7 @@
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤097a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第九十七支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=97">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -93,7 +93,7 @@
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤098a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第九十八支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=98">View more</a>
                     </figcaption>                    
                 </figure>
                 
@@ -103,7 +103,7 @@
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤099a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第九十九支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=99">View more</a>
                     </figcaption>                    
                 </figure>
                 
@@ -113,7 +113,7 @@
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤100a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第一百支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=100">View more</a>
                     </figcaption>                    
                 </figure>
                 

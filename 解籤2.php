@@ -84,7 +84,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤017a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第十七支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=17">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -93,7 +93,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤018a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第十八支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=18">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -102,7 +102,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤019a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第十九籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=19">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -111,7 +111,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤020a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=20">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -121,7 +121,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤021a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十一支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=21">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -130,7 +130,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤022a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十二支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=22">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -139,7 +139,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤023a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十三支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=23">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -148,7 +148,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤024a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十四支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=24">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -157,7 +157,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤025a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十五支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=25">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -166,7 +166,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤026a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十六支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=26">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -175,7 +175,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤027a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十七支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=27">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -184,7 +184,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤028a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十八支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=28">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -193,7 +193,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤029a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第二十九支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=29">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -202,7 +202,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤030a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第三十支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=30">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -211,7 +211,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤031a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第三十一支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=31">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
@@ -220,7 +220,7 @@ include ("login.php");
                     <img src="img\image_a_small\淺草金龍山觀音寺一百籤032a.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>第三十二支籤</h2>
-                        <a href="籤詩1.php">View more</a>
+                        <a href="籤詩.php?id=32">View more</a>
                     </figcaption>                    
                 </figure>
             </div>         

@@ -142,15 +142,15 @@ session_start();
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
           <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
-          <li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i class="fas fa-shopping-cart my-cart-icon"></i>
-              <span class="badge badge-notify my-cart-badge"></span></a></li>
           <li>
           <?php
             if (isset($_SESSION['Name'])) {
-                echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                echo '<li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fas fa-shopping-cart my-cart-icon"></i>
+                <span class="badge badge-notify my-cart-badge"></span></a></li><li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 } else {
-                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>';
+                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
+                ';
                 }
             ?>
         </ul>

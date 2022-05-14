@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-11 18:45:20
--- 伺服器版本： 10.4.24-MariaDB
--- PHP 版本： 7.4.29
+-- 產生時間： 2022-05-14 14:07:55
+-- 伺服器版本： 10.4.22-MariaDB
+-- PHP 版本： 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -22,6 +22,80 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `437god` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `437god`;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `member`
+--
+
+CREATE TABLE `member` (
+  `member_id` int(20) NOT NULL,
+  `member_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `member_email` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `member_password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `member_level` varchar(5) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `member`
+--
+
+INSERT INTO `member` (`member_id`, `member_name`, `member_email`, `member_password`, `member_level`) VALUES
+(10001, '王曉明', 'S0861126@gamail.com', 'aaaaaa', '初級'),
+(10002, '張小飛', 'S086112@gamail.com', 'bbbbb', '中級'),
+(10003, '陳大華', '21S86126@gamail.com', 'ccccc', '高級'),
+(10004, '蔡依林', 'daa26@gamail.com', 'ddddd', '中級'),
+(10005, '周杰倫', 'apple@gamail.com', 'fffff', '初級'),
+(10006, 'member', 'adddddf@gamail.com', 'member123456', '初級'),
+(10014, 'A', 'A', 'A', 'A'),
+(10015, 'a', 'a', 'a', 's');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `order`
+--
+
+CREATE TABLE `order` (
+  `member_id` int(20) NOT NULL,
+  `order_id` int(20) NOT NULL,
+  `order_price` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `order`
+--
+
+INSERT INTO `order` (`member_id`, `order_id`, `order_price`) VALUES
+(10002, 1, 80),
+(10003, 2, 160),
+(10004, 3, 85),
+(10006, 4, 240);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `order_content`
+--
+
+CREATE TABLE `order_content` (
+  `order_id` int(20) NOT NULL,
+  `product_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `product_categories` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `product_numbers` int(20) NOT NULL,
+  `product_price` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `order_content`
+--
+
+INSERT INTO `order_content` (`order_id`, `product_name`, `product_categories`, `product_numbers`, `product_price`) VALUES
+(1, '考試御守', '御守', 1, 80),
+(2, '戀愛御守', '御守', 2, 160),
+(3, '求籤', '紀念品', 2, 200),
+(4, '刮痧板', '佛具', 1, 180);
 
 -- --------------------------------------------------------
 
@@ -53,7 +127,105 @@ INSERT INTO `products` (`product_id`, `product_picture`, `product_name`, `produc
 (7, 'img/portfolio/b3.png', '香皿', '佛具', '450', '<option>白色</option>', '香皿還重現了藥師寺東塔天花板的白鳳圖騰，精緻又具收藏價值。\r\n<br>* 燃燒時，是小心使用。\r\n<br>* 處理火時要小心。即使在煙霧消失後，火種仍可能存在。\r\n<br>* 瓷器小心易碎。'),
 (8, 'img/portfolio/c1.png', '鳥居擺飾', '紀念品', '300', '<option>男人</option>\r\n<option>女人</option>\r\n<option>富士山</option>\r\n<option>鬼怪</option>\r\n<option>搖鈴</option>', '鳥居／とりい 是日本神社的建築之一，傳說是連接神明居住的神域與人類居住的俗世之通道，屬「結界」的一種。\r\n<br>鳥居有多種形狀，但大多均以兩根支柱與一至二根橫梁構成。 現在把鳥居成可擺飾的大小,\r\n<br>在日本或國外也都是受歡迎的紀念品, 如果將它們並排展示，那將是一個壯觀的景象。'),
 (9, 'img/portfolio/c2.png', '佛珠', '紀念品', '650', '<option>綠色</option>\r\n<option>粉色</option>\r\n<option>藍色</option>', '此款佛珠自古以來即被視為避邪之聖物，其蘊藏著豐富的天然靈氣，有助於消除壓力、疲勞、濁氣等負面能量，也是友善、愛心以及希望的象徵。 無論是靜思冥想、唸經數珠時使用，或是隨身攜帶、掛置車上、家中神明配戴，都很合適，不僅十分漂亮還可以招來好福氣喔！'),
-(10, 'img/portfolio/c3.png', '御守護太刀守', '紀念品', '650', '<option>金色</option>', '祀奉初代將軍德川家康的日光東照宮，寺境內的寶物館中，擁有2,000件藏品，其中兩把被列為國寶的太刀「銘助真」與「銘国宗」，尤其具有代表性。雖然這些寶物只能隔著櫥窗欣賞，但旅人們卻能夠把金色太刀造型的「御守護太刀守」買回家珍藏，當成擺設超有氣勢！');
+(10, 'img/portfolio/c3.png', '御守護太刀守', '紀念品', '650', '<option>金色</option>', '祀奉初代將軍德川家康的日光東照宮，寺境內的寶物館中，擁有2,000件藏品，其中兩把被列為國寶的太刀「銘助真」與「銘国宗」，尤其具有代表性。雖然這些寶物只能隔著櫥窗欣賞，但旅人們卻能夠把金色太刀造型的「御守護太刀守」買回家珍藏，當成擺設超有氣勢！'),
+(17, '', 'a', '', 'a', 'a', 'a'),
+(18, '', 'a', '', 'a', 'a', 'a'),
+(22, 'image/png', 'a', '御守', 'a', 'a', 'a'),
+(23, 'image/png', 'A', '御守', 'F', 'A', 'q'),
+(24, 'a3.png', 'A', '御守', 'q', 'a', 'A'),
+(25, '/a1.png', 'A', '御守', 'a', 'a', 'a'),
+(26, 'img/portfolio/b3.png', 'A', '佛具', 'A', 'a', 's');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `wish`
+--
+
+CREATE TABLE `wish` (
+  `member_id` int(20) NOT NULL,
+  `wish_content` varchar(10000) COLLATE utf8_unicode_ci NOT NULL,
+  `wish_time` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `wish`
+--
+
+INSERT INTO `wish` (`member_id`, `wish_content`, `wish_time`) VALUES
+(10001, '希望我可以賺大錢!!', '2022-05-11'),
+(10002, '我要上台大', '2022-05-01'),
+(10003, '可以順利找到工作', '2022-05-03'),
+(10004, '平安健康順利', '2022-05-10'),
+(10006, '希望可以順利找到好工作', '2022-05-05');
+
+--
+-- 已傾印資料表的索引
+--
+
+--
+-- 資料表索引 `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`member_id`);
+
+--
+-- 資料表索引 `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`member_id`);
+
+--
+-- 資料表索引 `order_content`
+--
+ALTER TABLE `order_content`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- 資料表索引 `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- 資料表索引 `wish`
+--
+ALTER TABLE `wish`
+  ADD PRIMARY KEY (`member_id`);
+
+--
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+--
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `member`
+--
+ALTER TABLE `member`
+  MODIFY `member_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10016;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order`
+--
+ALTER TABLE `order`
+  MODIFY `member_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10007;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order_content`
+--
+ALTER TABLE `order_content`
+  MODIFY `order_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `products`
+--
+ALTER TABLE `products`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `wish`
+--
+ALTER TABLE `wish`
+  MODIFY `member_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10007;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

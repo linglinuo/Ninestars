@@ -224,7 +224,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/a1.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="a1.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=1" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>御守</h4>
@@ -236,7 +236,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/c1.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="c1.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=8" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>紀念品</h4>
@@ -248,7 +248,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/a2.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="a2.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=2" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>御守</h4>
@@ -260,7 +260,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/b1.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="b1.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=5" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>佛具</h4>
@@ -272,7 +272,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/c2.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="c2.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=9" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>紀念品</h4>
@@ -284,7 +284,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/a3.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="a3.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=3" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>御守</h4>
@@ -296,7 +296,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/b2.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="b2.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=6" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>佛具</h4>
@@ -308,7 +308,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/b3.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="b3.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=7" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>佛具</h4>
@@ -320,7 +320,7 @@
             <div class="portfolio-wrap">
               <img src="img/portfolio/c3.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="c3.php" title="More Details"><i class="bi bi-link"></i></a>
+                <a href="商品頁.php?id=10" title="More Details"><i class="bi bi-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>紀念品</h4>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +44,13 @@
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
           <li><a class="nav-link scrollto active" href="許願池.php">許願池</a></li>
-          <li><a class="nav-link scrollto" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
+            <?php
+            if (isset($_SESSION['Name'])) {
+                echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                } else {
+                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>';
+                }
+            ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -52,7 +58,7 @@
   </header><!-- End Header -->
 <!--login-->
 <?php
-include ("login.html");
+include ("login.php");
 ?>
 <!--login end-->
 
@@ -103,13 +109,7 @@ include ("login.html");
             </div>
             <div class="col-lg-6 col-12 mb-5">
                 <h2 class="tm-text-primary mb-5 text-center">許願籤</h2>
-                <form id="contact-form" action="" method="POST" class="tm-contact-form mx-auto">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control rounded-0 text-left" placeholder="尊稱" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control rounded-0 text-left" placeholder="Email" required />
-                    </div>
+                <form id="contact-form" action="wish_finish.php" method="POST" class="tm-contact-form mx-auto">
                     <div class="form-group">
                         <textarea rows="8" name="message" class="form-control rounded-0" placeholder="祈願..." required=></textarea>
                     </div>
@@ -117,7 +117,7 @@ include ("login.html");
                     <div class="form-group tm-text-right">
                         <button type="submit" class="btn btn-primary">寄送</button>
                     </div>
-                </form>                
+                </form>
             </div>
             
         </div>
@@ -137,5 +137,10 @@ include ("login.html");
     include ("verify.html");
     ?>
     <!--verify end-->
+    <!--mycart-->
+    <?php
+        include ("mycart.php");
+    ?>
+    <!--mycart end-->
 </body>
 </html>

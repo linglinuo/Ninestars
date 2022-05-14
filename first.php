@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,7 +81,29 @@
             display: inline;
             padding: 1px;
         }
-  </style>
+  </style> 
+  <?php
+  include("mysql_connect.inc.php");
+  
+  // 送出查詢的SQL指令
+  if ($result = mysqli_query($link, "SELECT * FROM `wish` ORDER BY `wish`.`wish_time` DESC")) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    $data .= "
+    <div class=\"item\" style=\"max-width: 250px; margin-right: 10px;\">
+    <table width=\"250px\" height=\"250px\" class=\"wishboard\">
+        <th height=\"30px\" class=\"name\">$row[member_name]</th>
+        <tr>
+          <td class=\"sentence\">$row[wish_content]</td>
+        </tr>
+        <tr>
+          <td height=\"30px\" class=\"date\">$row[wish_time]</td>
+        </tr>
+      </table>
+</div>";
+  }
+  mysqli_free_result($result);
+  }
+  ?>
 </head>
 
 <body>
@@ -106,8 +129,13 @@
           <li><a class="nav-link scrollto" href="#pray">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
           <li><a class="nav-link scrollto" href="#wish">許願池</a></li>
-          <li><a class="nav-link scrollto" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
+          <?php
+            if (isset($_SESSION['Name'])) {
+                echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                } else {
+                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>';
+                }
+            ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -115,7 +143,7 @@
   </header><!--End Header -->
   <!--login-->
   <?php
-  include ("login.html");
+  include ("login.php");
   ?>
   <!--login end-->
   <!-- ======= Banner Section ======= -->
@@ -436,127 +464,7 @@
                       </tr>
                     </table>
               </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名1</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名2</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名3</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名4</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名5</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                  </table>        
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名6</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名7</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名8</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名9</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名10</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
-              <div class="item" style="max-width: 250px; margin-right: 10px;">
-                  <table width="250px" height="250px" class="wishboard">
-                      <th height="30px" class="name">會員姓名11</th>
-                      <tr>
-                        <td class="sentence">我希望可以.....</td>
-                      </tr>
-                      <tr>
-                        <td height="30px" class="date">2022.03.28</td>
-                      </tr>
-                    </table>
-              </div>
+              <?php echo $data;?>
           </div>   
           </div>
         </div>

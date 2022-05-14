@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +15,7 @@
   ?>
   <!--商品-->
   <?php
-  $num=1;
-  $link = mysqli_connect("localhost", "root", "root123456", "437god") // 建立MySQL的資料庫連結
-  or die("無法開啟MySQL資料庫連結!<br>");
-  
-  // 送出編碼的MySQL指令
-  mysqli_query($link, 'SET CHARACTER SET utf8');
-  mysqli_query($link, "SET collation_connection = 'utf8_unicode_ci'");
+  include("mysql_connect.inc.php");
   
   // 送出查詢的SQL指令
   if ($result = mysqli_query($link, "SELECT * FROM `products` WHERE `product_id`=".$_GET['id'])) {
@@ -33,7 +30,7 @@
             <div class=\"col-lg-8\">
                 <div class=\"portfolio-details-slider swiper\">
                 <div class=\"swiper-wrapper align-items-center\">
-                    <img src=\"$row[product_picture]\" alt=\"\">   
+                    <img src=\"$row[product_picture]\" alt=\"\">
                 </div>
                 </div>
             </div>
@@ -149,15 +146,21 @@
               <i class="fas fa-shopping-cart my-cart-icon"></i>
               <span class="badge badge-notify my-cart-badge"></span></a></li>
           <li>
-          <button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
+          <?php
+            if (isset($_SESSION['Name'])) {
+                echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                } else {
+                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>';
+                }
+            ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav><!-- navbar -->
     </div>
   </header><!-- End Header -->
 <!--login-->
 <?php
-include ("login.html");
+include ("login.php");
 ?>
 <!--login end-->
   <main id="main">
@@ -190,25 +193,6 @@ include ("login.html");
   echo $vendorjs ;
   echo $mainjs ;
   ?>
-  <!-- <script>
-    $(function () {
-      var x=1;
-      $("#plus").click(function(){
-        x++;
-        document.getElementById("num").innerHTML = x;
-        if(x<=0){
-            document.getElementById("num").innerHTML = 0;
-        }
-      });
-      $("#minus").click(function(){
-        x--;
-        document.getElementById("num").innerHTML = x;
-        if(x<=0){
-            document.getElementById("num").innerHTML = 0;
-        }
-      });
-    });
-  </script> -->
   <!--verify-->
   <?php
     include ("verify.html");
@@ -216,7 +200,7 @@ include ("login.html");
   <!--verify end-->
   <!--mycart-->
   <?php
-    include ("mycart.html");
+    include ("mycart.php");
   ?>
   <!--mycart end-->
 </body>

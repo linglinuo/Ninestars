@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,8 +57,13 @@
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
           <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
-          <li><a class="nav-link scrollto active" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
+          <?php
+            if (isset($_SESSION['Name'])) {
+                echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                } else {
+                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>';
+                }
+            ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -65,7 +71,7 @@
   </header><!-- End Header -->
   <!--login-->
   <?php
-  include ("login.html");
+  include ("login.php");
   ?>
   <!--login end-->
 

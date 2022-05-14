@@ -223,14 +223,14 @@
           '<div class="modal-dialog modal-lg" role="document">' +
             '<div class="modal-content">' +
               '<div class="modal-header">' +
-                '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                '<button type="button" class="close jquery-close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
                 '<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span> 我的購物車</h4>' +
               '</div>' +
               '<div class="modal-body">' +
                 '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' +
               '</div>' +
               '<div class="modal-footer">' +
-                '<button type="button" class="btn btn-default" data-dismiss="modal" >關閉</button>' +
+                '<button type="button"  class="btn btn-default jquery-close-modal" data-dismiss="modal" >關閉</button>' +
                 '<button type="button" class="btn btn-primary ' + classCheckoutCart + '">去買單</button>' +
               '</div>' +
             '</div>' +
@@ -382,6 +382,13 @@
 
       options.afterAddOnCart(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
     });
+
+    $(".jquery-close-modal").click(function(){
+      alert("closemodal")
+      $("#" + idCartModal).modal("hide");
+    });
+    
+
 
   };
 

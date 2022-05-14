@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +44,13 @@
           <li><a class="nav-link scrollto active" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
           <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
-          <li><a class="nav-link scrollto" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          <li><button class="getstarted button1" onclick="document.getElementById('id01').style.display='block'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
+          <?php
+            if (isset($_SESSION['Name'])) {
+                echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                } else {
+                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>';
+                }
+            ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -52,7 +58,7 @@
   </header><!-- End Header -->
 <!--login-->
 <?php
-include ("login.html");
+include ("login.php");
 ?>
 <!--login end-->
       <script>
@@ -84,7 +90,8 @@ include ("login.html");
                     $("#input1").toggle();
                 var _result = $("#result").empty();
                 var _list = [];
-                _result.append('<div id="input1" class="col-xl-12 col-lg-5 col-md-6 col-sm-12 text-center\"><img type="image" src="img/求籤3.gif" alt="Image" class="img-fluid draw"  width="500"></div><div class="m-3">恭喜抽中第' + Math.floor(Math.random() * 100) + '支籤~</div><div class="text-center"><a href="解籤1.php" class="btn btn-primary tm-btn-big">前往解籤</a></div>');
+                $fortune=Math.floor(1+Math.random() * 99);
+                _result.append('<div id="input1" class="col-xl-12 col-lg-5 col-md-6 col-sm-12 text-center\"><img type="image" src="img/求籤3.gif" alt="Image" class="img-fluid draw"  width="500"></div><div class="m-3">恭喜抽中第' + $fortune + '支籤~</div><div class="text-center"><a href="籤詩.php?id='+$fortune+'" class="btn btn-primary tm-btn-big">前往解籤</a></div>');
                 });
             });
         </script>

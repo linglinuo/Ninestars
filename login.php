@@ -4,15 +4,14 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-
       <div class="container">
         <div class="cont">
-          <form method="POST" action="" name="sign" id="sign">
+          <form method="POST" action="connect.php" name="sign" id="sign">
             <div class="form sign">
               <h2>歡迎回來</h2>
               <label>
-                <input type="email" name="email1">信箱
-                <label for="email1" class="error"></label>
+                <input type="text" name="name1">信徒名稱
+                <label for="name1" class="error"></label>
               </label>
               <label>
                 <input type="password" name="pwd1">密碼
@@ -40,7 +39,7 @@
               </div>
             </div>
 
-            <form method="POST" action="" name="register" id="register">
+            <form method="POST" action="register_finish.php" name="register" id="register">
               <div class="form resister">
                 <h2>歡迎加入大家庭</h2>
                 <label>

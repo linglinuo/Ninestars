@@ -145,12 +145,24 @@ session_start();
           <li>
           <?php
             if (isset($_SESSION['Name'])) {
-                echo '<li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fas fa-shopping-cart my-cart-icon"></i>
-                <span class="badge badge-notify my-cart-badge"></span></a></li><li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                if($_SESSION["Name"] == 'admin')
+                {
+                  echo '<li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <i class="fas fa-shopping-cart my-cart-icon"></i>
+                  <span class="badge badge-notify my-cart-badge"></span></a></li>';
+                  echo '<li><a class="nav-link scrollto" href="商品管理.php">管理中心</a></li>';
+                  echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                }
+                else
+                {
+                  echo '<li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <i class="fas fa-shopping-cart my-cart-icon"></i>
+                  <span class="badge badge-notify my-cart-badge"></span></a></li>';
+                  echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                  echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
+                }
                 } else {
-                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>
-                ';
+                echo '<li><button class="getstarted button1" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width: 125px; padding-top: 7px;">登入/註冊</button></li>';
                 }
             ?>
         </ul>

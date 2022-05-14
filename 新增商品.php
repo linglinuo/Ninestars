@@ -381,7 +381,6 @@
   <script>
     $("#register").validate({
       submitHandler: function(form) {
-        alert("success!");
         form.submit();
       },
       rules: {
@@ -410,7 +409,6 @@
 
     $("#sign").validate({
       submitHandler: function(form) {
-        alert("success!");
         form.submit();
       },
       rules: {
@@ -429,57 +427,6 @@
           required: "必填"
         }
       }
-    });
-  </script>
-
-  <script>
-    $(document).ready(function($){
-      $("#new-product").validate({
-        submitHandler: function(form) {
-          alert("success!");
-          form.submit();
-        },
-        rules: {
-          Myfile: {
-            required: true
-          },
-          pname: {
-            required: true
-          },
-          pcategory: {
-            required: true
-          },
-          pprice: {
-            required: true
-          },
-          ptype: {
-            required: true
-          },
-          pintro: {
-            required: true
-          }
-        },
-        messages: {
-          Myfile: {
-            required: "必需填寫"
-          },
-          pname: {
-            required: "必需填寫"
-          },
-          pcategory: {
-            required: "必需填寫"
-          },
-          pprice: {
-            required: "必需填寫"
-          },
-          ptype: {
-            required: "必需填寫"
-          },
-          pintro: {
-            required: "必需填寫"
-          }
-        }
-      });
     });
   </script>
 </body>

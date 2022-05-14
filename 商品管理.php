@@ -385,7 +385,6 @@
   <script>
     $("#register").validate({
       submitHandler: function(form) {
-        alert("success!");
         form.submit();
       },
       rules: {
@@ -414,7 +413,6 @@
 
     $("#sign").validate({
       submitHandler: function(form) {
-        alert("success!");
         form.submit();
       },
       rules: {

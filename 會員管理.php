@@ -58,7 +58,7 @@
     // 送出查詢的SQL指令
     if ($result = mysqli_query($link, "SELECT * FROM member")) {
     while ($row = mysqli_fetch_assoc($result)) {
-    $data .= "<tr><th scope=\"row\">$row[member_id]</th><td>$row[member_name]</td><td>$row[member_email]</td><td>$row[member_password]</td><td>$row[member_level]</td></tr>";
+    $data .= "<tr><th scope=\"row\">$row[member_name]</th><td>$row[member_email]</td><td>$row[member_password]</td><td>$row[member_level]</td></tr>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }
@@ -68,11 +68,11 @@
 
   <style>
     .error {
-            color: #D82424;
-            font-weight: normal;
-            font-family: "微軟正黑體";
-            display: inline;
-            padding: 1px;
+      color: #D82424;
+      font-weight: normal;
+      font-family: "微軟正黑體";
+      display: inline;
+      padding: 1px;
     }
     .new-product{
       background-color: #eb5d1e;
@@ -234,11 +234,8 @@
                             <div class="col-9">
                                 <h2 style="text-align:left;">會員管理</h2>  
                             </div>
-                            <div class="col-3">
-                            <button id="new-member" class="new-product flex-end">新增資料</button>
-                            </div>
                         </div>
-                        <table id="table-member" class="table table-bordered" style="table-layout:fixed">
+                        <table id="table-member" class="table table-bordered">
                             <thead>
                                 <tr>
                                 <th scope="col">信徒名稱</th>
@@ -376,7 +373,6 @@
   <script>
     $("#register").validate({
       submitHandler: function(form) {
-        alert("success!");
         form.submit();
       },
       rules: {
@@ -405,7 +401,6 @@
 
     $("#sign").validate({
       submitHandler: function(form) {
-        alert("success!");
         form.submit();
       },
       rules: {
@@ -427,68 +422,6 @@
     });
   </script>
 
-  <script>
-      $(function (){
-        //商品管理表
-        $("#product-manager").click(function(){
-          alert("click");
-          $("#member-table").hide();
-          $("#product-table").show();
-        });
-        //會員管理表
-        $("#member-manager").click(function(){
-          alert("member manager");
-          $("#member-table").show();
-          $("#product-table").show();
-        });
-        
-        //新增商品按鈕跳出modal
-        $("#new-product").click(function(){
-          alert("modal");
-          $("#product-modal").modal('show');
-        });
-        //儲存商品管理資訊，表格新增下行
-        $("#product-save").click(function(){
-          alert("product save");
-          $("#product-modal").modal('hide');
-
-          $table_row = $('<tr><th scope="row"><img src="img/portfolio/a2.png" width="100px"></th><td><?php echo $_POST['pname'];?></td><td><?php echo $_POST['pcategory'];?></td><td><?php echo $_POST['pcolor'];?></td><td><?php echo $_POST['pprice'];?></td></tr>')
-          $("#table-product").append($table_row);
-        });
-        //關閉modal
-        $("#closemodal").click(function(){
-          alert("colsemodal")
-          $("#product-modal").modal('hide');
-        });
-        
-        
-        //新增會員按鈕跳出modal
-        $("#new-member").click(function(){
-          alert("click");
-          $("#member-modal").modal('show');        
-        });
-        //儲存會員資訊，表格新增下行
-        $("#member-save").click(function(){
-          alert("member save");
-          $("#member-modal").modal('hide');
-
-          $table_row = $('<tr><th scope="row"><img src="img/portfolio/a2.png" width="100px"></th><td>$pName</td></tr>')
-          $("#table-member").append($table_row);
-        });
-        //關閉modal
-        $("#closemodal2").click(function(){
-          alert("colsemodal")
-          $("#member-modal").modal('hide');
-        });
-
-        $(".close").click(function(){
-          alert("colsemodal")
-          $("#member-modal").modal('hide');
-          $("#product-modal").modal('hide');
-        });
-        
-      });
-  </script>
 </body>
 
 </html>

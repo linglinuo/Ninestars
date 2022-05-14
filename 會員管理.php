@@ -67,7 +67,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <i class="fas fa-film mr-2"></i>
             絲扇淒神社
         </a>
@@ -75,12 +75,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">首頁</a></li>
-          <li><a class="nav-link scrollto" href="index.html">介紹</a></li>
-          <li><a class="nav-link scrollto" href="store-page.html">小舖</a></li>
-          <li><a class="nav-link scrollto" href="求籤.html">求籤</a></li>
-          <li><a class="nav-link scrollto" href="解籤1.html">解籤</a></li>
-          <li><a class="nav-link scrollto" href="許願池.html">許願池</a></li>
+          <li><a class="nav-link scrollto active" href="index.php">首頁</a></li>
+          <li><a class="nav-link scrollto" href="index.php">介紹</a></li>
+          <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
+          <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
+          <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
+          <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
           <?php
             if (isset($_SESSION['Name'])) {
                 echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';

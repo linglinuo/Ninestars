@@ -20,6 +20,6 @@ if($row[0] == $name && $row[2] == $pwd)
 else
 {
         echo '登入失敗!';
-        echo 'url=first.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=1;url=first.php>';
 }
 ?>

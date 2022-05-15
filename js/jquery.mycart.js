@@ -384,7 +384,6 @@
     });
 
     $(".jquery-close-modal").click(function(){
-      alert("closemodal")
       $("#" + idCartModal).modal("hide");
     });
     

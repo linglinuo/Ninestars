@@ -33,10 +33,7 @@
 
         
         //寫入資料庫
-        $link = mysqli_connect("localhost", "root", "root123456", "437god") // 建立MySQL的資料庫連結
-        or die("無法開啟MySQL資料庫連結!<br>");
-        mysqli_query($link, 'SET CHARACTER SET utf8');
-        mysqli_query($link, "SET collation_connection = 'utf8_unicode_ci'");
+        include("mysql_connect.inc.php");
         $sql = "insert into products(product_id,product_picture,product_name,product_categories,product_price,product_type,product_instruction)values('$id','img/portfolio/$file_name','$name','$category','$price','$type','$intro')";
         
         mysqli_query($link, $sql);

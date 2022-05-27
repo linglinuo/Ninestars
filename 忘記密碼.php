@@ -112,8 +112,10 @@
         <div class="container" style="text-align: center; width: 500px">
             <img src="img/foegetpwd.png">
             <h5 class="mt-4">您的電子信箱</h5><br>
+            <form>
             <input class="form-control" placeholder="輸入註冊時的電子信箱"><br>
             <button class="btn btn-new">確認送出</button>
+            </form>
         </div>
     </section><!-- End Portfolio Section -->
     

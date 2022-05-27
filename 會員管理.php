@@ -131,7 +131,10 @@
                     <div id="member-table">
                         <div class="row ">
                             <div class="col-9">
-                                <h2 style="text-align:left;">會員管理</h2>  
+                              <h2 style="text-align:left;">會員管理</h2>  
+                            </div>
+                            <div class="col-3">
+                              <button type="button" id="newProduct" class="btn flex-end"><a href="刪除會員.php"><h5>刪除會員<h5></button>
                             </div>
                         </div>
                         <table id="table-member" class="table table-bordered">

@@ -9,6 +9,19 @@
         echo $maincss;
         echo $sourcejs;
     ?>
+    <?php
+    $search='';
+    if(isset($_GET['search'])){ $search = $_GET['search']; }
+    include("mysql_connect.inc.php");
+
+    // 送出查詢的SQL指令
+    if ($result = mysqli_query($link, "SELECT * FROM `fortune poems` WHERE (`poem_no` LIKE '%$search%') OR (`poem_id` LIKE '%$search%')")) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $data .= "<div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5\"><figure class=\"effect-ming tm-video-item\"><img src=\"img\image_a_small\淺草金龍山觀音寺一百籤$row[poem_url]a.jpg\" alt=\"Image\" class=\"img-fluid\"><figcaption class=\"d-flex align-items-center justify-content-center\"><h2>$row[poem_no]</h2><a href=\"籤詩.php?id=$row[poem_id]\">View more</a></figcaption></figure></div>";
+    }
+    mysqli_free_result($result); 
+    }
+    ?>
     <style>
         .error 
         {
@@ -73,7 +86,7 @@ include ("login.php");
 
     <div class="tm-hero d-flex justify-content-center align-items-center mt-5" data-parallax="scroll" data-image-src="img/hero.jpg">
         <form class="d-flex tm-search-form">
-            <input class="form-control tm-search-input text-left" type="search" placeholder="搜尋" aria-label="Search" style="margin: 0px;">
+            <input class="form-control tm-search-input text-left" type="search" placeholder="搜尋" aria-label="Search" style="margin: 0px;" name="search">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
             </button>
@@ -87,164 +100,8 @@ include ("login.php");
             </h2>
         </div>
         <div class="row tm-mb-90 tm-gallery">
-        	<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤001a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第一支籤</h2>
-                        <a href="籤詩.php?id=1">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤002a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第二支籤</h2>
-                        <a href="籤詩.php?id=2">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤003a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第三支籤</h2>
-                        <a href="籤詩.php?id=3">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤004a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第四支籤</h2>
-                        <a href="籤詩.php?id=4">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤005a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第五支籤</h2>
-                        <a href="籤詩.php?id=5">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤006a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第六支籤</h2>
-                        <a href="籤詩.php?id=6">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤007a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第七支籤</h2>
-                        <a href="籤詩.php?id=7">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤008a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第八支籤</h2>
-                        <a href="籤詩.php?id=8">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤009a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第九支籤</h2>
-                        <a href="籤詩.php?id=9">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤010a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第十支籤</h2>
-                        <a href="籤詩.php?id=10">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤011a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第十一支籤</h2>
-                        <a href="籤詩.php?id=11">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤012a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第十二支籤</h2>
-                        <a href="籤詩.php?id=12">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤013a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第十三支籤</h2>
-                        <a href="籤詩.php?id=13">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤014a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第十四支籤</h2>
-                        <a href="籤詩.php?id=14">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤015a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第十五支籤</h2>
-                        <a href="籤詩.php?id=15">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                <figure class="effect-ming tm-video-item">
-                    <img src="img\image_a_small\淺草金龍山觀音寺一百籤016a.jpg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>第十六支籤</h2>
-                        <a href="籤詩.php?id=16">View more</a>
-                    </figcaption>                    
-                </figure>
-            </div>         
-        </div> <!-- row -->
-        <div class="row tm-mb-90">
-            <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
-                <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a>
-                <div class="tm-paging d-flex">
-                    <a href="解籤1.php" class="active tm-paging-link">1</a>
-                    <a href="解籤2.php" class="tm-paging-link">2</a>
-                    <a href="解籤3.php" class="tm-paging-link">3</a>
-                    <a href="解籤4.php" class="tm-paging-link">4</a>
-                </div>
-                <a href="解籤2.php" class="btn btn-primary tm-btn-next">Next Page</a>
-            </div>            
-        </div>
+        <?php 
+        echo $data;?>
     </div> <!-- container-fluid, tm-container-content -->
 
     <!-- ======= Footer ======= -->

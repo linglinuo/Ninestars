@@ -79,8 +79,22 @@
     <section class="breadcrumbs">
         <div class="container">
   
-          <div class="d-flex justify-content-between align-items-center">
-            <h2>神社小舖</h2>
+          <div class="justify-content-between align-items-center">
+            <div class="row">
+              <div class="col-12">
+              <h2>神社小舖</h2>
+              </div>
+              <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center">
+                    <form class="d-flex tm-search-form">
+                        <input class="form-control tm-search-input" type="search" placeholder="搜尋" aria-label="Search" style="margin: 0px; text-align: left;">
+                        <button class="btn btn-outline-success tm-search-btn" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+              </div>
+            </div>
           </div>
   
         </div>

@@ -10,6 +10,60 @@
     echo $maincss;
     echo $sourcejs;
   ?>
+  <?php
+    $search='';
+    if(isset($_GET['search'])){ $search = $_GET['search']; }
+    include("mysql_connect.inc.php");
+
+    // 送出查詢的SQL指令
+    if ($result = mysqli_query($link, "SELECT * FROM `products` WHERE `product_name` LIKE '%$search%'")) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      if($row['product_categories']=='御守')
+      {
+        $data .= "<div class=\"col-lg-4 col-md-6 portfolio-item filter-app\">
+                    <div class=\"portfolio-wrap\">
+                      <img src=\"$row[product_picture]\" class=\"img-fluid\" alt=\"\">
+                      <div class=\"portfolio-links\">
+                        <a href=\"商品頁.php?id=$row[product_id]\" title=\"More Details\"><i class=\"bi bi-link\"></i></a>
+                      </div>
+                      <div class=\"portfolio-info\">
+                        <h4>$row[product_categories]</h4>
+                      </div>
+                    </div>
+                  </div>";
+      }
+      else if($row['product_categories']=='佛具')
+      {
+        $data .= "<div class=\"col-lg-4 col-md-6 portfolio-item filter-card\">
+                    <div class=\"portfolio-wrap\">
+                      <img src=\"$row[product_picture]\" class=\"img-fluid\" alt=\"\">
+                      <div class=\"portfolio-links\">
+                        <a href=\"商品頁.php?id=$row[product_id]\" title=\"More Details\"><i class=\"bi bi-link\"></i></a>
+                      </div>
+                      <div class=\"portfolio-info\">
+                        <h4>$row[product_categories]</h4>
+                      </div>
+                    </div>
+                  </div>";
+      }
+      else
+      {
+        $data .= "<div class=\"col-lg-4 col-md-6 portfolio-item filter-web\">
+                    <div class=\"portfolio-wrap\">
+                      <img src=\"$row[product_picture]\" class=\"img-fluid\" alt=\"\">
+                      <div class=\"portfolio-links\">
+                        <a href=\"商品頁.php?id=$row[product_id]\" title=\"More Details\"><i class=\"bi bi-link\"></i></a>
+                      </div>
+                      <div class=\"portfolio-info\">
+                        <h4>$row[product_categories]</h4>
+                      </div>
+                    </div>
+                  </div>";
+      }
+    }
+    mysqli_free_result($result); 
+    }
+    ?>
   <style>
     .error
     {
@@ -87,7 +141,7 @@
               <div class="col-12">
                 <div class="d-flex justify-content-center align-items-center">
                     <form class="d-flex tm-search-form">
-                        <input class="form-control tm-search-input" type="search" placeholder="搜尋" aria-label="Search" style="margin: 0px; text-align: left;">
+                        <input class="form-control tm-search-input" type="search" placeholder="搜尋" aria-label="Search" style="margin: 0px; text-align: left;" name="search">
                         <button class="btn btn-outline-success tm-search-btn" type="submit">
                             <i class="fas fa-search"></i>
                         </button>
@@ -114,125 +168,7 @@
         </div>
         <!--照片大小800X600-->
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/a1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=1" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>御守</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/c1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=8" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>紀念品</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/a2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=2" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>御守</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/b1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=5" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>佛具</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/c2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=9" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>紀念品</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/a3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=3" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>御守</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/b2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=6" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>佛具</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/b3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=7" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>佛具</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/c3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=10" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>紀念品</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/a4.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=4" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>求籤</h4>
-              </div>
-            </div>
-          </div>
+          <?php echo $data;?>
         </div>
       </div>
     </section><!-- End Portfolio Section -->

@@ -10,18 +10,6 @@
     echo $maincss;
     echo $sourcejs;
   ?>
-    <?php
-    //商品管理
-    include("mysql_connect.inc.php");
-
-    // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM products")) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      $data .= "<tr><th scope=\"row\">$row[product_id]</th><td>$row[product_name]</td><td><img src=\"$row[product_picture]\" width=\"100px\"></td><td>$row[product_categories]</td><td>$row[product_type]</td><td>$row[product_price]</td></tr>";
-    }
-    mysqli_free_result($result); // 釋放佔用的記憶體
-    }
-    ?>
 
 
   <style>

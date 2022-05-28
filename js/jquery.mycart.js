@@ -231,11 +231,12 @@
               '</div>' +
               '<div class="modal-footer">' +
                 '<button type="button"  class="btn btn-default jquery-close-modal" data-dismiss="modal" >關閉</button>' +
-                '<button type="button" class="btn btn-primary ' + classCheckoutCart + '">去買單</button>' +
+                '<button type="button" class="btn btn-primary gobuyit ' + classCheckoutCart + '">去買單</button>' +
               '</div>' +
             '</div>' +
           '</div>' +
         '</div>'
+      
       );
     }
 
@@ -247,12 +248,12 @@
       $.each(products, function () {
         var total = this.quantity * this.price;
         $cartTable.append(
-          '<tr title="' + this.summary + '" data-id="' + this.id + '" data-price="' + this.price + '">' +
-          '<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="' + this.image + '"/></td>' +
-          '<td>' + this.name + '</td>' +
+          '<tr title="' + this.summary + '" data-id="' + this.id + '" data-price="' + this.price + '"><input name="price_catch" type="hidden" value="'+this.price+'">' +
+          '<td class="text-center" style="width: 30px;"><input name="image_catch" type="hidden" value="'+this.image+'"><img width="30px" height="30px" src="' + this.image + '"/></td>' +
+          '<td> <input name="name_catch" type="hidden" value="'+this.name+'">' + this.name + '</td>' +
           '<td title="Unit Price" class="text-right">' + options.currencySymbol + MathHelper.getRoundedNumber(this.price) + '</td>' +
-          '<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' +
-          '<td title="Total" class="text-right ' + classProductTotal + '">' + options.currencySymbol + MathHelper.getRoundedNumber(total) + '</td>' +
+          '<td title="Quantity"><input type="number" name="quantity_catch" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' +
+          '<td title="Total" class="text-right ' + classProductTotal + '"><input name="unitprice_catch" type="hidden" value="'+MathHelper.getRoundedNumber(total)+'">' + options.currencySymbol + MathHelper.getRoundedNumber(total) + '</td>' +
           '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger ' + classProductRemove + '">X</a></td>' +
           '</tr>'
         );
@@ -265,7 +266,7 @@
         '<td><strong>總共</strong></td>' +
         '<td></td>' +
         '<td></td>' +
-        '<td class="text-right"><strong id="' + idGrandTotal + '"></strong></td>' +
+        '<td class="text-right"><input id="totalprice_catch" type="hidden" value="'+MathHelper.getRoundedNumber(ProductManager.getTotalPrice())+'"><strong id="' + idGrandTotal + '"></strong></td>' +
         '<td></td>' +
         '</tr>' :
         '<div class="alert alert-danger" role="alert" id="' + idEmptyCartMessage + '">你的購物車已清空</div>'
@@ -383,12 +384,62 @@
       options.afterAddOnCart(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
     });
 
+    
     $(".jquery-close-modal").click(function(){
       $("#" + idCartModal).modal("hide");
     });
+
+
+    $(".gobuyit").click(function(){
+      $("#" + idCartModal).modal("hide");
+      alert("c");
+      var product_arrList = new Array();//抓product name
+      $("input[name^='name_catch']").each(function(i)
+        {
+          product_arrList.push($(this).val());
+        }
+      )
+      alert(product_arrList);
+
+      var quantity_arrList = new Array();//抓quantity
+      $("input[name^='quantity_catch']").each(function(i)
+        {
+          quantity_arrList.push($(this).val());
+        }
+      )
+      alert(quantity_arrList);
+
+      var image_arrList = new Array();//抓image
+      $("input[name^='image_catch']").each(function(i)
+        {
+          image_arrList.push($(this).val());
+        }
+      )
+      alert(image_arrList);
+
+      var price_arrList = new Array();//抓unit price
+      $("input[name^='price_catch']").each(function(i)
+        {
+          price_arrList.push($(this).val());
+        }
+      )
+      alert(price_arrList);
+
+      var unitprice_arrList = new Array();//抓unit price
+      $("input[name^='unitprice_catch']").each(function(i)
+        {
+          unitprice_arrList.push($(this).val());
+        }
+      )
+      alert(unitprice_arrList);
+
+      alert($("#totalprice_catch").val());
+      var total_catch = $("#totalprice_catch").val();
+      $.post('value.php', {'product_name[]':product_arrList,'quantity[]':quantity_arrList,'image[]':image_arrList,'price[]':price_arrList,'unit[]':unitprice_arrList,total:total_catch});
+
+    });
+
     
-
-
   };
 
 

@@ -13,10 +13,12 @@
   
   <!--商品管理-->
   <?php
+  $search='';
+  if(isset($_GET['search'])){ $search = $_GET['search']; }
     include("mysql_connect.inc.php");
 
     // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM member")) {
+    if ($result = mysqli_query($link, "SELECT * FROM member WHERE (`member_name` LIKE '%$search%') OR (`member_email` LIKE '%$search%') OR (`member_password` LIKE '%$search%') OR (`member_level` LIKE '%$search%')")) {
     while ($row = mysqli_fetch_assoc($result)) {
     $data .= "<tr><th scope=\"row\">$row[member_name]</th><td>$row[member_email]</td><td>$row[member_password]</td><td>$row[member_level]</td></tr>";
     }

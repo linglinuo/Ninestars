@@ -43,8 +43,8 @@
               <div class="form resister">
                 <h2>歡迎加入大家庭</h2>
                 <label>
-                  <input type="text" name="name">信徒名稱
-                  <label for="name" class="error"></label>
+                  <input type="text" name="name" id="name" onkeyup=sendRequest();>信徒名稱
+                  <label for="name" class="error"></label><span id='show_msg' style="color:red"></span>
                 </label>
                 <label>
                   <input type="email" name="email">信箱
@@ -57,6 +57,7 @@
                 <button class="submit button1">註冊</button>
               </div>
             </form>
+            
           </div>
         </div>
         <!-- partial -->

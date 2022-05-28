@@ -10,21 +10,31 @@
     echo $maincss;
     echo $sourcejs;
   ?>
-  
-  <!--商品管理-->
+
   <?php
     include("mysql_connect.inc.php");
+    $name = $_POST['name'];
 
     // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM member")) {
+    if ($result = mysqli_query($link, "SELECT * FROM member WHERE member_name='$name';")) {
     while ($row = mysqli_fetch_assoc($result)) {
-    $data .= "<tr><th scope=\"row\">$row[member_name]</th><td>$row[member_email]</td><td>$row[member_password]</td><td>$row[member_level]</td></tr>";
+    $data .= "
+    <form name=\"form\" method=\"post\" action=\"updateMember_finish.php\">
+        <h5 class=\"mt-4\">信徒名稱</h5>
+        <input type=\"text\" class=\"input form-control\" name=\"m-name\" value=\"$row[member_name]\"><br>
+        <h5 class=\"mt-4\">email</h5>  
+        <input type=\"email\" class=\"input form-control\" name=\"m-email\" value=\"$row[member_email]\"><br>
+        <h5 class=\"mt-4\">密碼</h5>
+        <input type=\"password\" class=\"input form-control\" name=\"m-pwd\" value=\"$row[member_password]\"><br>
+        <h5 class=\"mt-4\">會員等級</h5>
+        <input type=\"text\" class=\"input form-control\" name=\"m-level\" value=\"$row[member_level]\"><br>
+        <input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"確認\">
+    </form>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }
     mysqli_close($link); // 關閉資料庫連結
   ?>
-
 
   <style>
     .error {
@@ -35,6 +45,15 @@
       padding: 1px;
     }
     .new-product{
+      background-color: #eb5d1e;
+      color: #fef8f5;
+      border-radius: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .btn-new{
       background-color: #eb5d1e;
       color: #fef8f5;
       border-radius: 10px;
@@ -97,95 +116,25 @@
   include ("login.php");
   ?>
   <!--login end-->
-  <main id="main">
+  <main id="main" style="margin-top: 20px;">
 
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
         <div class="container">
-  
-          <div class="d-flex justify-content-between align-items-center">
-            <h2>管理中心</h2>
+          <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2>修改會員</h2>
           </div>
-  
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <section id="store" class="portfolio">
-      <div class="container" data-aos="fade-up">
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <!--左側-->
-          <div class="col-3">
-            <table class="table table-bordered">
-              <tr>
-                <th><button id="product-manager"><h5><a href="商品管理.php">商品管理</h5></button></th>
-              </tr>
-              <tr>
-                <th><button id="member-manager"><h5><a href="會員管理.php">會員管理</h5></button></th>
-              </tr>
-            </table>
-          </div>
-            
-          <!--右側-->
-          <div class="col-9">
-            <div class="row">
-              <div id="title">
-                <table>
-                    <tr>
-                      <td scope="col"><h5>會員管理<h5></td>
-
-                      <!-- 搜尋框 -->
-                      <div class="search">
-                        <form>
-                          <td scope="col" style="float: left; margin-left: 200px">
-                            <input type="text" class="input form-control" placeholder="搜尋" name="search" style="width: 200px">
-                          </td>
-                          <td scope="col">
-                            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                          </td>
-                        </form>
-                      </div>
-                      <!-- 搜尋框 -->
-
-                      <td scope="col">
-                        <button type="button" id="newProduct" class="btn">
-                          <a href="insertMember.php"><h6>新增會員<h6>
-                        </button>
-                      </td>
-                      <td scope="col">
-                        <button type="button" id="newProduct" class="btn">
-                          <a href="delete.php"><h6>刪除會員<h6>
-                        </button>
-                      </td>
-                      <td scope="col">
-                        <button type="button" id="newProduct" class="btn">
-                          <a href="updateMember.php"><h6>修改會員<h6>
-                        </button>
-                      </td>
-                    </tr>
-                </table>
-              </div>
-            </div>
-            <!--member table start-->
-            <div id="member-table">
-              <table id="table-member" class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">信徒名稱</th>
-                    <th scope="col">email</th>
-                    <th scope="col">密碼</th>
-                    <th scope="col">會員等級</th>
-                  </tr>
-                </thead>
-                <?php echo $data;?>
-              </table>
-            </div>
-            <!--member table end-->
-          </div>
+    <section>
+        <div class="container" style="text-align: center; width: 500px">
+            <img src="img/insert.png">
+            <?php echo $data;?>
         </div>
-      </div>
     </section><!-- End Portfolio Section -->
-    
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -210,3 +159,4 @@
 </body>
 
 </html>
+

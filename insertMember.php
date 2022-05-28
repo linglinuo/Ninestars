@@ -97,7 +97,7 @@
     <section class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>刪除會員</h2>
+            <h2>新增會員</h2>
           </div>
         </div>
     </section>
@@ -105,15 +105,25 @@
 
     <section>
         <div class="container" style="text-align: center; width: 500px">
-            <img src="img/delete.png">
+            <img src="img/insert.png">
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                     echo "<form name=\"form\" method=\"post\" action=\"delete_finish.php\">";
-                     echo "<h5 class=\"mt-4\">要刪除的帳號</h5><br>";
-                     echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"id3\"><br>";
-                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"刪除\"></button>";
-                     echo "</form>";
+                    echo "<form name=\"form\" method=\"post\" action=\"insertMember_finish.php\">";
+                    echo "<h5 class=\"mt-4\">信徒名稱</h5>";
+                    echo "<input type=\"text\" class=\"input form-control\" name=\"m-name\"><br>";
+                    echo "<h5 class=\"mt-4\">email</h5>";
+                    echo "<input type=\"email\" class=\"input form-control\" name=\"m-email\"><br>";
+                    echo "<h5 class=\"mt-4\">密碼</h5>";
+                    echo "<input type=\"password\" class=\"input form-control\" name=\"m-pwd\"><br>";
+                    echo "<h5 class=\"mt-4\">會員等級</h5>";
+                    echo "<div class=\"level\">
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"1\" checked>初級</label>
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"2\">中級</label>
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"3\">高級</label>
+                    </div>";
+                    echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"></button>";
+                    echo "</form>";
                 }
                 else
                 {

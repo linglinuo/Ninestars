@@ -127,16 +127,46 @@
                 </div>
                 <!--右側-->
                 <div class="col-9">
+                  <div class="row">
+                    <div id="title">
+                      <table>
+                        <tr>
+                          <td scope="col"><h5>商品管理<h5></td>
+
+                          <!-- 搜尋框 -->
+                          <div class="search">
+                            <form>
+                              <td scope="col" style="float: left; margin-left: 200px">
+                                <input type="text" class="input form-control" placeholder="搜尋" name="search" style="width: 200px">
+                              </td>
+                              <td scope="col">
+                                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                              </td>
+                            </form>
+                          </div>
+                          <!-- 搜尋框 -->
+
+                          <td scope="col">
+                            <button type="button" id="newProduct" class="btn">
+                              <a href="新增商品.php"><h6>新增商品<h6>
+                            </button>
+                          </td>
+                          <td scope="col">
+                            <button type="button" id="newProduct" class="btn">
+                              <a href=""><h6>刪除商品<h6>
+                            </button>
+                          </td>
+                          <td scope="col">
+                            <button type="button" id="newProduct" class="btn">
+                              <a href=""><h6>修改商品<h6>
+                            </button>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
                     <!--product table start-->
                     <div id="product-table">
-                        <div class="row">
-                            <div class="col-9">
-                                <h2 style="text-align:left;">商品管理</h2>  
-                            </div>
-                            <div class="col-3">
-                              <button type="button" id="newProduct" class="btn flex-end"><a href="新增商品.php"><h5>新增商品<h5></button>
-                            </div>
-                        </div>
                         <table id="table-product" class="table table-bordered" style="table-layout:fixed">
                             <thead>
                                 <tr>

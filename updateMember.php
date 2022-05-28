@@ -97,7 +97,7 @@
     <section class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>刪除會員</h2>
+            <h2>修改會員</h2>
           </div>
         </div>
     </section>
@@ -109,10 +109,10 @@
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                     echo "<form name=\"form\" method=\"post\" action=\"delete_finish.php\">";
-                     echo "<h5 class=\"mt-4\">要刪除的帳號</h5><br>";
-                     echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"id3\"><br>";
-                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"刪除\"></button>";
+                     echo "<form name=\"form\" method=\"post\" action=\"updateMember_check.php\">";
+                     echo "<h5 class=\"mt-4\">要修改的信徒名稱</h5><br>";
+                     echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"name\"><br>";
+                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"查看\"></button>";
                      echo "</form>";
                 }
                 else

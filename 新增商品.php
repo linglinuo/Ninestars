@@ -119,6 +119,51 @@
   include ("login.php");
   ?>
   <!--login end-->
+  <main id="main" style="margin-top: 20px;">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2>新增商品</h2>
+          </div>
+        </div>
+    </section>
+    <!-- End Breadcrumbs Section -->
+
+    <section>
+        <div class="container" style="text-align: center; width: 500px">
+            <img src="img/insert.png">
+            <?php
+                if($_SESSION['Name'] != null)
+                {
+                    echo "<form name=\"form\" method=\"post\" action=\"insertMember_finish.php\">";
+                    echo "<h5 class=\"mt-4\">商品編號</h5>";
+                    echo "<input type=\"text\" class=\"input form-control\" name=\"p-id\"><br>";
+                    echo "<h5 class=\"mt-4\">商品圖片</h5>";
+                    //echo "<input type=\"email\" class=\"input form-control\" name=\"m-email\"><br>";
+                    echo "<h5 class=\"mt-4\">商品名稱</h5>";
+                    echo "<input type=\"password\" class=\"input form-control\" name=\"p-name\"><br>";
+                    echo "<h5 class=\"mt-4\">分類</h5>";
+                    echo "<input type=\"password\" class=\"input form-control\" name=\"p-category\"><br>";
+                    echo "<div class=\"level\">
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"1\" checked>初級</label>
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"2\">中級</label>
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"3\">高級</label>
+                    </div>";
+                    echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"></button>";
+                    echo "</form>";
+                }
+                else
+                {
+                     echo '您無權限觀看此頁面!';
+                     echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+                }
+            ?>
+        </div>
+    </section><!-- End Portfolio Section -->
+
+  </main><!-- End #main -->
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->

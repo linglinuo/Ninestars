@@ -17,7 +17,7 @@
     // 送出查詢的SQL指令
     if ($result = mysqli_query($link, "SELECT * FROM `order` where `member_name` = '$name'")) {
     while ($row = mysqli_fetch_assoc($result)) {
-      $data .= "<tr><th scope=\"row\"><a href=\"cart.php\">$row[order_id]</th><td>$row[order_totalprice]</td><td>$row[order_time]</td></tr>";
+      $data .= "<tr><th scope=\"row\"><a href=\"cart.php?order=$row[order_id]\">$row[order_id]</th><td>$row[order_totalprice]</td><td>$row[order_time]</td></tr>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }

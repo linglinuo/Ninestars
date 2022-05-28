@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-17 13:22:23
+-- 產生時間： 2022-05-28 17:05:46
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -132,9 +132,9 @@ INSERT INTO `fortune poems` (`poem_id`, `poem_no`, `poem_url`, `poem_sign`, `poe
 (85, '第八十五支籤', '085', '大吉', '<h5 class=\"text-center tm-text-gray-dark\">望用何愁晚</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">雖說願望很晚才會實現，不悲傷嘆息慢慢地等待吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">求名漸得寧</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">漸漸地名聲揚起，變成安心的心情吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">雲梯終有望</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">大大的願望也得到援助，終於能被實現吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">歸路入蓬瀛</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">變成能得到福德、財產、長壽吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">變成往後才會實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會治好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>'),
 (86, '第八十六支籤', '086', '大吉', '<h5 class=\"text-center tm-text-gray-dark\">花發應陽臺</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">像是從照到陽光的房屋，可以充分地看見花盛開的景象般地，一切都能如願地充分被能實現吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">車行進寶財</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">像是堆滿財寶的車子來到自己的家般地，財產或寶物變得豐富吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">執文朝帝殿</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">顯現學問的德行，被居上位者帶領，還讓你能說出願望吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">走馬聽聲雷</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">得意洋洋地騎馬，那種姿態是變成成令人羨慕的身份吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">會實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會治好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結親緣、喜慶、交往：</span><span class=\"tm-text-primary\">全都好吧。</span>\r\n\r\n</div>'),
 (87, '第八十七支籤', '087', '大吉', '<h5 class=\"text-center tm-text-gray-dark\">鑿石方逢玉</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">偶然挖出石頭中的寶石可說是遇見沒想過的幸福。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">淘沙始見金</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">就像是淘砂收集金子般地，在生活中財寶自然地累積吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">青霄終有路</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">想向天空實現大成功之道，在世間也廣為稱讚吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">只恐不堅心</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">只是，如果不意志堅定一心努力的話，什麼是都不能成功吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">能被實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會治好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>'),
+(88, '第八十八支籤', '088', '兇', '<h5 class=\"text-center tm-text-gray-dark\">作事不和同</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">就算想做些什麼事，卻和人或者夫婦之間是不和睦的狀態。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">臨危更主凶</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">因為在這樣的狀態下，就算想從危險的事逃離、防止危險的事，壞事還是發生吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">佳人生苦根</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">產生像是關係到自己的妻子般的痛苦或擔心的事。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">閑慮兩三重</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">壞事一而再再而三地接踵發生。要非常有信心吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">難實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">危險吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">不會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">不會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">壞吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">壞吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">壞吧。</span>\r\n\r\n</div>'),
 (89, '第八十九支籤', '089', '大吉', '<h5 class=\"text-center tm-text-gray-dark\">一片無瑕玉</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">玉石因為琢磨終於變成無瑕疵的玉是世上天賜給的東西。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">從今好琢磨</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">就像天生的好人也因雕琢的方式不同變成更好的人般地，誠心地更加努力吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">得遇高人識</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">這樣做的話會被名聲高的人賞識，變成能得到提拔吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">方逢喜氣多</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">智慧或財寶充滿，被無限的欣喜包圍的時機會機到來吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">能被實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會治好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">不會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">交往、結婚：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>'),
 (90, '第九十支籤', '090', '大吉', '<h5 class=\"text-center tm-text-gray-dark\">一信向天飛</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">如果有真誠心的話，最後會傳達給上天，出人頭地的時候會到來吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">秦川舟自歸</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">因為上天的恩惠，會得到各種財寶吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">前途成好事</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">將來會遇見好事吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">應得貴人推</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">因為得到居上位者（菩薩）的力量，能被吸引往好的方向吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">會實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會治好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">全部都好吧。</span>\r\n\r\n</div>'),
-(88, '第八十八支籤', '088', '兇', '<h5 class=\"text-center tm-text-gray-dark\">作事不和同</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">就算想做些什麼事，卻和人或者夫婦之間是不和睦的狀態。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">臨危更主凶</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">因為在這樣的狀態下，就算想從危險的事逃離、防止危險的事，壞事還是發生吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">佳人生苦根</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">產生像是關係到自己的妻子般的痛苦或擔心的事。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">閑慮兩三重</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">壞事一而再再而三地接踵發生。要非常有信心吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">難實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">危險吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">不會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">不會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">壞吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">壞吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">壞吧。</span>\r\n\r\n</div>'),
 (91, '第九十一支籤', '091', '小吉', '<h5 class=\"text-center tm-text-gray-dark\">改變前途去</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">如果改進到現在為止壞事，嶄新地向前進的話，事情會改變的吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">月桂又逢圓</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">就像缺月也會再變圓般地，吉事就猶如月的圓缺。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">雲中乘祿至</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">至今為止的缺點也會漸漸地變好吧。從天降下來福德、幸運吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">凡事可宜先</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">在做任何事時，也不要落於人後，先做就能得到好結果吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">如果守正道的話會實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會治好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>'),
 (92, '第九十二支籤', '092', '吉', '<h5 class=\"text-center tm-text-gray-dark\">自幼常為旅</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">從小時候起的到流落旅行就是內心的不安定，勞苦很多。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">逢春駿馬驕</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">如果變成春天的話，就像馬也振奮地來回奔跑般底，終於運氣到來吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">前程宜進步</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">就算如心想地去了哪裡，會變成如自己想的一樣吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">得箭降青霄</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">箭筆直地向前進時是要射中獵物。從天而來的幸運向你而來吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">會實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會治好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">會出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>'),
 (93, '第九十三支籤', '093', '吉', '<h5 class=\"text-center tm-text-gray-dark\">有魚臨旱池</h6>\r\n\r\n<h6 class=\"text-center tm-text-gray\">雖然有很多魚但是池子裡如果沒有水會死掉吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">跳躍入波濤</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">如果沒有保持著真誠心的話，人總有一天會向滅絕而去吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">隔中須有望</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">就像是在沒水池子裡的魚如果進入廣大的河川的話，也生氣勃勃般地，你的運勢也終於到來了吧。</h6>\r\n\r\n<h5 class=\"text-center tm-text-gray-dark\">先且慮塵勞</h5>\r\n\r\n<h6 class=\"text-center tm-text-gray\">但是因為有阻礙，要十分注意吧。暫時忍耐吧。因為忍耐，來生、後世或子孫能幸福吧。</h6>\r\n', '<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">願望：</span><span class=\"tm-text-primary\">變成到後來能實現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">疾病：</span><span class=\"tm-text-primary\">會拖長吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">盼望的人：</span><span class=\"tm-text-primary\">變遲吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">遺失物：</span><span class=\"tm-text-primary\">難出現吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">蓋新居、搬家：</span><span class=\"tm-text-primary\">馬馬虎虎還算可以吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">旅行：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>\r\n<div class=\"mr-4 mb-2\">\r\n<span class=\"tm-text-gray-dark\">結婚、交往：</span><span class=\"tm-text-primary\">好吧。</span>\r\n\r\n</div>'),
@@ -165,13 +165,13 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`member_name`, `member_email`, `member_password`, `member_level`) VALUES
-('jason', 'S0861126@gamail.com', 'aaaaaa', '初級'),
 ('3ssss21', 'S086112@gamail.com', 'bbbbb', '中級'),
-('fdaasdf', '21S86126@gamail.com', 'ccccc', '高級'),
 ('selina', 'daa26@gamail.com', 'ddddd', '中級'),
 ('dora', 'apple@gamail.com', 'fffff', '初級'),
 ('member', 'adddddf@gamail.com', 'member123456', '初級'),
-('admin', 'admin@gamial.com', 'admin123456', '初級');
+('admin', 'admin@gamial.com', 'admin123456', '初級'),
+('fdaasdf', '152@ybu.ss.edu.tw', '123321', '初級'),
+('fiona051', 'fiona051@gmail.com', 'aaa111', '初級');
 
 -- --------------------------------------------------------
 
@@ -182,7 +182,7 @@ INSERT INTO `member` (`member_name`, `member_email`, `member_password`, `member_
 CREATE TABLE `order` (
   `member_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `order_id` int(20) NOT NULL,
-  `order_price` int(10) NOT NULL,
+  `order_totalprice` int(10) NOT NULL,
   `order_time` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -190,11 +190,10 @@ CREATE TABLE `order` (
 -- 傾印資料表的資料 `order`
 --
 
-INSERT INTO `order` (`member_name`, `order_id`, `order_price`, `order_time`) VALUES
-('jason', 1, 80, '2022-05-01'),
-('3ssss21', 2, 160, '2022-05-10'),
-('selina', 3, 85, '2022-05-24'),
-('dora', 4, 240, '2022-05-09');
+INSERT INTO `order` (`member_name`, `order_id`, `order_totalprice`, `order_time`) VALUES
+('member', 1, 1910, '2022-05-28'),
+('member', 2, 1910, '2022-05-28'),
+('dora', 3, 1610, '2022-05-28');
 
 -- --------------------------------------------------------
 
@@ -203,22 +202,30 @@ INSERT INTO `order` (`member_name`, `order_id`, `order_price`, `order_time`) VAL
 --
 
 CREATE TABLE `order_content` (
-  `order_id` int(20) NOT NULL,
+  `order_id` int(11) NOT NULL,
   `product_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `product_categories` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `product_numbers` int(20) NOT NULL,
-  `product_price` int(20) NOT NULL
+  `product_quantity` int(11) NOT NULL,
+  `product_image` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `product_unitprice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 傾印資料表的資料 `order_content`
 --
 
-INSERT INTO `order_content` (`order_id`, `product_name`, `product_categories`, `product_numbers`, `product_price`) VALUES
-(1, '考試御守', '御守', 1, 80),
-(2, '戀愛御守', '御守', 2, 160),
-(3, '求籤', '紀念品', 2, 200),
-(4, '刮痧板', '佛具', 1, 180);
+INSERT INTO `order_content` (`order_id`, `product_name`, `product_quantity`, `product_image`, `product_price`, `product_unitprice`) VALUES
+(1, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
+(1, '求籤', 3, 'img/portfolio/a4.png', 100, 300),
+(1, '線香', 4, 'img/portfolio/b1.png', 200, 800),
+(1, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
+(2, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
+(2, '求籤', 3, 'img/portfolio/a4.png', 100, 300),
+(2, '線香', 4, 'img/portfolio/b1.png', 200, 800),
+(2, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
+(3, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
+(3, '線香', 4, 'img/portfolio/b1.png', 200, 800),
+(3, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650);
 
 -- --------------------------------------------------------
 
@@ -271,21 +278,24 @@ CREATE TABLE `wish` (
 --
 
 INSERT INTO `wish` (`member_name`, `wish_content`, `wish_time`) VALUES
-('jason', '希望我可以賺大錢!!', '2022-05-11'),
 ('3ssss21', '我要上台大', '2022-05-01'),
 ('selina', '可以順利找到工作', '2022-05-03'),
-('dora', '平安健康順利', '2022-05-10'),
-('fdaasdf', '希望可以順利找到好工作', '2022-05-05'),
-('jason', 'haha', '2022-05-14');
+('dora', '平安健康順利', '2022-05-10');
 
 --
 -- 已傾印資料表的索引
 --
 
 --
--- 資料表索引 `order_content`
+-- 資料表索引 `fortune poems`
 --
-ALTER TABLE `order_content`
+ALTER TABLE `fortune poems`
+  ADD PRIMARY KEY (`poem_id`);
+
+--
+-- 資料表索引 `order`
+--
+ALTER TABLE `order`
   ADD PRIMARY KEY (`order_id`);
 
 --
@@ -299,10 +309,10 @@ ALTER TABLE `products`
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `order_content`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order`
 --
-ALTER TABLE `order_content`
-  MODIFY `order_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `order`
+  MODIFY `order_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `products`

@@ -11,6 +11,38 @@
     echo $extrajs;
     echo $sourcejs;
   ?>
+  <?php
+    //商品管理
+    include("mysql_connect.inc.php");
+    $name = $_SESSION['Name'];
+    // 送出查詢的SQL指令
+    if ($result = mysqli_query($link, "SELECT * FROM `order_content` where `order_id` = ".$_GET['order'])) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $data .= "<div class=\"row mt-3\">
+      <div class=\"col-3 d-flex\">
+        <img src=\"$row[product_image]\" alt=\"\" style=\"width: 100px; height: 75px;\">
+        <h5 class=\"px-4\">$row[product_name]</h5>
+      </div>
+      <div class=\"col-3\">
+        <span>$</span><h5 id=\"price\" style=\"display: inline;\">$row[product_price]</h5>
+      </div>
+      <div class=\"col-3\">
+          <span id=\"num\">$row[product_quantity]</span>
+      </div>
+      <div class=\"col-3\">
+        <span>$</span><h5 id=\"totalprice\" style=\"display: inline;\">$row[product_unitprice]</h5>
+      </div>
+    </div>";
+    }
+    mysqli_free_result($result); // 釋放佔用的記憶體
+    };
+    if ($result = mysqli_query($link, "SELECT * FROM `order` where `order_id` = ".$_GET['order'])) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        $total= "$row[order_totalprice]";
+      }
+      mysqli_free_result($result); // 釋放佔用的記憶體
+      };
+    ?>
   <style>
     .numbutton{
       background-color: #eb5d1e;
@@ -113,40 +145,9 @@
             <h4>總計</h4>
           </div>
         </div>
-        <!--item1-->
-        <div class="row mt-3">
-          <div class="col-3 d-flex">
-            <img src="img/portfolio/a1.png" alt="" style="width: 100px; height: 75px;">
-            <h5 class="px-4">考試御守</h5>
-          </div>
-          <div class="col-3">
-            <span>$</span><h5 id="price" style="display: inline;">80</h5>
-          </div>
-          <div class="col-3">
-              <span id="num">1</span>
-          </div>
-          <div class="col-3">
-            <span>$</span><h5 id="totalprice" style="display: inline;"></h5>
-          </div>
-        </div>
-
-        <!--item1-->
-        <div class="row mt-3">
-          <div class="col-3 d-flex">
-            <img src="img/portfolio/a2.png" alt="" style="width: 100px; height: 75px;">
-            <h5 class="px-4">戀愛御守</h5>
-          </div>
-          <div class="col-3">
-            <span>$</span><h5 id="price2" style="display: inline;">80</h5>
-          </div>
-          <div class="col-3">
-            <span id="num2">1</span>
-          </div>
-          <div class="col-3">
-            <span>$</span><h5 id="totalprice2" style="display: inline;"></h5>
-          </div>
-        </div>
-
+        <?php
+        echo $data;
+        ?>
         <div class="row mt-3">
           <div class="col-4"></div>
           <div class="col-4">
@@ -154,7 +155,7 @@
           </div>
           <div class="col-4">
             <span>$</span>
-            <h2 id="payment" style="display: inline;">160</h2>
+            <h2 id="payment" style="display: inline;"><?php echo $total;?></h2>
           </div>
         </div>
 
@@ -176,109 +177,6 @@
   echo $vendorjs ;
   echo $mainjs;
   ?>
-  <script>
-    $(function () {
-      var x = document.getElementById("num").innerText;
-      var price = document.getElementById("price").innerText;
-      document.getElementById("totalprice").innerHTML = price;
-      var totalprice;
-      var payment;
-
-      $("#plus").click(function(){
-        x++;
-        document.getElementById("num").innerHTML = x;
-        if(x<=0){
-            document.getElementById("num").innerHTML = 0;
-        }
-        price = document.getElementById("price").innerText;
-        totalprice = price*x;
-        if(x<=0){
-          document.getElementById("totalprice").innerHTML = 0;
-        }
-        else{
-          document.getElementById("totalprice").innerHTML = totalprice;
-        }
-        var totalprice = document.getElementById("totalprice").innerText;
-        totalprice = parseInt(totalprice);
-        var totalprice2 = document.getElementById("totalprice2").innerText;
-        totalprice2 = parseInt(totalprice2);
-        var payment = totalprice + totalprice2;
-        document.getElementById("payment").innerHTML = payment;
-      });
-
-      $("#minus").click(function(){
-        x--;
-        document.getElementById("num").innerHTML = x;
-        if(x<=0){
-            document.getElementById("num").innerHTML = 0;
-        }
-        var price = document.getElementById("price").innerText;
-        var totalprice = price*x;
-        if(x<=0){
-          document.getElementById("totalprice").innerHTML = 0;
-        }
-        else{
-          document.getElementById("totalprice").innerHTML = totalprice;
-        }
-        var totalprice = document.getElementById("totalprice").innerText;
-        totalprice = parseInt(totalprice);
-        var totalprice2 = document.getElementById("totalprice2").innerText;
-        totalprice2 = parseInt(totalprice2);
-        var payment = totalprice + totalprice2;
-        document.getElementById("payment").innerHTML = payment;
-      });
-
-      var y = document.getElementById("num2").innerText;
-      var price2 = document.getElementById("price2").innerText;
-      document.getElementById("totalprice2").innerHTML = price2;
-      var totalprice2;
-      var payment2;
-      $("#plus2").click(function(){
-        y++;
-        document.getElementById("num2").innerHTML = y;
-        if(y<=0){
-            document.getElementById("num2").innerHTML = 0;
-        }
-        price2 = document.getElementById("price2").innerText;
-        totalprice2 = price2*y;
-        if(y<=0){
-          document.getElementById("totalprice2").innerHTML = 0;
-        }
-        else{
-          document.getElementById("totalprice2").innerHTML = totalprice2;
-        }
-        var totalprice = document.getElementById("totalprice").innerText;
-        totalprice = parseInt(totalprice);
-        var totalprice2 = document.getElementById("totalprice2").innerText;
-        totalprice2 = parseInt(totalprice2);
-        var payment = totalprice + totalprice2;
-        document.getElementById("payment").innerHTML = payment;
-      });
-
-      $("#minus2").click(function(){
-        y--;
-        document.getElementById("num2").innerHTML = y;
-        if(y<=0){
-            document.getElementById("num2").innerHTML = 0;
-        }
-        var price2 = document.getElementById("price2").innerText;
-        var totalprice2 = price2*y;
-        if(y<=0){
-          document.getElementById("totalprice2").innerHTML = 0;
-        }
-        else{
-          document.getElementById("totalprice2").innerHTML = totalprice2;
-        }
-        var totalprice = document.getElementById("totalprice").innerText;
-        totalprice = parseInt(totalprice);
-        var totalprice2 = document.getElementById("totalprice2").innerText;
-        totalprice2 = parseInt(totalprice2);
-        var payment = totalprice + totalprice2;
-        document.getElementById("payment").innerHTML = payment;
-      });
-       
-    });
-  </script>
 <!--verify-->
 <?php
   include ("verify.html");

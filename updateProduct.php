@@ -10,6 +10,7 @@
     echo $maincss;
     echo $sourcejs;
   ?>
+
   <style>
     .error {
       color: #D82424;
@@ -17,6 +18,15 @@
       font-family: "微軟正黑體";
       display: inline;
       padding: 1px;
+    }
+    .new-product{
+      background-color: #eb5d1e;
+      color: #fef8f5;
+      border-radius: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     .btn-new{
       background-color: #eb5d1e;
@@ -26,12 +36,6 @@
       padding-bottom: 3px;
       padding-left: 10px;
       padding-right: 10px;
-    }
-    .modal-backdrop {
-      z-index: -1;
-    }
-    #myModal{
-      z-index: 999;
     }
   </style>
 </head>
@@ -78,9 +82,10 @@
             ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- navbar -->
+      </nav><!-- .navbar -->
     </div>
   </header><!--End Header -->
+  
   <!--login-->
   <?php
   include ("login.php");
@@ -92,7 +97,7 @@
     <section class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>新增商品</h2>
+            <h2>修改商品</h2>
           </div>
         </div>
     </section>
@@ -100,29 +105,15 @@
 
     <section>
         <div class="container" style="text-align: center; width: 500px">
-            <img src="img/insert.png">
+            <img src="img/update.png">
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                    echo "<form name=\"form\" method=\"post\" action=\"insertProduct_finish.php\">";
-                    echo "<h5 class=\"mt-4\">商品圖片</h5>";
-                    echo "<input type=\"file\" name=\"Myfile\">";
-                    echo "<h5 class=\"mt-4\">商品名稱</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"pname\"><br>";
-                    echo "<h5 class=\"mt-4\">分類</h5>";
-                    echo "<div class=\"level\">
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"1\" checked>御守</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"2\">佛具</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"3\">紀念品</label>
-                    </div>";
-                    echo "<h5 class=\"mt-4\">價格</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"pprice\"><br>";
-                    echo "<h5 class=\"mt-4\">種類</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"ptype\"><br>";
-                    echo "<h5 class=\"mt-4\">敘述</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"pintro\"><br>";
-                    echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\">";
-                    echo "</form>";
+                     echo "<form name=\"form\" method=\"post\" action=\"updateProduct_check.php\">";
+                     echo "<h5 class=\"mt-4\">要修改的商品名稱</h5><br>";
+                     echo "<input type=\"text\" class=\"input form-control\" placeholder=\"商品名稱\" name=\"name\"><br>";
+                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"查看\"></button>";
+                     echo "</form>";
                 }
                 else
                 {
@@ -153,6 +144,8 @@
     include ("verify.html");
   ?>
   <!--verify end-->
+
 </body>
 
 </html>
+

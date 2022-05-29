@@ -153,12 +153,12 @@
                           </td>
                           <td scope="col">
                             <button type="button" id="newProduct" class="btn">
-                              <a href=""><h6>刪除商品<h6>
+                              <a href="deleteProduct.php"><h6>刪除商品<h6>
                             </button>
                           </td>
                           <td scope="col">
                             <button type="button" id="newProduct" class="btn">
-                              <a href=""><h6>修改商品<h6>
+                              <a href="updateProduct.php"><h6>修改商品<h6>
                             </button>
                           </td>
                         </tr>

@@ -19,20 +19,6 @@
       padding: 1px;
     }
   </style>
-  <script>
-      function sendRequest() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              if (this.responseText==1) document.getElementById('show_msg').innerHTML = '此帳號已存在!';
-              else document.getElementById('show_msg').innerHTML = '';
-            }
-        };
-        var url='check_account_ajax.php?name=' + document.register.name.value + '&timeStamp='+new Date().getTime();
-        xhttp.open('GET',url,true);//建立XMLHttpRequest連線要求
-        xhttp.send();
-      }
-  </script>
 </head>
 <body>
   <?php

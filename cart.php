@@ -18,21 +18,16 @@
     // 送出查詢的SQL指令
     if ($result = mysqli_query($link, "SELECT * FROM `order_content` where `order_id` = ".$_GET['order'])) {
     while ($row = mysqli_fetch_assoc($result)) {
-      $data .= "<div class=\"row mt-3\">
-      <div class=\"col-3 d-flex\">
-        <img src=\"$row[product_image]\" alt=\"\" style=\"width: 100px; height: 75px;\">
-        <h5 class=\"px-4\">$row[product_name]</h5>
-      </div>
-      <div class=\"col-3\">
-        <span>$</span><h5 id=\"price\" style=\"display: inline;\">$row[product_price]</h5>
-      </div>
-      <div class=\"col-3\">
-          <span id=\"num\">$row[product_quantity]</span>
-      </div>
-      <div class=\"col-3\">
-        <span>$</span><h5 id=\"totalprice\" style=\"display: inline;\">$row[product_unitprice]</h5>
-      </div>
-    </div>";
+      $data .= "
+      <tr>
+        <th scope=\"row\"><img class=\"img-fluid\" src=\"$row[product_image]\" alt=\"\" style=\"width: 100px; height: 75px;\"></th>
+        <td>$row[product_name]</td>
+        <td>$row[product_price]</td>
+        <td>$row[product_quantity]</td>
+        <td>$row[product_unitprice]</td>
+      </tr>";
+      
+      
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     };
@@ -51,7 +46,7 @@
     }
     .buybtn{
       background-color: #eb5d1e;
-      color: #fef8f5;
+      color: #ffffff;
       font-size: larger;
       border-radius: 10px;
     }
@@ -62,6 +57,7 @@
       display: inline;
       padding: 1px;
     }
+    
   </style>
 </head>
 
@@ -120,45 +116,45 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2 style="text-align: left;">訂單內容</h2>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>訂單內容</h2>
+          </div>
         </div>
-      </div>
-    </section><!-- End Breadcrumbs Section -->
+    </section>
 
     <section class="inner-page">
       <div class="container">
         <!--title-->
-        <div class="row">
-          <div class="col-3">
-            <h4>商品名</h4>
-          </div>
-          <div class="col-3">
-            <h4>單價</h4>
-          </div>
-          <div class="col-3">
-            <h4>數量</h4>
-          </div>
-          <div class="col-3">
-            <h4>總計</h4>
-          </div>
+        <div id="product-table">
+          <table id="table-product" class="table table-bordered" style="table-layout:fixed">
+            <thead>
+              <tr>
+                <th scope="col"><h5>商品圖片</h5></th>
+                <th scope="col"><h5>商品名</h5></th>
+                <th scope="col"><h5>單價</h5></th>
+                <th scope="col"><h5>數量</h5></th>
+                <th scope="col"><h5>總計</h5></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php echo $data;?>
+              <th colspan="2"></th>
+              <th scope="col">
+                <h5 class="mt-2">總金額</h5>
+              </th>
+              <th scope="col">
+                <span>$</span>
+                <h2 id="payment" class="fw-bolder" style="display: inline;"><?php echo $total;?></h2>
+              </th>
+              <th scope="col">
+                <button type="button" class="btn delete-order">
+                <a href=""><h5>刪除訂單<h5>
+              </button>
+              </th>
+            </tbody>
+          </table>
         </div>
-        <?php
-        echo $data;
-        ?>
-        <div class="row mt-3">
-          <div class="col-4"></div>
-          <div class="col-4">
-            <h3>總金額</h3>
-          </div>
-          <div class="col-4">
-            <span>$</span>
-            <h2 id="payment" style="display: inline;"><?php echo $total;?></h2>
-          </div>
-        </div>
-
       </div>
     </section>
 

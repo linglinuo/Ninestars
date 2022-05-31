@@ -116,12 +116,17 @@
                 <div class="col-3">
                     <table class="table table-bordered">
                         <tr>
-                        <th><button id="product-manager"><a href="商品管理.php"><h4>商品管理</h4></button></th>
+                          <th><button id="product-manager"><a href="商品管理.php"><h5>商品管理</h5></button></th>
                         </tr>
                         <tr>
-                        <th>
-                          <button id="member-manager"><h4><a href="會員管理.php">會員管理</a></h4></button>
-                        </th>
+                          <th>
+                            <button id="member-manager"><h5><a href="會員管理.php">會員管理</a></h5></button>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th>
+                            <button id="wish-manager"><h5><a href="許願池管理.php">許願池管理</a></h5></button>
+                          </th>
                         </tr>
                     </table>
                 </div>

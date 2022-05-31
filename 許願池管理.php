@@ -18,9 +18,9 @@
     include("mysql_connect.inc.php");
 
     // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM member WHERE (`member_name` LIKE '%$search%') OR (`member_email` LIKE '%$search%') OR (`member_password` LIKE '%$search%') OR (`member_level` LIKE '%$search%')")) {
+    if ($result = mysqli_query($link, "SELECT * FROM wish WHERE (`member_name` LIKE '%$search%') OR (`wish_content` LIKE '%$search%') OR (`wish_time` LIKE '%$search%')")) {
     while ($row = mysqli_fetch_assoc($result)) {
-    $data .= "<tr><th scope=\"row\">$row[member_name]</th><td>$row[member_email]</td><td>$row[member_password]</td><td>$row[member_level]</td></tr>";
+    $data .= "<tr><th scope=\"row\">$row[member_name]</th><td>$row[wish_content]</td><td>$row[wish_time]</td></tr>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }
@@ -139,7 +139,7 @@
               <div id="title">
                 <table>
                     <tr>
-                      <td scope="col"><h5>會員管理<h5></td>
+                      <td scope="col"><h5>許願池管理<h5></td>
 
                       <!-- 搜尋框 -->
                       <div class="search">
@@ -156,17 +156,17 @@
 
                       <td scope="col">
                         <button type="button" id="newProduct" class="btn">
-                          <a href="insertMember.php"><h6>新增會員<h6>
+                          <a href="insertWish.php"><h6>新增許願<h6>
                         </button>
                       </td>
                       <td scope="col">
                         <button type="button" id="newProduct" class="btn">
-                          <a href="delete.php"><h6>刪除會員<h6>
+                          <a href="deleteWish.php"><h6>刪除許願<h6>
                         </button>
                       </td>
                       <td scope="col">
                         <button type="button" id="newProduct" class="btn">
-                          <a href="updateMember.php"><h6>修改會員<h6>
+                          <a href="updateWish.php"><h6>修改許願<h6>
                         </button>
                       </td>
                     </tr>
@@ -179,9 +179,8 @@
                 <thead>
                   <tr>
                     <th scope="col">信徒名稱</th>
-                    <th scope="col">email</th>
-                    <th scope="col">密碼</th>
-                    <th scope="col">會員等級</th>
+                    <th scope="col">許願池</th>
+                    <th scope="col">許願時間</th>
                   </tr>
                 </thead>
                 <?php echo $data;?>

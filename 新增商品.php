@@ -104,25 +104,30 @@
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                    echo "<form name=\"form\" method=\"post\" action=\"insertProduct_finish.php\">";
-                    echo "<h5 class=\"mt-4\">商品圖片</h5>";
-                    echo "<input type=\"file\" name=\"Myfile\">";
-                    echo "<h5 class=\"mt-4\">商品名稱</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"pname\"><br>";
-                    echo "<h5 class=\"mt-4\">分類</h5>";
-                    echo "<div class=\"level\">
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"1\" checked>御守</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"2\">佛具</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"3\">紀念品</label>
-                    </div>";
-                    echo "<h5 class=\"mt-4\">價格</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"pprice\"><br>";
-                    echo "<h5 class=\"mt-4\">種類</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"ptype\"><br>";
-                    echo "<h5 class=\"mt-4\">敘述</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"pintro\"><br>";
-                    echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\">";
-                    echo "</form>";
+                  echo "<div class=\"container\" style=\"text-align: center; width: 500px\">";
+                  echo "<form enctype=\"multipart/form-data\" method=\"post\" action=\"insertRroduct_finish.php\">";
+                  echo "<img src=\"img/insert.png\">"
+                  echo "<h5 class=\"mt-4\">商品圖片</h5>";
+                  echo "<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"1024000\">";
+                  echo "<input type=\"file\" name=\"Myfile\">";
+                  echo "<label for=\"Myfile\" class=\"error\"></label>";
+                  echo "<h5 class=\"mt-4\">商品名稱</h5>";
+                  echo "<input type=\"text\" class=\"input form-control\" name=\"pname\"><br>";
+                  echo "<h5 class=\"mt-4\">分類</h5>";
+                  echo "<div class=\"level\">";
+                  echo "<label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"1\" checked>御守</label>";
+                  echo "<label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"2\">佛具</label>";
+                  echo "<label class=\"radio-inline\"><input type=\"radio\" name=\"pcategory\"  value=\"3\">紀念品</label>";
+                  echo "</div>";
+                  echo "<h5 class=\"mt-4\">價格</h5>";
+                  echo "<input type=\"text\" class=\"input form-control\" name=\"pprice\"><br>";
+                  echo "<h5 class=\"mt-4\">種類</h5>";
+                  echo "<input type=\"text\" class=\"input form-control\" name=\"ptype\"><br>";
+                  echo "<h5 class=\"mt-4\">敘述</h5>";
+                  echo "<input type=\"text\" class=\"input form-control\" name=\"pintro\"><br>";
+                  echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\">";
+                  echo "</form>";
+                  echo "</div>";
                 }
                 else
                 {

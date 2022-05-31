@@ -10,35 +10,56 @@
     echo $maincss;
     echo $sourcejs;
   ?>
+    <?php 
+    //新增資料庫
+    if (isset($_POST['pname'])) {
+        //上傳檔案
+        $tmp_name = $_FILES['Myfile']['tmp_name'];
+        $file_name = $_FILES['Myfile']['name'];
+        $file_type = $_FILES['Myfile']['type'];
+        $fp = fopen($tmp_name, "rb");
+        $file = addslashes(fread($fp, filesize($tmp_name)));
+        
+        include("mysql_connect.inc.php");
+        $sql1 = "SELECT * FROM products ORDER BY product_id DESC LIMIT 0, 1";
+        $result = mysqli_query($link, $sql1);
+        $row = mysqli_fetch_row($result);
+        $id = $row[0]+1;
 
-  <?php
-    include("mysql_connect.inc.php");
-    $name = $_POST['name'];
+        $name = $_POST['pname'];
+        
+        $array_category = array(1=>"御守","佛具","紀念品");
+        $post_category = $_POST['pcategory'];
+        $category = $array_category[$post_category];
 
-    // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM products WHERE product_name='$name';")) {
-    while ($row = mysqli_fetch_assoc($result)) {
-    $data .= "
-    <form name=\"form\" method=\"post\" action=\"updateProduct_finish.php\">
-      <h5 class=\"mt-4\">商品圖片</h5>
-        <img src=\"$row[product_picture]\" width=\"200px\">
-      <h5 class=\"mt-4\">商品名稱</h5>
-        <input type=\"text\" class=\"input form-control\" name=\"p-name\" value=\"$row[product_name]\"><br>
-      <h5 class=\"mt-4\">商品分類</h5>  
-        <input type=\"text\" class=\"input form-control\" name=\"p-categories\" value=\"$row[product_categories]\"><br>
-      <h5 class=\"mt-4\">商品單價</h5>
-        <input type=\"text\" class=\"input form-control\" name=\"p-price\" value=\"$row[product_price]\"><br>
-      <h5 class=\"mt-4\">商品種類</h5>
-        <input type=\"text\" class=\"input form-control\" name=\"p-type\" value=\"$row[product_type]\"><br>
-      <h5 class=\"mt-4\">商品敘述</h5>
-        <input type=\"text\" class=\"input form-control\" name=\"p-instruction\" value=\"$row[product_instruction]\"><br>
-      <input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"確認\">
-    </form>";
+        $price = $_POST['pprice'];
+        $type = $_POST['ptype'];
+        $intro = $_POST['pintro'];
+
+        
+        //寫入資料庫
+        include("mysql_connect.inc.php");
+        $sql = "insert into products(product_id, product_picture, product_name, product_categories, 
+        product_price, product_type, product_instruction)values('$id','img/portfolio/$file_name','$name','$category','$price','<option>$type</option>','$intro')";
+
+        if(mysqli_query($link,$sql))
+        {
+            echo "新增成功";
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=商品管理.php>';
+        }
+        else
+        {
+            echo '新增失敗!';
+        }
     }
-    mysqli_free_result($result); // 釋放佔用的記憶體
+    else
+    {
+        echo '您無權限觀看此頁面!';
+
     }
-    mysqli_close($link); // 關閉資料庫連結
-  ?>
+        
+    ?>
+
 
   <style>
     .error {
@@ -48,15 +69,6 @@
       display: inline;
       padding: 1px;
     }
-    .new-product{
-      background-color: #eb5d1e;
-      color: #fef8f5;
-      border-radius: 10px;
-      padding-top: 3px;
-      padding-bottom: 3px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
     .btn-new{
       background-color: #eb5d1e;
       color: #fef8f5;
@@ -65,6 +77,12 @@
       padding-bottom: 3px;
       padding-left: 10px;
       padding-right: 10px;
+    }
+    .modal-backdrop {
+      z-index: -1;
+    }
+    #myModal{
+      z-index: 999;
     }
   </style>
 </head>
@@ -111,33 +129,51 @@
             ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav><!-- navbar -->
     </div>
   </header><!--End Header -->
-  
   <!--login-->
   <?php
   include ("login.php");
   ?>
   <!--login end-->
   <main id="main" style="margin-top: 20px;">
-
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>修改商品</h2>
+            <h2>新增商品</h2>
           </div>
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <section>
-        <div class="container" style="text-align: center; width: 500px">
-            <img src="img/update.png">
-            <?php echo $data;?>
-        </div>
-    </section><!-- End Portfolio Section -->
+    <div class="container" style="text-align: center; width: 500px">
+      <form enctype="multipart/form-data" method="post">
+        <img src="img/insert.png">
+      
+          <h5 class="mt-4">商品圖片</h5>
+            <input type="hidden" name="MAX_FILE_SIZE" value="1024000">
+            <input type="file" name="Myfile">
+            <label for="Myfile" class="error"></label>
+          <h5 class="mt-4">商品名稱</h5>
+            <input type="text" class="input form-control" name="pname"><br>
+          <h5 class="mt-4">分類</h5>
+          <div class="level">
+            <label class="radio-inline"><input type="radio" name="pcategory"  value="1" checked>御守</label>
+            <label class="radio-inline"><input type="radio" name="pcategory"  value="2">佛具</label>
+            <label class="radio-inline"><input type="radio" name="pcategory"  value="3">紀念品</label>
+          </div>
+          <h5 class="mt-4">價格</h5>
+            <input type="text" class="input form-control" name="pprice"><br>
+          <h5 class="mt-4">種類</h5>
+            <input type="text" class="input form-control" name="ptype"><br>
+          <h5 class="mt-4">敘述</h5>
+            <input type="text" class="input form-control" name="pintro"><br>
+            
+          <input type="submit" name="button" class="btn btn-new" id="sub_btn" value="新增">
+      </form>
+    </div>
 
   </main><!-- End #main -->
 
@@ -159,8 +195,6 @@
     include ("verify.html");
   ?>
   <!--verify end-->
-
 </body>
 
 </html>
-

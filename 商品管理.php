@@ -148,7 +148,7 @@
 
                           <td scope="col">
                             <button type="button" id="newProduct" class="btn">
-                              <a href="新增商品.php"><h6>新增商品<h6>
+                              <a href="insertProduct.php"><h6>新增商品<h6>
                             </button>
                           </td>
                           <td scope="col">

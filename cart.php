@@ -149,7 +149,9 @@
               </th>
               <th scope="col">
                 <button type="button" class="btn delete-order">
-                <a href=""><h5>刪除訂單<h5>
+                <?php
+                echo '<a href="deleteOrder_finish.php?order='.$_GET['order'].'"><h5>刪除訂單<h5>';
+                ?>
               </button>
               </th>
             </tbody>

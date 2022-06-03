@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-28 17:05:46
+-- 產生時間： 2022-06-03 09:58:06
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -157,21 +157,25 @@ CREATE TABLE `member` (
   `member_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `member_email` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `member_password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `member_level` varchar(5) COLLATE utf8_unicode_ci NOT NULL
+  `member_level` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `order_amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 傾印資料表的資料 `member`
 --
 
-INSERT INTO `member` (`member_name`, `member_email`, `member_password`, `member_level`) VALUES
-('3ssss21', 'S086112@gamail.com', 'bbbbb', '中級'),
-('selina', 'daa26@gamail.com', 'ddddd', '中級'),
-('dora', 'apple@gamail.com', 'fffff', '初級'),
-('member', 'adddddf@gamail.com', 'member123456', '初級'),
-('admin', 'admin@gamial.com', 'admin123456', '初級'),
-('fdaasdf', '152@ybu.ss.edu.tw', '123321', '初級'),
-('fiona051', 'fiona051@gmail.com', 'aaa111', '初級');
+INSERT INTO `member` (`member_name`, `member_email`, `member_password`, `member_level`, `order_amount`) VALUES
+('3ssss21', 'S086112@gamail.com', 'bbbbb', '中級', 0),
+('selina', 'daa26@gamail.com', 'ddddd', '中級', 0),
+('dora', 'apple@gamail.com', 'fffff', '初級', 0),
+('member', 'adddddf@gamail.com', 'member123456', '初級', 0),
+('admin', 'admin@gamial.com', 'admin123456', '初級', 0),
+('fdaasdf', '152@ybu.ss.edu.tw', '123321', '初級', 0),
+('fiona051', 'fiona051@gmail.com', 'aaa111', '初級', 0),
+('member', 'member@123', 'aaa', '初級', 0),
+('ling', 'fiona90311@yahoo.com', 'aaa1111', '初級', 0),
+('nothing', 'nothing@gmail.com', 'asdfghjk', '初級', 1930);
 
 -- --------------------------------------------------------
 
@@ -191,9 +195,9 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`member_name`, `order_id`, `order_totalprice`, `order_time`) VALUES
-('member', 1, 1910, '2022-05-28'),
 ('member', 2, 1910, '2022-05-28'),
-('dora', 3, 1610, '2022-05-28');
+('dora', 3, 1610, '2022-05-28'),
+('nothing', 4, 1930, '2022-06-03');
 
 -- --------------------------------------------------------
 
@@ -215,17 +219,17 @@ CREATE TABLE `order_content` (
 --
 
 INSERT INTO `order_content` (`order_id`, `product_name`, `product_quantity`, `product_image`, `product_price`, `product_unitprice`) VALUES
-(1, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
-(1, '求籤', 3, 'img/portfolio/a4.png', 100, 300),
-(1, '線香', 4, 'img/portfolio/b1.png', 200, 800),
-(1, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
 (2, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
 (2, '求籤', 3, 'img/portfolio/a4.png', 100, 300),
 (2, '線香', 4, 'img/portfolio/b1.png', 200, 800),
 (2, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
 (3, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
 (3, '線香', 4, 'img/portfolio/b1.png', 200, 800),
-(3, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650);
+(3, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
+(4, '戀愛御守', 1, 'img/portfolio/a2.png', 80, 80),
+(4, '佛珠', 1, 'img/portfolio/c2.png', 650, 650),
+(4, '鳥居擺飾', 1, 'img/portfolio/c1.png', 300, 300),
+(4, '香皿', 2, 'img/portfolio/b3.png', 450, 900);
 
 -- --------------------------------------------------------
 

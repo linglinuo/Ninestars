@@ -45,6 +45,16 @@ $sql2 = "insert into `order` (member_name, order_id, order_totalprice, order_tim
         {
                 echo '新增失敗!2';
         }
+$sql3 = "UPDATE `member` SET `order_amount`=`order_amount`+$total WHERE `member_name`='$name'";
+        if(mysqli_query($link,$sql3))
+        {
+                echo '成功3';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=訂單管理.php>';
+        }
+        else
+        {
+                echo '新增失敗!3';
+        }
 
 
 ?>

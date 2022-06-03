@@ -103,6 +103,40 @@
   }
   mysqli_free_result($result);
   }
+  $count=0;
+  if ($result = mysqli_query($link, "SELECT * FROM `member` ORDER BY `member`.`order_amount` DESC Limit 3")) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $count=$count+1;
+      if($count==1)
+      {
+        $rank='一';
+      }
+      elseif($count==2)
+      {
+        $rank='二';
+      }
+      else
+      {
+        $rank='三';
+      }
+      $data2 .= "
+      <div class=\"col-lg-4\" align=\"center\">
+            <div class=\"card d-flex mt-2\" style=\"width: 20rem;\">
+              <div class=\"card-body\" style=\"padding-bottom: 5px;\">
+                <h5 class=\"card-title\">第".$rank."名</h5>
+                <h3 class=\"card-name\">$row[member_name]</h3>
+              </div>
+              <ul class=\"list-group list-group-flush\">
+                <li class=\"list-group-item\">$row[member_level]</li>
+                <li class=\"list-group-item\"><p class=\"card-text\">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+      ";
+  }
+  mysqli_free_result($result);
+  }
   ?>
 </head>
 
@@ -182,24 +216,6 @@
         </div>
       </div>
     </div>
-    
-    <!-- <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-4 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>絲扇淒神社</h1>
-          <h2>We are team of talented designers making websites with Bootstrap</h2>
-          <div>
-            <a href="#about" class="btn-get-started scrollto">開始參觀</a>
-          </div>
-          <div>
-            <img src="" class="img-fluid" alt="">
-          </div>
-        </div>
-        <div class="col-lg-8 order-1 order-lg-2 hero-img">
-          <img src="gif/1.gif" class="img-fluid animated" alt="">
-        </div>
-      </div>
-    </div> -->
 
   </div><!-- End Hero -->
 
@@ -379,49 +395,7 @@
           <p>願你在其中得到救贖</p>
         </div>
         <div class="row">
-          <div class="col-lg-4" align="center">
-            <div class="card d-flex mt-2" style="width: 20rem;">
-              <img src="img/team/team-1.jpg" class="card-img-top memberimg" alt="">
-              <div class="card-body" style="padding-bottom: 5px;">
-                <h5 class="card-title">第一名</h5>
-                <h3 class="card-name">Jason</h3>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">會員等級</li>
-                <li class="list-group-item"><p class="card-text">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4" align="center">
-            <div class="card d-flex mt-2" style="width: 20rem;">
-              <img src="img/team/team-2.jpg" class="card-img-top memberimg" alt="...">
-              <div class="card-body" style="padding-bottom: 5px;">
-                <h5 class="card-title">第二名</h5>
-                <h3 class="card-name">Betty</h3>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">會員等級</li>
-                <li class="list-group-item"><p class="card-text">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4" align="center">
-            <div class="card d-flex mt-2" style="width: 20rem;">
-              <img src="img/team/team-3.jpg" class="card-img-top memberimg" alt="...">
-              <div class="card-body" style="padding-bottom: 5px;">
-                <h5 class="card-title">第三名</h5>
-                <h3 class="card-name">Jack</h3>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">會員等級</li>
-                <li class="list-group-item"><p class="card-text">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
+        <?php echo $data2;?>
         </div>
 
       </div>

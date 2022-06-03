@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-03 09:58:06
+-- 產生時間： 2022-06-03 10:12:09
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -168,12 +168,11 @@ CREATE TABLE `member` (
 INSERT INTO `member` (`member_name`, `member_email`, `member_password`, `member_level`, `order_amount`) VALUES
 ('3ssss21', 'S086112@gamail.com', 'bbbbb', '中級', 0),
 ('selina', 'daa26@gamail.com', 'ddddd', '中級', 0),
-('dora', 'apple@gamail.com', 'fffff', '初級', 0),
-('member', 'adddddf@gamail.com', 'member123456', '初級', 0),
+('dora', 'apple@gamail.com', 'fffff', '初級', 1610),
+('member', 'adddddf@gamail.com', 'member123456', '初級', 1910),
 ('admin', 'admin@gamial.com', 'admin123456', '初級', 0),
 ('fdaasdf', '152@ybu.ss.edu.tw', '123321', '初級', 0),
 ('fiona051', 'fiona051@gmail.com', 'aaa111', '初級', 0),
-('member', 'member@123', 'aaa', '初級', 0),
 ('ling', 'fiona90311@yahoo.com', 'aaa1111', '初級', 0),
 ('nothing', 'nothing@gmail.com', 'asdfghjk', '初級', 1930);
 

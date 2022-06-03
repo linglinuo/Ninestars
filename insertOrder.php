@@ -104,24 +104,29 @@
     <!-- End Breadcrumbs Section -->
 
     <section>
-        <div class="container" style="text-align: center; width: 500px">
-            <img src="img/insert.png">
+        <div class="container" style="text-align: center; width: 700px">
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                    echo "<form name=\"form\" method=\"post\" action=\"insertMember_finish.php\">";
-                    echo "<h5 class=\"mt-4\">名稱</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"m-name\"><br>";
-                    echo "<h5 class=\"mt-4\">email</h5>";
-                    echo "<input type=\"email\" class=\"input form-control\" name=\"m-email\"><br>";
-                    echo "<h5 class=\"mt-4\">密碼</h5>";
-                    echo "<input type=\"password\" class=\"input form-control\" name=\"m-pwd\"><br>";
-                    echo "<h5 class=\"mt-4\">會員等級</h5>";
-                    echo "<div class=\"level\">
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"1\" checked>初級</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"2\">中級</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"3\">高級</label>
-                    </div>";
+                    echo "<form name=\"form\" method=\"post\" action=\"insertOrder_finish.php\">";
+                    echo "<h5 class=\"mt-4\">信徒名稱</h5>";
+                    echo "<input type=\"text\" class=\"input form-control\" name=\"member_name\"><br>";
+
+                    echo "<table class=\"table table-bordered\" style=\"table-layout:fixed\">
+                        <tbody id=\"div_upload\">
+                            <tr>
+                                <td scope=\"col\" colspan=\"3\">商品名稱</td>
+                                <td scope=\"col\" colspan=\"3\">購買數量</td>
+                                <td scope=\"col\">新增欄位</td>
+                            </tr>
+                            <tr>
+                                <td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td>
+                                <td scope=\"col\" colspan=\"3\"><input type=\text\" class=\"input form-control\" name=\"p-quantity\"></td>
+                                <td scope=\"col\"><button type=\"button\" id=\"btn_append\" class=\"btn\">+</button></td>
+                            </tr>
+                        </tbody>
+                    </table>";
+
                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"></button>";
                     echo "</form>";
                 }
@@ -131,32 +136,6 @@
                      echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
                 }
             ?>
-            <form>
-                <div>
-                    <table class="table table-bordered" style="table-layout:fixed">
-                        <thead>
-                            <tr>
-                                <th scope="col">商品名稱</th>
-                                <th scope="col">購買數量</th>
-                                <th scope="col">商品圖片</th>
-                                <th scope="col">商品單價</th>
-                                <th scope="col">商品總價</th>
-                            </tr>
-                            <tr>
-                                <th scope="col"><input type="text" class="input form-control" name="m-name"></th>
-                                <th scope="col"><input type="text" class="input form-control" name="m-name"></th>
-                                <th scope="col"><input type="text" class="input form-control" name="m-name"></th>
-                                <th scope="col"><input type="text" class="input form-control" name="m-name"></th>
-                                <th scope="col"><input type="text" class="input form-control" name="m-name"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php echo $data;?>
-                        </tbody>
-                    </table>
-                    <!--product table end-->
-                </div>
-            </form>
         </div>
     </section><!-- End Portfolio Section -->
 
@@ -180,6 +159,35 @@
     include ("verify.html");
   ?>
   <!--verify end-->
+
+  <script>
+    $("#btn_append").on("click", function(){
+        $("#div_upload").append('<tr id=\"div_upload\"><td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td><td scope=\"col\" colspan=\"3\"><input type=\text\" class=\"input form-control\" name=\"p-quantity\"></td><td scope=\"col\"><button id=\"btn_append\" class=\"btn\" type=\"button\">+</button></td></tr>');
+    });
+    
+    
+    $("#sub_btn").on("click", function(){
+        var pname_arrList = new Array();
+        $("input[name^='p-name']").each(function(i)
+            {
+                pname_arrList.push($(this).val());
+                
+            }
+        )
+        alert(pname_arrList);
+        var quantity_arrList = new Array();
+        $("input[name^='p-quantity']").each(function(i)
+            {
+                quantity_arrList.push($(this).val());
+                
+            }
+        )
+        alert(quantity_arrList);
+        $.post('insertOrder_finish.php', {'product-name[]':pname_arrList, 'product-quantity[]':quantity_arrList});
+
+    });
+      
+  </script>
 
 </body>
 

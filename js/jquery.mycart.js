@@ -392,14 +392,12 @@
 
     $(".gobuyit").click(function(){
       $("#" + idCartModal).modal("hide");
-      alert("c");
       var product_arrList = new Array();//抓product name
       $("input[name^='name_catch']").each(function(i)
         {
           product_arrList.push($(this).val());
         }
       )
-      alert(product_arrList);
 
       var quantity_arrList = new Array();//抓quantity
       $("input[name^='quantity_catch']").each(function(i)
@@ -407,7 +405,6 @@
           quantity_arrList.push($(this).val());
         }
       )
-      alert(quantity_arrList);
 
       var image_arrList = new Array();//抓image
       $("input[name^='image_catch']").each(function(i)
@@ -415,7 +412,6 @@
           image_arrList.push($(this).val());
         }
       )
-      alert(image_arrList);
 
       var price_arrList = new Array();//抓unit price
       $("input[name^='price_catch']").each(function(i)
@@ -423,7 +419,6 @@
           price_arrList.push($(this).val());
         }
       )
-      alert(price_arrList);
 
       var unitprice_arrList = new Array();//抓unit price
       $("input[name^='unitprice_catch']").each(function(i)
@@ -431,9 +426,7 @@
           unitprice_arrList.push($(this).val());
         }
       )
-      alert(unitprice_arrList);
 
-      alert($("#totalprice_catch").val());
       var total_catch = $("#totalprice_catch").val();
       $.post('value.php', {'product_name[]':product_arrList,'quantity[]':quantity_arrList,'image[]':image_arrList,'price[]':price_arrList,'unit[]':unitprice_arrList,total:total_catch});
 

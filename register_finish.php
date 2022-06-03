@@ -12,7 +12,7 @@ $email = $_POST['email'];
 if($id != null && $pwd != null)
 {
         //新增資料進資料庫語法
-        $sql = "insert into member (member_name, member_email, member_password, member_level) values ('$id', '$email', '$pwd', '初級')";
+        $sql = "insert into member (member_name, member_email, member_password, member_level, order_amount) values ('$id', '$email', '$pwd', '初級', '0')";
         if(mysqli_query($link,$sql))
         {
                 echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';

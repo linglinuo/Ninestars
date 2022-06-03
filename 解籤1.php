@@ -5,6 +5,7 @@
     <?php
         include ("template.php");
         echo $top ;
+        echo $vendorcss;
         echo $extracss;
         echo $maincss;
         echo $sourcejs;

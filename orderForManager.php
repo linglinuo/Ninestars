@@ -10,22 +10,16 @@
     echo $maincss;
     echo $sourcejs;
   ?>
+
   <?php
     $search='';
     if(isset($_GET['search'])){ $search = $_GET['search']; }
     include("mysql_connect.inc.php");
 
     // 送出查詢的SQL指令
-    if ($result = mysqli_query($link, "SELECT * FROM `products` WHERE (`product_id` LIKE '%$search%') 
-    OR (`product_picture` LIKE '%$search%') OR (`product_name` LIKE '%$search%') 
-    OR (`product_categories` LIKE '%$search%') OR (`product_price` LIKE '%$search%') 
-    OR (`product_type` LIKE '%$search%') OR (`product_instruction` LIKE '%$search%')")) {
+    if ($result = mysqli_query($link, "SELECT * FROM `order` WHERE (`member_name` LIKE '%$search%') OR (`order_id` LIKE '%$search%') OR (`order_totalprice` LIKE '%$search%') OR (`order_time` LIKE '%$search%')")) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $data .= "<tr><td scope=\"row\">$row[product_id]</td>
-        <td><img class=\"img-fluid\" src=\"$row[product_picture]\" width=\"100px\"></td>
-        <td>$row[product_name]</td><td>$row[product_categories]</td>
-        <td>$row[product_price]</td><td>$row[product_type]</td>
-        <td colspan=\"4\">$row[product_instruction]</td></tr>";
+        $data .= "<tr><td scope=\"row\">$row[member_name]</td><th><a href=\"cart.php?order=$row[order_id]\">$row[order_id]</th><td>$row[order_totalprice]</td><td>$row[order_time]</td></tr>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }
@@ -58,6 +52,9 @@
     include ("template.php");
     echo $pageloader ;
   ?>
+
+  
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -150,7 +147,7 @@
                     <div id="title">
                       <table>
                         <tr>
-                          <td scope="col"><h5>商品管理<h5></td>
+                          <td scope="col"><h5>訂單管理<h5></td>
 
                           <!-- 搜尋框 -->
                           <div class="search">
@@ -167,17 +164,17 @@
 
                           <td scope="col">
                             <button type="button" id="newProduct" class="btn">
-                              <a href="insertProduct.php"><h6>新增商品<h6>
+                              <a href="insertOrder.php"><h6>新增訂單<h6>
                             </button>
                           </td>
                           <td scope="col">
                             <button type="button" id="newProduct" class="btn">
-                              <a href="deleteProduct.php"><h6>刪除商品<h6>
+                              <a href="deleteOrder.php"><h6>刪除訂單<h6>
                             </button>
                           </td>
                           <td scope="col">
                             <button type="button" id="newProduct" class="btn">
-                              <a href="updateProduct.php"><h6>修改商品<h6>
+                              <a href="updateOrder.php"><h6>修改訂單<h6>
                             </button>
                           </td>
                         </tr>
@@ -189,13 +186,10 @@
                         <table id="table-product" class="table table-bordered" style="table-layout:fixed">
                             <thead>
                                 <tr>
-                                <th scope="col">商品編號</th>
-                                <th scope="col">商品圖片</th>
-                                <th scope="col">商品名</th>
-                                <th scope="col">分類</th>
-                                <th scope="col">價格</th>
-                                <th scope="col">種類</th>
-                                <th colspan="4">描述</th>
+                                <th scope="col">會員姓名</th>
+                                <th scope="col">訂單編號</th>
+                                <th scope="col">應付金額</th>
+                                <th scope="col">建檔日期</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -11,7 +11,6 @@
     echo $sourcejs;
   ?>
   
-  <!--商品管理-->
   <?php
   $search='';
   if(isset($_GET['search'])){ $search = $_GET['search']; }
@@ -128,6 +127,11 @@
               <tr>
                 <th>
                   <button id="wish-manager"><h5><a href="許願池管理.php">許願池管理</a></h5></button>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <button id="order-manager"><h5><a href="orderForManager.php">訂單管理</a></h5></button>
                 </th>
               </tr>
             </table>

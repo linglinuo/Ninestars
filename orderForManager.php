@@ -35,9 +35,7 @@
       display: inline;
       padding: 1px;
     }
-    .btn-new{
-      background-color: #eb5d1e;
-      color: #fef8f5;
+    .btn-light{
       border-radius: 10px;
       padding-top: 3px;
       padding-bottom: 3px;
@@ -121,8 +119,8 @@
           <div class="container" data-aos="fade-up">
               <div class="row" data-aos="fade-up" data-aos-delay="100">
                   <!--左側-->
-                  <div class="col-3">
-                      <table class="table table-bordered">
+                  <div class="col-sm-3">
+                      <table class="table table-bordered" style="table-layout:fixed">
                           <tr>
                             <th><button id="product-manager"><a href="商品管理.php"><h5>商品管理</h5></button></th>
                           </tr>
@@ -144,38 +142,36 @@
                       </table>
                   </div>
                   <!--右側-->
-                  <div class="col-9">
-                    <div class="row">
-                        <table id="table-product" style="table-layout:fixed">
-                          <tr>
-                            <td scope="col"><h5>訂單管理<h5></td>
-                            <td>
-                              <!-- 搜尋框 -->
-                              <div class="search">
-                                <form>
-                                  <td scope="col" style="float: left; margin-left: 200px">
-                                    <input type="text" class="input form-control" placeholder="搜尋" name="search" style="width: 200px">
-                                  </td>
-                                  <td scope="col">
-                                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                                  </td>
-                                </form>
-                              </div>
-                              <!-- 搜尋框 -->
-                            </td>
-                            <td scope="col">
-                              <button type="button" id="newProduct" class="btn">
-                                <a href="insertOrder.php"><h6>新增訂單<h6>
-                              </button>
-                            </td>
-                            <td scope="col">
-                              <button type="button" id="newProduct" class="btn">
-                                <a href="deleteOrder.php"><h6>刪除訂單<h6>
-                              </button>
-                            </td>
-                          </tr>
-                        </table>
-                    </div>
+                  <div class="col-sm-9">
+                    <table class="table">
+                      <tr>
+                        <td class="pt-3" valign="middle" colspan="3">
+                          <h5>訂單管理</h5>
+                        </td>
+
+                        <!-- 搜尋框 -->
+                        <form>
+                          <td class="ps-5" scope="col" align="right" valign="middle">
+                            <input type="text" class="input form-control" placeholder="搜尋" name="search">                            
+                          </td>
+                          <td align="center" valign="middle">
+                            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                          </td>
+                        </form>
+
+                        <td  class="pt-3" align="center" valign="middle">
+                          <button type="button" id="newProduct" class="btn btn-light">
+                            <a href="insertOrder.php"><h6 class="pt-2">新增訂單<h6>
+                          </button>
+                        </td>
+                        <td class="pt-3" align="center" valign="middle">
+                          <button type="button" id="newProduct" class="btn btn-light">
+                            <a href="deleteOrder.php"><h6 class="pt-2">刪除訂單<h6>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                    
                     
                     <div id="product-table">
                       <table id="table-product" class="table table-bordered" style="table-layout:fixed">

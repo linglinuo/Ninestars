@@ -50,6 +50,13 @@
       padding-left: 10px;
       padding-right: 10px;
     }
+    .btn-light{
+      border-radius: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   </style>
 </head>
 
@@ -118,100 +125,96 @@
     </section>
     <!-- End Breadcrumbs Section -->
     <?php
-                if($_SESSION['Name'] == 'admin')
-                {
-                  echo'
-    <section id="store" class="portfolio">
-        <div class="container" data-aos="fade-up">
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <!--左側-->
-                <div class="col-3">
-                    <table class="table table-bordered">
+      if($_SESSION['Name'] == 'admin')
+      {
+        echo'
+        <section id="store" class="portfolio">
+            <div class="container" data-aos="fade-up">
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <!--左側-->
+                    <div class="col-sm-3">
+                        <table class="table table-bordered">
+                            <tr>
+                              <th><button id="product-manager"><a href="商品管理.php"><h5>商品管理</h5></button></th>
+                            </tr>
+                            <tr>
+                              <th>
+                                <button id="member-manager"><h5><a href="會員管理.php">會員管理</a></h5></button>
+                              </th>
+                            </tr>
+                            <tr>
+                              <th>
+                                <button id="wish-manager"><h5><a href="許願池管理.php">許願池管理</a></h5></button>
+                              </th>
+                            </tr>
+                            <tr>
+                              <th>
+                                <button id="order-manager"><h5><a href="orderForManager.php">訂單管理</a></h5></button>
+                              </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--右側-->
+                    <div class="col-sm-9">
+                      <table class="table">
                         <tr>
-                          <th><button id="product-manager"><a href="商品管理.php"><h5>商品管理</h5></button></th>
-                        </tr>
-                        <tr>
-                          <th>
-                            <button id="member-manager"><h5><a href="會員管理.php">會員管理</a></h5></button>
-                          </th>
-                        </tr>
-                        <tr>
-                          <th>
-                            <button id="wish-manager"><h5><a href="許願池管理.php">許願池管理</a></h5></button>
-                          </th>
-                        </tr>
-                        <tr>
-                          <th>
-                            <button id="order-manager"><h5><a href="orderForManager.php">訂單管理</a></h5></button>
-                          </th>
-                        </tr>
-                    </table>
-                </div>
-                <!--右側-->
-                <div class="col-9">
-                  <div class="row">
-                    <div id="title">
-                      <table>
-                        <tr>
-                          <td scope="col"><h5>商品管理<h5></td>
-
+                          <td class="pt-3" valign="middle" colspan="3">
+                            <h5>商品管理</h5>
+                          </td>
+        
                           <!-- 搜尋框 -->
-                          <div class="search">
-                            <form>
-                              <td scope="col" style="float: left; margin-left: 200px">
-                                <input type="text" class="input form-control" placeholder="搜尋" name="search" style="width: 200px">
-                              </td>
-                              <td scope="col">
-                                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                              </td>
-                            </form>
-                          </div>
-                          <!-- 搜尋框 -->
-
-                          <td scope="col">
-                            <button type="button" id="newProduct" class="btn">
-                              <a href="insertProduct.php"><h6>新增商品<h6>
+                          <form>
+                            <td class="ps-5" scope="col" align="right" valign="middle">
+                              <input type="text" class="input form-control" placeholder="搜尋" name="search">                            
+                            </td>
+                            <td align="center" valign="middle">
+                              <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                            </td>
+                          </form>
+        
+                          <td  class="pt-3" align="center" valign="middle">
+                            <button type="button" id="newProduct" class="btn btn-light">
+                              <a href="insertProduct.php"><h6 class="pt-2">新增商品<h6>
                             </button>
                           </td>
-                          <td scope="col">
-                            <button type="button" id="newProduct" class="btn">
-                              <a href="deleteProduct.php"><h6>刪除商品<h6>
+                          <td class="pt-3" align="center" valign="middle">
+                            <button type="button" id="newProduct" class="btn btn-light">
+                              <a href="deleteProduct.php"><h6 class="pt-2">刪除商品<h6>
                             </button>
                           </td>
-                          <td scope="col">
-                            <button type="button" id="newProduct" class="btn">
-                              <a href="updateProduct.php"><h6>修改商品<h6>
+                          <td class="pt-3" align="center" valign="middle">
+                            <button type="button" id="newProduct" class="btn btn-light">
+                              <a href="updateProduct.php"><h6 class="pt-2">修改商品<h6>
                             </button>
                           </td>
                         </tr>
                       </table>
-                    </div>
-                  </div>
-                    <!--product table start-->
-                    <div id="product-table">
-                        <table id="table-product" class="table table-bordered" style="table-layout:fixed">
-                            <thead>
-                                <tr>
-                                <th scope="col">商品編號</th>
-                                <th scope="col">商品圖片</th>
-                                <th scope="col">商品名</th>
-                                <th scope="col">分類</th>
-                                <th scope="col">價格</th>
-                                <th scope="col">種類</th>
-                                <th colspan="4">描述</th>
-                                </tr>
-                            </thead>
-                            <tbody>';
-                              echo $data;
-                              echo '
-                            </tbody>
-                        </table>
-                        <!--product table end-->
+
+                        <!--product table start-->
+                        <div id="product-table">
+                            <table id="table-product" class="table table-bordered" style="table-layout:fixed">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">商品編號</th>
+                                    <th scope="col">商品圖片</th>
+                                    <th scope="col">商品名</th>
+                                    <th scope="col">分類</th>
+                                    <th scope="col">價格</th>
+                                    <th scope="col">種類</th>
+                                    <th colspan="4">描述</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                                  echo $data;
+                                  echo '
+                                </tbody>
+                            </table>
+                            <!--product table end-->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div><!--container end-->
-    </section><!-- End Portfolio Section -->';}
+            </div><!--container end-->
+        </section><!-- End Portfolio Section -->';}
     else
     {
       echo '您無權限觀看此頁面!';

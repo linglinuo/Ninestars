@@ -45,6 +45,44 @@
     include ("template.php");
     echo $pageloader ;
   ?>
+  <?php
+    include("mysql_connect.inc.php");
+    $name = $_POST['name'];
+        
+    // 送出查詢的SQL指令
+    if ($result = mysqli_query($link, "SELECT * FROM `order` WHERE order_id = ".$_GET['order'].";")) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        $data .= "
+          <tr>
+            <td scope=\"col\">$row[member_name]</td>
+            <td scope=\"col\">$row[order_id]
+              <input type=\"hidden\" id=\"order_id\" class=\"input form-control\" value=\"$row[order_id]\">
+            </td>
+            <td scope=\"col\">$row[order_time]</td>
+          </tr>";
+      }
+      mysqli_free_result($result); // 釋放佔用的記憶體
+    }
+
+    if ($result = mysqli_query($link, "SELECT `product_image`, `product_name`, `product_quantity` FROM order_content WHERE order_id = ".$_GET['order'].";")) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        $data2 .= "
+          <tr>
+            <td scope=\"col\" colspan=\"3\">
+              <input type=\"text\" class=\"input form-control\" name=\"p-name\" value=\"$row[product_name]\"><br>
+            </td>
+            <td scope=\"col\" colspan=\"3\">
+              <input type=\"text\" class=\"input form-control\" name=\"p-quantity\" value=\"$row[product_quantity]\"><br>
+            </td>
+            <td scope=\"col\">
+              <button type=\"button\" id=\"btn_append\" class=\"btn\">+</button>
+            </td>
+          </tr>";
+      }
+      mysqli_free_result($result); // 釋放佔用的記憶體
+    }
+    mysqli_close($link); // 關閉資料庫連結
+  ?>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -97,47 +135,44 @@
     <section class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>新增訂單</h2>
+            <h2>修改訂單</h2>
           </div>
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
-                
+    
+
     <section>
-        <div class="container" style="text-align: center; width: 700px">
-            <?php
-                if($_SESSION['Name'] != null)
-                {
-                    echo "<h5 class=\"mt-4\">信徒名稱</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" id=\"member_name\"><br>";
+      <div class="container" style="text-align: center; width: 700px">
+        <img src="img/insert.png">
+        <br><br>
 
-                    echo "<table class=\"table table-bordered\" style=\"table-layout:fixed\">
-                        <tbody id=\"div_upload\">
-                          <tr>
-                            <td scope=\"col\" colspan=\"3\">商品名稱</td>
-                            <td scope=\"col\" colspan=\"3\">購買數量</td>
-                            <td scope=\"col\">新增欄位</td>
-                          </tr>
-                          <tr>
-                            <td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td>
-                            <td scope=\"col\" colspan=\"3\"><input type=\text\" class=\"input form-control\" name=\"p-quantity\"></td>
-                            <td scope=\"col\"><button type=\"button\" id=\"btn_append\" class=\"btn\">+</button></td>
-                          </tr>
-                        </tbody>
-                    </table>";
+        <table class="table table-bordered" style="table-layout:fixed">
+          <tbody>
+            <tr>
+              <td scope="col">信徒名稱</td>
+              <td scope="col">訂單編號</td>
+              <td scope="col">訂單日期</td>
+            </tr>
+            <?php echo $data;?>
+          </tbody>
+        </table>
 
-                    echo "
-                      <input type=\"button\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"
-                      onclick=\"location.href='orderForManager.php'\">";
-                }
-                else
-                {
-                     echo '您無權限觀看此頁面!';
-                     echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
-                }
-            ?>
-        </div>
+        <!--order_content-->
+        <table class="table table-bordered" style="table-layout:fixed">
+          <tbody id="div_upload">
+            <tr>
+              <td scope="col" colspan="3">商品名稱</td>
+              <td scope="col" colspan="3">數量</td>
+              <td scope="col">新增欄位</td>
+            </tr>
+            <?php echo $data2;?>
+          </tbody>
+        </table>
+        <input type="button" name="button" class="btn btn-new" id="sub_btn" value="修改" onclick="location.href='orderForManager.php'"></button>
+      </div>
     </section><!-- End Portfolio Section -->
+
 
   </main><!-- End #main -->
 
@@ -162,10 +197,9 @@
 
   <script>
     $("#btn_append").on("click", function(){
-        $("#div_upload").append('<tr><td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td><td scope=\"col\" colspan=\"3\"><input type=\text\" class=\"input form-control\" name=\"p-quantity\"></td><td scope=\"col\"><button id=\"btn_append\" class=\"btn\" type=\"button\">+</button></td></tr>');
+        $("#div_upload").append('<tr><td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td><td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-quantity\"></td><td scope=\"col\"><button type=\"button\" id=\"btn_append\" class=\"btn\">+</button></td></tr>');
     });
-    
-    
+
     $("#sub_btn").on("click", function(){
         var pname_arrList = new Array();
         $("input[name^='p-name']").each(function(i)
@@ -173,18 +207,17 @@
               pname_arrList.push($(this).val());
             }
         )
-        //alert(pname_arrList);
+        alert(pname_arrList);
         var quantity_arrList = new Array();
         $("input[name^='p-quantity']").each(function(i)
             {
-                quantity_arrList.push($(this).val());
-                
+              quantity_arrList.push($(this).val());
             }
         )
-        //alert(quantity_arrList);
-        var member_name = $("#member_name").val();
-        //alert(member_name);
-        $.post('insertOrder_finish.php', {'product-name[]':pname_arrList, 'product-quantity[]':quantity_arrList, name:member_name});
+        alert(quantity_arrList);
+        var order_id = $("#order_id").val();
+        alert(order_id);
+        $.post('updateOrder_finish.php', {'product-name[]':pname_arrList, 'product-quantity[]':quantity_arrList, id:order_id});
     });
       
   </script>

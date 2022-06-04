@@ -97,38 +97,22 @@
     <section class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>新增訂單</h2>
+            <h2>修改訂單</h2>
           </div>
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
-                
+
     <section>
         <div class="container" style="text-align: center; width: 700px">
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                    echo "<h5 class=\"mt-4\">信徒名稱</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" id=\"member_name\"><br>";
-
-                    echo "<table class=\"table table-bordered\" style=\"table-layout:fixed\">
-                        <tbody id=\"div_upload\">
-                          <tr>
-                            <td scope=\"col\" colspan=\"3\">商品名稱</td>
-                            <td scope=\"col\" colspan=\"3\">購買數量</td>
-                            <td scope=\"col\">新增欄位</td>
-                          </tr>
-                          <tr>
-                            <td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td>
-                            <td scope=\"col\" colspan=\"3\"><input type=\text\" class=\"input form-control\" name=\"p-quantity\"></td>
-                            <td scope=\"col\"><button type=\"button\" id=\"btn_append\" class=\"btn\">+</button></td>
-                          </tr>
-                        </tbody>
-                    </table>";
-
-                    echo "
-                      <input type=\"button\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"
-                      onclick=\"location.href='orderForManager.php'\">";
+                    echo "<form name=\"form\" method=\"post\" action=\"updateOrder_check.php\">";
+                    echo "<h5 class=\"mt-4\">要修改的信徒訂單</h5><br>";
+                    echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"name\"><br>";
+                    echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"查看\"></button>";
+                    echo "</form>";
                 }
                 else
                 {
@@ -162,7 +146,7 @@
 
   <script>
     $("#btn_append").on("click", function(){
-        $("#div_upload").append('<tr><td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td><td scope=\"col\" colspan=\"3\"><input type=\text\" class=\"input form-control\" name=\"p-quantity\"></td><td scope=\"col\"><button id=\"btn_append\" class=\"btn\" type=\"button\">+</button></td></tr>');
+        $("#div_upload").append('<tr id=\"div_upload\"><td scope=\"col\" colspan=\"3\"><input type=\"text\" class=\"input form-control\" name=\"p-name\"></td><td scope=\"col\" colspan=\"3\"><input type=\text\" class=\"input form-control\" name=\"p-quantity\"></td><td scope=\"col\"><button id=\"btn_append\" class=\"btn\" type=\"button\">+</button></td></tr>');
     });
     
     
@@ -170,10 +154,11 @@
         var pname_arrList = new Array();
         $("input[name^='p-name']").each(function(i)
             {
-              pname_arrList.push($(this).val());
+                pname_arrList.push($(this).val());
+                
             }
         )
-        //alert(pname_arrList);
+        alert(pname_arrList);
         var quantity_arrList = new Array();
         $("input[name^='p-quantity']").each(function(i)
             {
@@ -181,9 +166,9 @@
                 
             }
         )
-        //alert(quantity_arrList);
+        alert(quantity_arrList);
         var member_name = $("#member_name").val();
-        //alert(member_name);
+        alert(member_name);
         $.post('insertOrder_finish.php', {'product-name[]':pname_arrList, 'product-quantity[]':quantity_arrList, name:member_name});
     });
       

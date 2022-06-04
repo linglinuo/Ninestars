@@ -123,8 +123,11 @@
         </div>
     </section>
 
+    <?php
+    if($_SESSION['Name']!=null){
+    echo '
     <section class="inner-page">
-      <div class="container">
+      <div class="container" style="text-align: center; width: 800px">
         <!--title-->
         <div id="product-table">
           <table id="table-product" class="table table-bordered" style="table-layout:fixed">
@@ -137,9 +140,9 @@
                 <th scope="col"><h5>總計</h5></th>
               </tr>
             </thead>
-            <tbody>
-              <?php echo $data;?>
-              <th colspan="2"></th>
+            <tbody>';
+              echo $data;
+        echo  '<th></th>
               <th scope="col">
                 <h5 class="mt-2">總金額</h5>
               </th>
@@ -148,17 +151,24 @@
                 <h2 id="payment" class="fw-bolder" style="display: inline;"><?php echo $total;?></h2>
               </th>
               <th scope="col">
-                <button type="button" class="btn delete-order">
-                <?php
+                <button type="button" class="btn delete-order">';
+                echo '<a href="updateOrder_check.php?order='.$_GET['order'].'"><h5>修改訂單<h5>';
+        echo  '</button>
+              <th scope="col">
+                <button type="button" class="btn delete-order">';
                 echo '<a href="deleteOrder_finish.php?order='.$_GET['order'].'"><h5>刪除訂單<h5>';
-                ?>
-              </button>
+        echo  '</button>
               </th>
             </tbody>
           </table>
         </div>
       </div>
-    </section>
+    </section>';
+  }
+  else{
+    echo "您無權限";
+  }
+  ?>
 
   </main><!-- End #main -->
 

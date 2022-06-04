@@ -12,14 +12,14 @@
         $mt = md5($row['member_name'].$row['member_password']); 
         if($mt==$token)
         { 
-            if(time()-$row['getpasstime']>24*60*60)
-            { 
-                $msg = '該鏈接已過期！'; 
-            }
-            else
-            { //重置密碼... 
+            // if(time()-$row['getpasstime']>24*60*60)
+            // { 
+            //     $msg = '該鏈接已過期！'; 
+            // }
+            //else
+//{ //重置密碼... 
                 $msg = '請重新設置密碼，顯示重置密碼表單，<br/>這裏只是演示，略過。'; 
-            } 
+            //} 
         }else
         { 
             $msg = '無效的鏈接'; 

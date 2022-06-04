@@ -13,7 +13,8 @@ if($row[1] == $email){
     $getpasstime = time(); 
     $uid=$row[0];
     $token = md5($uid.$row[2]);//組合驗證碼 
-    $url = "/reset.php?email=".$email."&token=".$token;//構造URL 
+    $server = $_SERVER['SERVER_NAME'];
+    $url = "http://".$server."/Ninestars-main/reset.php?email=".$email."&token=".$token;//構造URL 
     $time = date('Y-m-d H:i'); 
     echo "send3";
     // $comment = "([^()]*)";
@@ -64,8 +65,8 @@ else{
 //發送郵件 
 function sendmail($time,$email,$url){ 
     include_once("smtp.class.php"); 
-    $smtpserver = "smtp.gmail.com"; //SMTP服務器，如smtp.163.com 
-    $smtpserverport = 587; //SMTP服務器端口 
+    $smtpserver = "ssl://smtp.gmail.com"; //SMTP服務器，如smtp.163.com 
+    $smtpserverport = 465; //SMTP服務器端口 
     $smtpusermail = "437god@gmail.com"; //SMTP服務器的用戶郵箱 
     $smtpuser = "437god@gmail.com"; //SMTP服務器的用戶帳號 
     $smtppass = "jkrpfpgqoycrtbvl"; //SMTP服務器的用戶密碼 

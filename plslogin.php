@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <?php
     include ("template.php");
@@ -10,42 +9,23 @@
     echo $maincss;
     echo $sourcejs;
   ?>
-
   <style>
-    .error {
+    .error 
+    {
       color: #D82424;
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
       padding: 1px;
     }
-    .new-product{
-      background-color: #eb5d1e;
-      color: #fef8f5;
-      border-radius: 10px;
-      padding-top: 3px;
-      padding-bottom: 3px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    .btn-new{
-      background-color: #eb5d1e;
-      color: #fef8f5;
-      border-radius: 10px;
-      padding-top: 3px;
-      padding-bottom: 3px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
   </style>
 </head>
-
 <body>
   <?php
-    include ("template.php");
-    echo $pageloader ;
+  include ("template.php");
+  echo $pageloader ;
   ?>
-  <!-- ======= Header ======= -->
+    <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
@@ -58,8 +38,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">首頁</a></li>
-          <li><a class="nav-link scrollto" href="index.php">介紹</a></li>
+          <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
+          <li><a class="nav-link scrollto" href="first.php">介紹</a></li>
           <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
           <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
@@ -84,68 +64,48 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
-  </header><!--End Header -->
-  
-  <!--login-->
-  <?php
-  include ("login.php");
-  ?>
-  <!--login end-->
-  <main id="main" style="margin-top: 20px;">
-
-    <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-        <div class="container">
-          <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>修改會員</h2>
-          </div>
+  </header><!-- End Header -->
+<!--login-->
+<?php
+include ("login.php");
+?>
+<!--login end-->
+      <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg"></div>
+    
+    <div class="tm-bg-white container-fluid tm-mt-60">
+        <div id="input1" class="col-xl-12 col-lg-5 col-md-6 col-sm-12 text-center">
+            <img type="image" src="img/plslogin.jpg" alt="Image" class="img-fluid draw"  width="500">
         </div>
-    </section>
-    <!-- End Breadcrumbs Section -->
+    </div> <!-- container-fluid, tm-container-content -->
 
-    <section>
-        <div class="container" style="text-align: center; width: 500px">
-            <img src="img/delete.png">
-            <?php
-                if($_SESSION['Name'] != null)
-                {
-                     echo "<form name=\"form\" method=\"post\" action=\"updateMember_check.php\">";
-                     echo "<h5 class=\"mt-4\">要修改的信徒名稱</h5><br>";
-                     echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"name\"><br>";
-                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"查看\"></button>";
-                     echo "</form>";
-                }
-                else
-                {
-                     echo '您無權限觀看此頁面!';
-                     echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
-                }
-            ?>
-        </div>
-    </section><!-- End Portfolio Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <?php
-  include ("footer.html");
-  ?>
-  <!-- End Footer -->
+    <!-- ======= Footer ======= -->
+    <?php
+    include ("footer.html");
+    ?>
+    <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  
   <?php
   include ("template.php");
   echo $vendorjs ;
   echo $mainjs ;
   ?>
-  <!--verify-->
+   <!--verify-->
   <?php
-    include ("verify.html");
+  include ("verify.html");
   ?>
   <!--verify end-->
-
 </body>
-
 </html>
-

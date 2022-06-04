@@ -6,7 +6,8 @@ echo $sql;
 $result = mysqli_query($link,$sql);
 //$num = mysqli_fetch_array($result);
 $row = mysqli_fetch_row($result);
-
+print_r($result);
+print_r($row);
 if($row[1] == $email){
     echo "send!";
     $getpasstime = time(); 
@@ -14,15 +15,23 @@ if($row[1] == $email){
     $token = md5($uid.$row[2]);//組合驗證碼 
     $url = "/reset.php?email=".$email."&token=".$token;//構造URL 
     $time = date('Y-m-d H:i'); 
+    echo "send3";
+    // $comment = "([^()]*)";
+    // if (preg_match($comment, $email)) {
+    //     print_r(preg_match($comment, $email));
+    //     $email = preg_replace($comment, "", $email);
+    //     }
+    //     print_r(preg_match($comment, $email));
+    //     echo $email.'sss';
     $resultmail = sendmail($time,$email,$url);
     echo "send2";
-    if($resultmail==1){//郵件發送成功 
-    $msg = '系統已向您的郵箱發送了一封郵件<br/>請登錄到您的郵箱及時重置您的密碼！'; 
-    //更新數據發送時間  
-    }else{ 
-    $msg = $resultmail; 
-    } 
-    echo $msg;
+    // if($resultmail==1){//郵件發送成功 
+    // $msg = '系統已向您的郵箱發送了一封郵件<br/>請登錄到您的郵箱及時重置您的密碼！'; 
+    // //更新數據發送時間  
+    // }else{ 
+    // $msg = $resultmail; 
+    // } 
+    // echo $msg;
 }
 else{
     echo "error";
@@ -59,7 +68,7 @@ function sendmail($time,$email,$url){
     $smtpserverport = 587; //SMTP服務器端口 
     $smtpusermail = "437god@gmail.com"; //SMTP服務器的用戶郵箱 
     $smtpuser = "437god@gmail.com"; //SMTP服務器的用戶帳號 
-    $smtppass = "pupss90311"; //SMTP服務器的用戶密碼 
+    $smtppass = "jkrpfpgqoycrtbvl"; //SMTP服務器的用戶密碼 
     $smtp = new Smtp($smtpserver, $smtpserverport, true, $smtpuser, $smtppass); 
     //這裏面的一個true是表示使用身份驗證,否則不使用身份驗證. 
     $emailtype = "HTML"; //信件類型，文本:text；網頁：HTML 

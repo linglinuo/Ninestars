@@ -14,7 +14,7 @@ if($id != null && $message != null)
         $sql = "insert into wish (member_name, wish_content, wish_time) values ('$id', '$message', '$today')";
         if(mysqli_query($link,$sql))
         {
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php#wish>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=first.php#wish>';
         }
         else
         {
@@ -25,6 +25,6 @@ if($id != null && $message != null)
 else
 {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
 }
 ?>

@@ -3,5 +3,5 @@
 <?php
 //將session清空
 unset($_SESSION['Name']);
-echo '<meta http-equiv=REFRESH CONTENT=1;url=first.php>';
+echo '<meta http-equiv=REFRESH CONTENT=0;url=first.php>';
 ?>

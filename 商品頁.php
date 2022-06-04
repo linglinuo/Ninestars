@@ -20,6 +20,16 @@ session_start();
   // 送出查詢的SQL指令
   if ($result = mysqli_query($link, "SELECT * FROM `products` WHERE `product_id`=".$_GET['id'])) {
   while ($row = mysqli_fetch_assoc($result)) {
+    if($_SESSION['Name'] != null)
+    {
+    $buyer="<button class=\"btn numbutton my-cart-btn\" data-id=\"$row[product_id]\" data-name=\"$row[product_name]\" data-price=\"$row[product_price]\" data-quantity=\"1\" data-image=\"$row[product_picture]\" style=\"margin-top: 0px;\">加入購物車</button>";
+    }
+    else
+    {
+      $buyer="<a href=\"plslogin.php\">
+      <button class=\"btn numbutton my-cart-btn\" style=\"margin-top: 0px;\">加入購物車</button>
+      </a>";
+    }
     $data .= "
     <!-- ======= Portfolio Details Section ======= -->
     <section id=\"portfolio-details\" class=\"portfolio-details\">
@@ -50,7 +60,7 @@ session_start();
                     </div>
                     </div>
                 </ul>
-                <button class=\"btn numbutton my-cart-btn\" data-id=\"$row[product_id]\" data-name=\"$row[product_name]\" data-price=\"$row[product_price]\" data-quantity=\"1\" data-image=\"$row[product_picture]\" style=\"margin-top: 0px;\">加入購物車</button>
+                 $buyer
                 </div>
                 <div class=\"portfolio-description\">
                 <p>

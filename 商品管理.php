@@ -117,7 +117,10 @@
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
-
+    <?php
+                if($_SESSION['Name'] == 'admin')
+                {
+                  echo'
     <section id="store" class="portfolio">
         <div class="container" data-aos="fade-up">
             <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -198,8 +201,9 @@
                                 <th colspan="4">描述</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php echo $data;?>
+                            <tbody>';
+                              echo $data;
+                              echo '
                             </tbody>
                         </table>
                         <!--product table end-->
@@ -207,7 +211,13 @@
                 </div>
             </div>
         </div><!--container end-->
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Portfolio Section -->';}
+    else
+    {
+      echo '您無權限觀看此頁面!';
+      echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
+    }
+    ?>
     
 
 

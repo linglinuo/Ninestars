@@ -51,9 +51,9 @@ $this->sock = false;
 /* Main Function */
 
 function sendmail($to, $from, $subject = "", $body = "", $mailtype, $cc = "", $bcc = "", $additional_headers = "") {
-$mail_from = $this->get_address($this->strip_comment($from));
+$mail_from = $this->get_address($from);
 
-$body = ereg_replace("(^|(rn))(.)", "1.3", $body);
+$body = str_replace("(^|(rn))(.)", "1.3", $body);
 
 $header .= "MIME-version:1.0rn";
 
@@ -81,14 +81,14 @@ list ($msec, $sec) = explode(" ", microtime());
 
 $header .= "message-ID: <" . date("YmdHis", $sec) . "." . ($msec * 1000000) . "." . $mail_from . ">rn";
 
-$TO = explode(",", $this->strip_comment($to));
+$TO = explode(",", $this->$to);
 
 if ($cc != "") {
-$TO = array_merge($TO, explode(",", $this->strip_comment($cc)));
+$TO = array_merge($TO, explode(",", $this->$cc));
 }
 
 if ($bcc != "") {
-$TO = array_merge($TO, explode(",", $this->strip_comment($bcc)));
+$TO = array_merge($TO, explode(",", $this->$bcc));
 }
 
 $sent = true;
@@ -243,14 +243,14 @@ function smtp_ok() {
 $response = str_replace("rn", "", fgets($this->sock, 512));
 
 $this->smtp_debug($response . "n");
-
-if (!ereg("^[23]", $response)) {
+print_r($response);
+if (!preg_match("/^[23]/", $response)) {
 fputs($this->sock, "QUITrn");
 
 fgets($this->sock, 512);
 
-$this->log_write("Error: Remote host returned " . $response . "n");
-
+//$this->log_write("Error: Remote host returned " . $response . "n");
+//echo "Error: Remote host returned " . $response . "n";
 return false;
 }
 
@@ -304,20 +304,20 @@ fclose($fp);
 return true;
 }
 
-function strip_comment($address) {
-$comment = "([^()]*)";
+// function strip_comment($address) {
+// $comment = "([^()]*)";
 
-while (preg_match($comment, $address)) {
-$address = preg_replace($comment, "", $address);
-}
+// while (preg_match($comment, $address)) {
+// $address = preg_replace($comment, "", $address);
+// }
 
-return $address;
-}
+// return $address;
+// }
 
 function get_address($address) {
-$address = ereg_replace("([ trn])+", "", $address);
+$address = str_replace("([ trn])+", "", $address);
 
-$address = ereg_replace("^.*<(.+)>.*$", "1", $address);
+$address = str_replace("^.*<(.+)>.*$", "1", $address);
 
 return $address;
 }

@@ -112,31 +112,42 @@
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
-
-    <section id="store" class="portfolio">
-        <div class="container" data-aos="fade-up">
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12">
-                    <!--order table start-->
-                    <div id="order-table">
-                        <table class="table table-bordered" style="table-layout:fixed">
-                            <thead>
-                                <tr>
-                                    <th scope="col">訂單編號</th>
-                                    <th scope="col">應付金額</th>
-                                    <th scope="col">建檔日期</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php echo $data;?>
-                            </tbody>
-                        </table>
-                        <!--product table end-->
-                    </div>
-                </div>
-            </div>
-        </div><!--container end-->
-    </section><!-- End Portfolio Section -->
+    <?php
+                if($_SESSION['Name'] != null)
+                {
+                     echo "<section id=\"store\" class=\"portfolio\">
+                     <div class=\"container\" data-aos=\"fade-up\">
+                         <div class=\"row\" data-aos=\"fade-up\" data-aos-delay=\"100\">
+                             <div class=\"col-12\">
+                                 <!--order table start-->
+                                 <div id=\"order-table\">
+                                     <table class=\"table table-bordered\" style=\"table-layout:fixed\">
+                                         <thead>
+                                             <tr>
+                                                 <th scope=\"col\">訂單編號</th>
+                                                 <th scope=\"col\">應付金額</th>
+                                                 <th scope=\"col\">建檔日期</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>";
+                     echo $data;
+                     echo "
+                                                        </tbody>
+                                                </table>
+                                                <!--product table end-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--container end-->
+                            </section><!-- End Portfolio Section -->";
+                    
+                }
+                else
+                {
+                     echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
+                }
+            ?>
+    
     
 
 

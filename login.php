@@ -31,7 +31,9 @@
                 <input type="password" name="pwd1">密碼
                 <label for="pwd1" class="error"></label>
               </label>
-              <p class="forgot-pass tm-text-gray">忘記密碼?</p>
+              <a href="forgetpwd.php">
+                <p class="forgot-pass tm-text-gray" >忘記密碼?</p>
+              </a>
               <button class="submit button1">登入</button>
             </div>
           </form>

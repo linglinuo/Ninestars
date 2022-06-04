@@ -15,7 +15,7 @@ if($id != null && $pwd != null)
         $sql = "insert into member (member_name, member_email, member_password, member_level, order_amount) values ('$id', '$email', '$pwd', '初級', '0')";
         if(mysqli_query($link,$sql))
         {
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=first.php>';
         }
         else
         {
@@ -26,6 +26,6 @@ if($id != null && $pwd != null)
 else
 {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
 }
 ?>

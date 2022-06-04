@@ -15,7 +15,7 @@ if($row[0] == $name && $row[2] == $pwd)
 {
         //將帳號寫入session，方便驗證使用者身份
         $_SESSION['Name'] = $name;
-        echo '<meta http-equiv=REFRESH CONTENT=1;url=first.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=first.php>';
 }
 else
 {

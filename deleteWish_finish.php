@@ -11,7 +11,7 @@ if($_SESSION['Name'] != null)
         if(mysqli_query($link,$sql))
         {
                 echo '刪除成功!';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=許願池管理.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=許願池管理.php>';
         }
         else
         {
@@ -21,7 +21,6 @@ if($_SESSION['Name'] != null)
 }
 else
 {
-        echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
 }
 ?>

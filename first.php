@@ -90,7 +90,7 @@
   while ($row = mysqli_fetch_assoc($result)) {
     $data .= "
     <div class=\"item\" style=\"max-width: 250px; margin-right: 10px;\">
-    <table width=\"250px\" height=\"250px\" class=\"wishboard\">
+      <table width=\"250px\" height=\"250px\" class=\"wishboard\">
         <th height=\"30px\" class=\"name\">$row[member_name]</th>
         <tr>
           <td class=\"sentence\">$row[wish_content]</td>
@@ -99,12 +99,12 @@
           <td height=\"30px\" class=\"date\">$row[wish_time]</td>
         </tr>
       </table>
-</div>";
+    </div>";
   }
   mysqli_free_result($result);
   }
   $count=0;
-  if ($result = mysqli_query($link, "SELECT * FROM `member` ORDER BY `member`.`order_amount` DESC Limit 3")) {
+  if ($result = mysqli_query($link, "SELECT member.member_name, member.member_level, member.order_amount, wish.wish_content FROM member INNER JOIN wish on member.member_name = wish.member_name ORDER BY `member`.`order_amount` DESC Limit 3;")) {
     while ($row = mysqli_fetch_assoc($result)) {
       $count=$count+1;
       if($count==1)
@@ -120,19 +120,20 @@
         $rank='三';
       }
       $data2 .= "
-      <div class=\"col-lg-4\" align=\"center\">
-            <div class=\"card d-flex mt-2\" style=\"width: 20rem;\">
-              <div class=\"card-body\" style=\"padding-bottom: 5px;\">
-                <h5 class=\"card-title\">第".$rank."名</h5>
-                <h3 class=\"card-name\">$row[member_name]</h3>
-              </div>
-              <ul class=\"list-group list-group-flush\">
-                <li class=\"list-group-item\">$row[member_level]</li>
-                <li class=\"list-group-item\"><p class=\"card-text\">感謝絲扇淒所帶給我的一切，我的身心靈得到了很大的救贖</p>
-                </li>
-              </ul>
+        <div class=\"col-lg-4\" align=\"center\">
+          <div class=\"card d-flex mt-2\" style=\"width: 20rem;\">
+            <div class=\"card-body\" style=\"padding-bottom: 5px;\">
+              <h5 class=\"card-title\">第".$rank."名</h5>
+              <h3 class=\"card-name\">$row[member_name]</h3>
             </div>
+            <ul class=\"list-group list-group-flush\">
+              <li class=\"list-group-item\">$row[member_level]</li>
+              <li class=\"list-group-item\"><p class=\"card-text\">
+                $row[wish_content]                
+              </li>
+            </ul>
           </div>
+        </div>
       ";
   }
   mysqli_free_result($result);

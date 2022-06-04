@@ -75,12 +75,12 @@
       text-align: right;
     }
     .error {
-            color: #D82424;
-            font-weight: normal;
-            font-family: "微軟正黑體";
-            display: inline;
-            padding: 1px;
-        }
+      color: #D82424;
+      font-weight: normal;
+      font-family: "微軟正黑體";
+      display: inline;
+      padding: 1px;
+    }
   </style> 
   <?php
   include("mysql_connect.inc.php");
@@ -261,128 +261,19 @@
           <div class="col-4"></div>
         </div>
         
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">御守</li>
-              <li data-filter=".filter-card">佛具</li>
-              <li data-filter=".filter-web">紀念品</li>
-            </ul>
+        <div class="row ">
+          <div class="col-lg-4 d-flex align-items-center justify-content-center about-img">
+            <img src="img/鳥居-03.png" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
-        </div>
-        <!--照片大小800X600-->
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/a1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=1" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>御守</h4>
-              </div>
-            </div>
+          <div class="col-lg-4 d-flex align-items-center justify-content-center about-img">
+            <a href="store-page.php" class="btn-get-started scrollto">
+              <img src="img/鳥居-02.png" class="img-fluid" alt="" data-aos="zoom-in">
+            </a>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/c1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=8" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>紀念品</h4>
-              </div>
-            </div>
+          <div class="col-lg-4 d-flex align-items-center justify-content-center about-img">
+            <img src="img/鳥居-04.png" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/a2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=2" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>御守</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/b1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=5" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>佛具</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/c2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=9" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>紀念品</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/a3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=3" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>御守</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/b2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=6" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>佛具</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/b3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=7" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>佛具</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/c3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="商品頁.php?id=10" title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-              <div class="portfolio-info">
-                <h4>紀念品</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <a href="store-page.php" class="btn-get-started scrollto enterstore" align="center">進入商城</a>
+          
         </div>
       </div>
     </section><!-- End Portfolio Section -->

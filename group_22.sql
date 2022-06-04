@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-03 10:12:09
--- 伺服器版本： 10.4.24-MariaDB
--- PHP 版本： 7.4.29
+-- 產生時間： 2022-06-04 18:10:18
+-- 伺服器版本： 10.4.22-MariaDB
+-- PHP 版本： 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -167,14 +167,15 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`member_name`, `member_email`, `member_password`, `member_level`, `order_amount`) VALUES
 ('3ssss21', 'S086112@gamail.com', 'bbbbb', '中級', 0),
-('selina', 'daa26@gamail.com', 'ddddd', '中級', 0),
+('selina', 'daa26@gamail.com', 'ddddd', '初級', 0),
 ('dora', 'apple@gamail.com', 'fffff', '初級', 1610),
 ('member', 'adddddf@gamail.com', 'member123456', '初級', 1910),
 ('admin', 'admin@gamial.com', 'admin123456', '初級', 0),
 ('fdaasdf', '152@ybu.ss.edu.tw', '123321', '初級', 0),
 ('fiona051', 'fiona051@gmail.com', 'aaa111', '初級', 0),
 ('ling', 'fiona90311@yahoo.com', 'aaa1111', '初級', 0),
-('nothing', 'nothing@gmail.com', 'asdfghjk', '初級', 1930);
+('nothing', 'nothing@gmail.com', 'asdfghjk', '初級', 1930),
+('jason', 'selina240@gmail.com', 'aaaaaa', '初級', 0);
 
 -- --------------------------------------------------------
 
@@ -194,9 +195,10 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`member_name`, `order_id`, `order_totalprice`, `order_time`) VALUES
-('member', 2, 1910, '2022-05-28'),
 ('dora', 3, 1610, '2022-05-28'),
-('nothing', 4, 1930, '2022-06-03');
+('nothing', 4, 1930, '2022-06-03'),
+('selina', 5, 760, '2022-06-04'),
+('dora', 6, 940, '2022-06-04');
 
 -- --------------------------------------------------------
 
@@ -218,17 +220,18 @@ CREATE TABLE `order_content` (
 --
 
 INSERT INTO `order_content` (`order_id`, `product_name`, `product_quantity`, `product_image`, `product_price`, `product_unitprice`) VALUES
-(2, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
-(2, '求籤', 3, 'img/portfolio/a4.png', 100, 300),
-(2, '線香', 4, 'img/portfolio/b1.png', 200, 800),
-(2, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
 (3, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
 (3, '線香', 4, 'img/portfolio/b1.png', 200, 800),
 (3, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
 (4, '戀愛御守', 1, 'img/portfolio/a2.png', 80, 80),
 (4, '佛珠', 1, 'img/portfolio/c2.png', 650, 650),
 (4, '鳥居擺飾', 1, 'img/portfolio/c1.png', 300, 300),
-(4, '香皿', 2, 'img/portfolio/b3.png', 450, 900);
+(4, '香皿', 2, 'img/portfolio/b3.png', 450, 900),
+(5, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
+(5, '線香', 3, 'img/portfolio/b1.png', 200, 600),
+(6, '戀愛御守', 3, 'img/portfolio/a2.png', 80, 240),
+(6, '線香', 3, 'img/portfolio/b1.png', 200, 600),
+(6, '求籤', 1, 'img/portfolio/a4.png', 100, 100);
 
 -- --------------------------------------------------------
 
@@ -283,7 +286,9 @@ CREATE TABLE `wish` (
 INSERT INTO `wish` (`member_name`, `wish_content`, `wish_time`) VALUES
 ('3ssss21', '我要上台大', '2022-05-01'),
 ('selina', '可以順利找到工作', '2022-05-03'),
-('dora', '平安健康順利', '2022-05-10');
+('dora', '但願我有一手好廚藝、想嘗嘗全世界最好吃的派、想長高、學會玩樂器。', '2022-05-10'),
+('member', '感謝437神社帶給我這麼多溫暖和希望，我又有動力活下去了', '2022-06-08'),
+('nothing', '希望可以轉學考成功，去自己真正想念的學校和科系，擺脫這個爛地方', '2022-05-11');
 
 --
 -- 已傾印資料表的索引

@@ -50,7 +50,7 @@ for($i=0; $i<count($_POST['product-name']); $i++){
     else
     {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=plslogin.php>';
     }
 }
 

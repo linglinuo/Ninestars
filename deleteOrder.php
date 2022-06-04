@@ -107,7 +107,7 @@
         <div class="container" style="text-align: center; width: 500px">
             <img src="img/delete.png">
             <?php
-                if($_SESSION['Name'] != null)
+                if($_SESSION['Name'] == 'admin')
                 {
                      echo "<form name=\"form\" method=\"post\" action=\"deleteOrderforManager_finish.php\">";
                      echo "<h5 class=\"mt-4\">要刪除的訂單編號</h5><br>";

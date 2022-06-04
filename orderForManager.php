@@ -115,7 +115,7 @@
     </section>
     <!-- End Breadcrumbs Section -->
     <?php
-    if($_SESSION['Name']!=null){
+    if($_SESSION['Name']=='admin'){
       echo '
       <section id="store" class="portfolio">
           <div class="container" data-aos="fade-up">

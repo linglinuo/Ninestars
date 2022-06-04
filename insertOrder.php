@@ -106,7 +106,7 @@
     <section>
         <div class="container" style="text-align: center; width: 700px">
             <?php
-                if($_SESSION['Name'] != null)
+                if($_SESSION['Name'] == 'admin')
                 {
                     echo "<h5 class=\"mt-4\">信徒名稱</h5>";
                     echo "<input type=\"text\" class=\"input form-control\" id=\"member_name\"><br>";

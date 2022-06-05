@@ -68,7 +68,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">首頁</a></li>
+          <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
           <li><a class="nav-link scrollto" href="index.php">介紹</a></li>
           <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
@@ -83,7 +83,7 @@
                 }
                 else
                 {
-                  echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                  echo '<li><a class="nav-link scrollto active" href="訂單管理.php">訂單查詢</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 } else {

@@ -89,12 +89,12 @@
             if (isset($_SESSION['Name'])) {
                 if($_SESSION["Name"] == 'admin')
                 {
-                  echo '<li><a class="nav-link scrollto" href="商品管理.php">管理中心</a></li>';
+                  echo '<li><a class="nav-link scrollto active" href="商品管理.php">管理中心</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 else
                 {
-                  echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                  echo '<li><a class="nav-link scrollto active" href="訂單管理.php">訂單查詢</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 } else {

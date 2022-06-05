@@ -81,7 +81,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">首頁</a></li>
+          <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
           <li><a class="nav-link scrollto" href="index.php">介紹</a></li>
           <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
           <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
@@ -91,7 +91,7 @@
             if (isset($_SESSION['Name'])) {
                 if($_SESSION["Name"] == 'admin')
                 {
-                  echo '<li><a class="nav-link scrollto" href="商品管理.php">管理中心</a></li>';
+                  echo '<li><a class="nav-link scrollto active" href="商品管理.php">管理中心</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 else

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-05 15:15:31
+-- 產生時間： 2022-06-05 16:42:21
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.2
 
@@ -155,7 +155,7 @@ INSERT INTO `fortune poems` (`poem_id`, `poem_no`, `poem_url`, `poem_sign`, `poe
 
 CREATE TABLE `member` (
   `member_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `member_email` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `member_email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `member_password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `member_level` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `order_amount` int(11) NOT NULL

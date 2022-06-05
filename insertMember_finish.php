@@ -7,9 +7,6 @@ $name = $_POST['m-name'];
 $email = $_POST['m-email'];
 $pwd = $_POST['m-pwd'];
 
-$array_level = array(1=>"初級","中級","高級");
-$post_level = $_POST['m-level'];
-$level = $array_level[$post_level];
 
 //判斷帳號密碼是否為空值
 //確認密碼輸入的正確性
@@ -17,7 +14,7 @@ if($name != null && $pwd != null)
 {
         //新增資料進資料庫語法
         $sql = "insert into member (member_name, member_email, member_password, member_level) 
-        values ('$name', '$email', '$pwd', '$level')";
+        values ('$name', '$email', '$pwd', '初級')";
         if(mysqli_query($link,$sql))
         {
             echo "新增成功";
@@ -26,12 +23,12 @@ if($name != null && $pwd != null)
         else
         {
             echo '新增失敗!';
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=insertMember.php>';
         }
 }
 else
 {
-        echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
+    echo '您無權限觀看此頁面!';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
 }
 ?>

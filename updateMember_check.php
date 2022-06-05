@@ -26,8 +26,6 @@
         <input type=\"email\" class=\"input form-control\" name=\"m-email\" value=\"$row[member_email]\"><br>
         <h5 class=\"mt-4\">密碼</h5>
         <input type=\"password\" class=\"input form-control\" name=\"m-pwd\" value=\"$row[member_password]\"><br>
-        <h5 class=\"mt-4\">會員等級</h5>
-        <input type=\"text\" class=\"input form-control\" name=\"m-level\" value=\"$row[member_level]\"><br>
         <input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"確認\">
     </form>";
     }

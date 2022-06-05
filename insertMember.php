@@ -116,12 +116,6 @@
                     echo "<input type=\"email\" class=\"input form-control\" name=\"m-email\"><br>";
                     echo "<h5 class=\"mt-4\">密碼</h5>";
                     echo "<input type=\"password\" class=\"input form-control\" name=\"m-pwd\"><br>";
-                    echo "<h5 class=\"mt-4\">會員等級</h5>";
-                    echo "<div class=\"level\">
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"1\" checked>初級</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"2\">中級</label>
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"m-level\"  value=\"3\">高級</label>
-                    </div>";
                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"></button>";
                     echo "</form>";
                 }

@@ -24,7 +24,7 @@
     if(msg=="noreg"){ 
     $("#chkmsg").html("該郵箱尚未註冊！"); 
     $("#sub_btn").removeAttr("disabled").val('submit').css("cursor","pointer"); 
-    }else{ 
+    }else{
     $(".demo").html("<h3>"+msg+"</h3>"); 
     } 
     }); 

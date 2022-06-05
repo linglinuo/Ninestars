@@ -12,55 +12,21 @@ if($row[1] == $email){
     echo "send!";
     $getpasstime = time(); 
     $uid=$row[0];
-    $token = md5($uid.$row[2]);//組合驗證碼 
+    $token = md5($uid.$row[2]);//組合驗證碼
+    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $new_link = trim($actual_link,'sendmail.php');
     $server = $_SERVER['SERVER_NAME'];
-    $url = "http://".$server."/Ninestars-main/reset.php?email=".$email."&token=".$token;//構造URL 
+    $url = "h".$new_link."reset.php?email=".$email."&token=".$token;//構造URL 
     $time = date('Y-m-d H:i'); 
     echo "send3";
-    // $comment = "([^()]*)";
-    // if (preg_match($comment, $email)) {
-    //     print_r(preg_match($comment, $email));
-    //     $email = preg_replace($comment, "", $email);
-    //     }
-    //     print_r(preg_match($comment, $email));
-    //     echo $email.'sss';
     $resultmail = sendmail($time,$email,$url);
     echo "send2";
-    // if($resultmail==1){//郵件發送成功 
-    // $msg = '系統已向您的郵箱發送了一封郵件<br/>請登錄到您的郵箱及時重置您的密碼！'; 
-    // //更新數據發送時間  
-    // }else{ 
-    // $msg = $resultmail; 
-    // } 
-    // echo $msg;
 }
 else{
     echo "error";
 
     exit;
 }
-
-// if($num[1]==null)
-//     { 
-//         echo 'noreg'; 
-//         exit; 
-//     }
-// else{ 
-//     $row = mysqli_fetch_array($result); 
-//     $getpasstime = time(); 
-//     $uid=$row['member_name'];
-//     $token = md5($uid.$row['member_password']);//組合驗證碼 
-//     $url = "/reset.php?email=".$email."&token=".$token;//構造URL 
-//     $time = date('Y-m-d H:i'); 
-//     $resultmail = sendmail($time,$email,$url); 
-//     if($resultmail==1){//郵件發送成功 
-//     $msg = '系統已向您的郵箱發送了一封郵件<br/>請登錄到您的郵箱及時重置您的密碼！'; 
-//     //更新數據發送時間  
-//     }else{ 
-//     $msg = $resultmail; 
-//     } 
-//     echo $msg; 
-//     } 
 
 //發送郵件 
 function sendmail($time,$email,$url){ 
@@ -75,7 +41,7 @@ function sendmail($time,$email,$url){
     $emailtype = "HTML"; //信件類型，文本:text；網頁：HTML 
     $smtpemailto = $email; 
     $smtpemailfrom = $smtpusermail; 
-    $emailsubject = "www.bitsCN.com - 找回密碼"; 
+    $emailsubject = "www.437god.com - 找回密碼"; 
     $emailbody = "親愛的".$email."：<br/>您在".$time."提交了找回密碼請求。請點擊下面的鏈接重置密碼 
     （按鈕24小時內有效）。<br/><a href='".$url."'target='_blank'>".$url."</a>"; 
     $rs = $smtp->sendmail($smtpemailto, $smtpemailfrom, $emailsubject, $emailbody, $emailtype); 

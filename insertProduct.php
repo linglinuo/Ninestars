@@ -1,4 +1,4 @@
-<?php session_start(); ?>
++<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +12,7 @@
   ?>
     <?php 
     //新增資料庫
+    if($_SESSION['Name'] == 'admin'){
     if (isset($_POST['pname'])) {
         //上傳檔案
         $tmp_name = $_FILES['Myfile']['tmp_name'];
@@ -45,17 +46,17 @@
         if(mysqli_query($link,$sql))
         {
             echo "新增成功";
-            echo '<meta http-equiv=REFRESH CONTENT=0;url=商品管理.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=商品管理.php>';
         }
         else
         {
             echo '新增失敗!';
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=商品管理.php>';
         }
+    }
     }
     else
     {
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
+        echo '您無權限觀看此頁面!';
 
     }
         

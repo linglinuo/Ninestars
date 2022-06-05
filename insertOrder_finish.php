@@ -11,7 +11,7 @@ $result = mysqli_query($link, $sql1);
 $row = mysqli_fetch_row($result);
 $id = $row[1]+1;
 
-$mname = $_POST['name'];
+$name=$_SESSION['Name'];
 
 $today = date('Y/m/d');
 $totalprice = 0;
@@ -31,7 +31,7 @@ for($i=0; $i<count($_POST['product-name']); $i++){
     $totalprice += $unitprice;
     echo $totalprice;
 
-    if($mname != null)
+    if($name == 'admin')
     {
         //新增資料進資料庫語法
         $sql3 = "insert into order_content (order_id, product_name, product_quantity, product_image, product_price, product_unitprice) 

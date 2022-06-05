@@ -10,6 +10,8 @@ $sql1 = "SELECT * FROM `order` ORDER BY order_id DESC LIMIT 0, 1";
 $result = mysqli_query($link, $sql1);
 $row = mysqli_fetch_row($result);
 $id = $row[1]+1;
+echo $id;
+
 
 $name=$_SESSION['Name'];
 
@@ -39,12 +41,12 @@ for($i=0; $i<count($_POST['product-name']); $i++){
         if(mysqli_query($link,$sql3))
         {
             echo "新增成功";
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+            //echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
         }
         else
         {
             echo '新增失敗!';
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+            //echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
         }
     }
     else
@@ -53,10 +55,23 @@ for($i=0; $i<count($_POST['product-name']); $i++){
         echo '<meta http-equiv=REFRESH CONTENT=2;url=plslogin.php>';
     }
 }
-
+$mname = $_POST['m_name'];
 $sql4 = "insert into `order` (member_name, order_id, order_totalprice, order_time) 
         values ('$mname', '$id', '$totalprice', '$today')";
 if(mysqli_query($link,$sql4))
+{
+    echo "新增成功";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+}
+else
+{
+    echo '新增失敗!';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+}
+
+$sql5 ="UPDATE member SET `order_amount`=`order_amount`+ $totalprice 
+        WHERE `member_name`= ( SELECT member_name FROM `order` WHERE order_id = '$id');";
+if(mysqli_query($link,$sql5))
 {
     echo "新增成功";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';

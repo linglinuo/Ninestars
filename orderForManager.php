@@ -164,11 +164,6 @@
                             <a href="insertOrder.php"><h6 class="pt-2">新增訂單<h6>
                           </button>
                         </td>
-                        <td class="pt-3" align="center" valign="middle">
-                          <button type="button" id="newProduct" class="btn btn-light">
-                            <a href="deleteOrder.php"><h6 class="pt-2">刪除訂單<h6>
-                          </button>
-                        </td>
                       </tr>
                     </table>
                     

@@ -169,7 +169,22 @@
             <?php echo $data2;?>
           </tbody>
         </table>
-        <input type="button" name="button" class="btn btn-new" id="sub_btn" value="修改" onclick="location.href='orderForManager.php'"></button>
+        <?php
+        if($_SESSION['Name']== 'admin')
+        {
+          $loading = "orderForManager.php";
+          echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+        }
+        else
+        {
+          $loading = "訂單管理.php";
+          
+        }
+        echo "<input type=\"button\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"修改\" 
+        onclick=\"location.href='";
+        echo $loading;
+        echo "'\">";
+        ?>
       </div>
     </section><!-- End Portfolio Section -->
 
@@ -207,16 +222,16 @@
               pname_arrList.push($(this).val());
             }
         )
-        alert(pname_arrList);
+        //alert(pname_arrList);
         var quantity_arrList = new Array();
         $("input[name^='p-quantity']").each(function(i)
             {
               quantity_arrList.push($(this).val());
             }
         )
-        alert(quantity_arrList);
+        //alert(quantity_arrList);
         var order_id = $("#order_id").val();
-        alert(order_id);
+        //alert(order_id);
         $.post('updateOrder_finish.php', {'product-name[]':pname_arrList, 'product-quantity[]':quantity_arrList, id:order_id});
     });
       

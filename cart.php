@@ -148,8 +148,9 @@
               </th>
               <th scope="col">
                 <span>$</span>
-                <h2 id="payment" class="fw-bolder" style="display: inline;"><?php echo $total;?></h2>
-              </th>
+                <h2 id="payment" class="fw-bolder" style="display: inline;">';
+                echo $total;
+        echo  '</th>
               <th scope="col">
                 <button type="button" class="btn delete-order">';
                 echo '<a href="updateOrder_check.php?order='.$_GET['order'].'"><h5>修改訂單<h5>';

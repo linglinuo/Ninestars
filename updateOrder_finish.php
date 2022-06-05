@@ -13,11 +13,15 @@ $mname = $row[0];
 
 $today = date('Y/m/d');
 $totalprice = 0;
+$sql2 = "SELECT * FROM `order` WHERE `order_id`='$id';";
+$result2 = mysqli_query($link, $sql2); 
+$row2 = mysqli_fetch_row($result2);
+$t_price = $row2[2];
+
 $sql3 = "DELETE FROM order_content WHERE order_id='$id'";
 if(mysqli_query($link,$sql3))
 {
     echo "刪除成功3";
-    //echo $sql3;
     echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
 }
 else
@@ -35,8 +39,8 @@ for($i=0; $i<count($_POST['product-name']); $i++){
     echo "商品數量";
     echo $quantity;
 
-    $sql2 = "SELECT * FROM `products` WHERE product_name = '$pname';";
-    $result = mysqli_query($link, $sql2);
+    $sql4 = "SELECT * FROM `products` WHERE product_name = '$pname';";
+    $result = mysqli_query($link, $sql4);
     $row = mysqli_fetch_row($result);
     $image = $row[1];
     $price = $row[4];
@@ -56,6 +60,7 @@ for($i=0; $i<count($_POST['product-name']); $i++){
         
         if(mysqli_query($link,$sql5))
         {
+            echo "新增成功5";
             echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
         }
         else
@@ -71,13 +76,41 @@ for($i=0; $i<count($_POST['product-name']); $i++){
         echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
     }
 }
-$sql4 = "UPDATE `order` SET member_name='$mname', order_id='$id', order_totalprice='$totalprice',
+$sql6 = "UPDATE `order` SET member_name='$mname', order_id='$id', order_totalprice='$totalprice',
         order_time ='$today' WHERE order_id='$id'";
-if(mysqli_query($link,$sql4))
+if(mysqli_query($link,$sql6))
 {
+    echo "新增成功6";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
 }
 else
 {
+    echo "失敗";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+}
+
+
+$sql7 ="UPDATE member SET `order_amount`=`order_amount`- $t_price  
+        WHERE `member_name`= ( SELECT member_name FROM `order` WHERE order_id = '$id');";
+$sql8 = "UPDATE member SET `order_amount`=`order_amount` + $totalprice  
+        WHERE `member_name`= ( SELECT member_name FROM `order` WHERE order_id = '$id');";
+if(mysqli_query($link,$sql7))
+{
+    echo "新增成功7";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+}
+else
+{
+    echo '新增失敗!';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+}
+if((mysqli_query($link,$sql8)))
+{
+    echo "新增成功8";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+}
+else
+{
+    echo '新增失敗!';
     echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
 }

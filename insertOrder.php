@@ -184,7 +184,7 @@
         //alert(quantity_arrList);
         var member_name = $("#member_name").val();
         //alert(member_name);
-        $.post('insertOrder_finish.php', {'product-name[]':pname_arrList, 'product-quantity[]':quantity_arrList, name:member_name});
+        $.post('insertOrder_finish.php', {'product-name[]':pname_arrList, 'product-quantity[]':quantity_arrList, m_name:member_name});
     });
       
   </script>

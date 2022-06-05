@@ -9,21 +9,41 @@ while ($row = mysqli_fetch_assoc($result)) {
       }
 if($_SESSION['Name'] != null)
 {
-        //刪除資料庫資料語法
-        $sql = "delete from group_22.order where `order_id` = ".$_GET['order'].";";
-        $sql2 = "delete from group_22.order_content where `order_id` = ".$_GET['order'].";";
-        $sql3 = "UPDATE `member` SET `order_amount`=`order_amount`-$data WHERE `member_name`='$name';";
-        if(mysqli_query($link,$sql)&& mysqli_query($link,$sql2)&& mysqli_query($link,$sql3))
+        $sql = "UPDATE `member` SET `order_amount`=`order_amount`-$data 
+        WHERE `member_name`= ( SELECT member_name FROM `order` WHERE order_id = ".$_GET['order'].");";
+        $sql2 = "delete from group_22.order where `order_id` = ".$_GET['order'].";";
+        $sql3 = "delete from group_22.order_content where `order_id` = ".$_GET['order'].";";
+        
+        if(mysqli_query($link,$sql))
         {
                 echo '刪除成功!';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=訂單管理.php>';
+                if($_SESSION['Name'] == 'admin')
+                {
+                   echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+                }
+                else
+                {
+                   echo '<meta http-equiv=REFRESH CONTENT=2;url=訂單管理.php>';
+                }
         }
         else
         {
                 echo '刪除失敗!';
-                echo $sql;
-                echo $sql2;
-                echo $sql3;
+        }
+
+        if(mysqli_query($link,$sql2)&& mysqli_query($link,$sql3))
+        {
+                if($_SESSION['Name'] == 'admin')
+                {
+                   echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+                }
+                else{
+                   echo '<meta http-equiv=REFRESH CONTENT=2;url=訂單管理.php>';
+                }
+        }
+        else
+        {
+                echo '刪除失敗!';
         }
 }
 else

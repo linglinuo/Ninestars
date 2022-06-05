@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-04 18:10:18
+-- 產生時間： 2022-06-05 15:15:31
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.2
 
@@ -166,16 +166,11 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`member_name`, `member_email`, `member_password`, `member_level`, `order_amount`) VALUES
-('3ssss21', 'S086112@gamail.com', 'bbbbb', '中級', 0),
-('selina', 'daa26@gamail.com', 'ddddd', '初級', 0),
-('dora', 'apple@gamail.com', 'fffff', '初級', 1610),
-('member', 'adddddf@gamail.com', 'member123456', '初級', 1910),
-('admin', 'admin@gamial.com', 'admin123456', '初級', 0),
-('fdaasdf', '152@ybu.ss.edu.tw', '123321', '初級', 0),
-('fiona051', 'fiona051@gmail.com', 'aaa111', '初級', 0),
-('ling', 'fiona90311@yahoo.com', 'aaa1111', '初級', 0),
-('nothing', 'nothing@gmail.com', 'asdfghjk', '初級', 1930),
-('jason', 'selina240@gmail.com', 'aaaaaa', '初級', 0);
+('admin', 'admin@gmail.com', 'admin123456', '初級', 0),
+('member', 'member@gmail.com', 'member123456', '中級', 640),
+('selina', 'selina240@gmail.com', 'selina', '高級', 10210),
+('fiona', 'fiona051@gmail.com', 'fiona', '中級', 5680),
+('jason', 'jason@gmail.com', 'jason', '中級', 4760);
 
 -- --------------------------------------------------------
 
@@ -195,10 +190,14 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`member_name`, `order_id`, `order_totalprice`, `order_time`) VALUES
-('dora', 3, 1610, '2022-05-28'),
-('nothing', 4, 1930, '2022-06-03'),
-('selina', 5, 760, '2022-06-04'),
-('dora', 6, 940, '2022-06-04');
+('member', 1, 240, '2022-06-05'),
+('member', 2, 400, '2022-06-05'),
+('selina', 4, 300, '2022-06-05'),
+('selina', 6, 9910, '2022-06-05'),
+('fiona', 8, 2680, '2022-06-05'),
+('fiona', 9, 3000, '2022-06-05'),
+('jason', 10, 3500, '2022-06-05'),
+('jason', 11, 1260, '2022-06-05');
 
 -- --------------------------------------------------------
 
@@ -220,18 +219,23 @@ CREATE TABLE `order_content` (
 --
 
 INSERT INTO `order_content` (`order_id`, `product_name`, `product_quantity`, `product_image`, `product_price`, `product_unitprice`) VALUES
-(3, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
-(3, '線香', 4, 'img/portfolio/b1.png', 200, 800),
-(3, '御守護太刀守', 1, 'img/portfolio/c3.png', 650, 650),
-(4, '戀愛御守', 1, 'img/portfolio/a2.png', 80, 80),
-(4, '佛珠', 1, 'img/portfolio/c2.png', 650, 650),
+(2, '求籤', 2, 'img/portfolio/a4.png', 100, 200),
+(2, '線香', 1, 'img/portfolio/b1.png', 200, 200),
+(1, '戀愛御守', 1, 'img/portfolio/a2.png', 80, 80),
+(1, '健康御守', 1, 'img/portfolio/a3.png', 80, 80),
+(1, '考試御守', 1, 'img/portfolio/a1.png', 80, 80),
 (4, '鳥居擺飾', 1, 'img/portfolio/c1.png', 300, 300),
-(4, '香皿', 2, 'img/portfolio/b3.png', 450, 900),
-(5, '戀愛御守', 2, 'img/portfolio/a2.png', 80, 160),
-(5, '線香', 3, 'img/portfolio/b1.png', 200, 600),
-(6, '戀愛御守', 3, 'img/portfolio/a2.png', 80, 240),
-(6, '線香', 3, 'img/portfolio/b1.png', 200, 600),
-(6, '求籤', 1, 'img/portfolio/a4.png', 100, 100);
+(6, '鳥居擺飾', 3, 'img/portfolio/c1.png', 300, 900),
+(6, '健康御守', 7, 'img/portfolio/a3.png', 80, 560),
+(6, '御守護太刀守', 13, 'img/portfolio/c3.png', 650, 8450),
+(8, '御守護太刀守', 4, 'img/portfolio/c3.png', 650, 2600),
+(8, '考試御守', 1, 'img/portfolio/a1.png', 80, 80),
+(9, '御守護太刀守', 4, 'img/portfolio/c3.png', 650, 2600),
+(9, '線香', 2, 'img/portfolio/b1.png', 200, 400),
+(10, '御守護太刀守', 4, 'img/portfolio/c3.png', 650, 2600),
+(10, '香皿', 2, 'img/portfolio/b3.png', 450, 900),
+(11, '香皿', 2, 'img/portfolio/b3.png', 450, 900),
+(11, '刮痧板', 2, 'img/portfolio/b2.png', 180, 360);
 
 -- --------------------------------------------------------
 
@@ -263,9 +267,7 @@ INSERT INTO `products` (`product_id`, `product_picture`, `product_name`, `produc
 (7, 'img/portfolio/b3.png', '香皿', '佛具', '450', '<option>白色</option>', '香皿還重現了藥師寺東塔天花板的白鳳圖騰，精緻又具收藏價值。\r\n<br>* 燃燒時，是小心使用。\r\n<br>* 處理火時要小心。即使在煙霧消失後，火種仍可能存在。\r\n<br>* 瓷器小心易碎。'),
 (8, 'img/portfolio/c1.png', '鳥居擺飾', '紀念品', '300', '<option>男人</option>\r\n<option>女人</option>\r\n<option>富士山</option>\r\n<option>鬼怪</option>\r\n<option>搖鈴</option>', '鳥居／とりい 是日本神社的建築之一，傳說是連接神明居住的神域與人類居住的俗世之通道，屬「結界」的一種。\r\n<br>鳥居有多種形狀，但大多均以兩根支柱與一至二根橫梁構成。 現在把鳥居成可擺飾的大小,\r\n<br>在日本或國外也都是受歡迎的紀念品, 如果將它們並排展示，那將是一個壯觀的景象。'),
 (9, 'img/portfolio/c2.png', '佛珠', '紀念品', '650', '<option>綠色</option>\r\n<option>粉色</option>\r\n<option>藍色</option>', '此款佛珠自古以來即被視為避邪之聖物，其蘊藏著豐富的天然靈氣，有助於消除壓力、疲勞、濁氣等負面能量，也是友善、愛心以及希望的象徵。 無論是靜思冥想、唸經數珠時使用，或是隨身攜帶、掛置車上、家中神明配戴，都很合適，不僅十分漂亮還可以招來好福氣喔！'),
-(10, 'img/portfolio/c3.png', '御守護太刀守', '紀念品', '650', '<option>金色</option>', '祀奉初代將軍德川家康的日光東照宮，寺境內的寶物館中，擁有2,000件藏品，其中兩把被列為國寶的太刀「銘助真」與「銘国宗」，尤其具有代表性。雖然這些寶物只能隔著櫥窗欣賞，但旅人們卻能夠把金色太刀造型的「御守護太刀守」買回家珍藏，當成擺設超有氣勢！'),
-(29, 'img/portfolio/a1.png', 'A', '御守', 'a', 's', 's'),
-(30, 'img/portfolio/a2.png', 'a', '御守', 'A', 'a', 'a');
+(10, 'img/portfolio/c3.png', '御守護太刀守', '紀念品', '650', '<option>金色</option>', '祀奉初代將軍德川家康的日光東照宮，寺境內的寶物館中，擁有2,000件藏品，其中兩把被列為國寶的太刀「銘助真」與「銘国宗」，尤其具有代表性。雖然這些寶物只能隔著櫥窗欣賞，但旅人們卻能夠把金色太刀造型的「御守護太刀守」買回家珍藏，當成擺設超有氣勢！');
 
 -- --------------------------------------------------------
 
@@ -284,11 +286,10 @@ CREATE TABLE `wish` (
 --
 
 INSERT INTO `wish` (`member_name`, `wish_content`, `wish_time`) VALUES
-('3ssss21', '我要上台大', '2022-05-01'),
-('selina', '可以順利找到工作', '2022-05-03'),
-('dora', '但願我有一手好廚藝、想嘗嘗全世界最好吃的派、想長高、學會玩樂器。', '2022-05-10'),
-('member', '感謝437神社帶給我這麼多溫暖和希望，我又有動力活下去了', '2022-06-08'),
-('nothing', '希望可以轉學考成功，去自己真正想念的學校和科系，擺脫這個爛地方', '2022-05-11');
+('member', '希望趕快放暑假~我想要耍廢', '2022-06-05'),
+('selina', '但願我有一手好廚藝、想嘗嘗全世界最好吃的派、想長高、學會玩樂器。', '2022-06-05'),
+('fiona', '感謝437神社帶給我這麼多溫暖和希望，我又有動力活下去了', '2022-06-05'),
+('jason', '希望可以轉學考成功，去自己真正想念的學校和科系，擺脫這個爛地方', '2022-06-05');
 
 --
 -- 已傾印資料表的索引

@@ -6,21 +6,40 @@ include("mysql_connect.inc.php");
 $today = date('Y/m/d');
 $id = $_SESSION['Name'];
 $message = $_POST['message'];
-//判斷帳號密碼是否為空值
-//確認密碼輸入的正確性
+
+$sql2 = "SELECT * FROM wish WHERE member_name = '$id'";
+$result = mysqli_query($link, $sql2);
+$row = mysqli_fetch_row($result);
+
+
 if($id != null && $message != null)
 {
-        //新增資料進資料庫語法
-        $sql = "insert into wish (member_name, wish_content, wish_time) values ('$id', '$message', '$today')";
-        if(mysqli_query($link,$sql))
-        {
-                echo '<meta http-equiv=REFRESH CONTENT=0;url=first.php#wish>';
+        if($row == null){
+                //新增資料進資料庫語法
+                $sql = "insert into wish (member_name, wish_content, wish_time) values ('$id', '$message', '$today')";
+                if(mysqli_query($link,$sql))
+                {
+                        echo '<meta http-equiv=REFRESH CONTENT=0;url=first.php#wish>';
+                }
+                else
+                {
+                        echo '新增失敗!';
+                        echo '<meta http-equiv=REFRESH CONTENT=2;url=許願池.php>';
+                }
         }
-        else
-        {
-                echo '新增失敗!';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=許願池.php>';
+        else{
+                $sql3 = "UPDATE `wish` SET `member_name`='$id',`wish_content`='$message',`wish_time`='$today' WHERE `member_name`='$id'";
+                if(mysqli_query($link,$sql3))
+                {
+                        echo '<meta http-equiv=REFRESH CONTENT=0;url=first.php#wish>';
+                }
+                else
+                {
+                        echo '新增失敗!';
+                        echo '<meta http-equiv=REFRESH CONTENT=2;url=許願池.php>';
+                }
         }
+        
 }
 else
 {

@@ -24,7 +24,7 @@ if(isset($_POST['p-name']))
     else
     {
         echo '修改失敗!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=updateProduct.php>';
     }
 }
 else

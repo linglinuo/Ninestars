@@ -41,18 +41,18 @@ for($i=0; $i<count($_POST['product-name']); $i++){
         if(mysqli_query($link,$sql3))
         {
             echo "新增成功";
-            //echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
         }
         else
         {
             echo '新增失敗!';
-            //echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=insertOrder.php>';
         }
     }
     else
     {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=plslogin.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
     }
 }
 $mname = $_POST['m_name'];
@@ -61,12 +61,12 @@ $sql4 = "insert into `order` (member_name, order_id, order_totalprice, order_tim
 if(mysqli_query($link,$sql4))
 {
     echo "新增成功";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
 }
 else
 {
     echo '新增失敗!';
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=insertOrder.php>';
 }
 
 $sql5 ="UPDATE member SET `order_amount`=`order_amount`+ $totalprice, `member_level`='中級' 
@@ -74,21 +74,22 @@ $sql5 ="UPDATE member SET `order_amount`=`order_amount`+ $totalprice, `member_le
 if(mysqli_query($link,$sql5))
 {
     echo "新增成功";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
 }
 else
 {
     echo '新增失敗!';
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=insertOrder.php>';
 }
 
 $sql6 = "UPDATE `member` SET `member_level`='高級' WHERE `order_amount`>10000;";
 if(mysqli_query($link,$sql6))
 {
     echo '成功6';
-    echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
 }
 else
 {
     echo '新增失敗!6';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=insertOrder.php>';
 }

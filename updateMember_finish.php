@@ -22,7 +22,7 @@ if($name != null && $pwd != null)
         else
         {
             echo '修改失敗!';
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=updateMember.php>';
         }
 }
 else

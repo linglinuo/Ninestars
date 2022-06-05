@@ -20,7 +20,7 @@ if($name != null && $message != null)
         else
         {
                 echo '新增失敗!';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=許願池.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=insertWish.php>';
         }
 }
 else

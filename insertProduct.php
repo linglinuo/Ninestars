@@ -46,17 +46,19 @@
         if(mysqli_query($link,$sql))
         {
             echo "新增成功";
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=商品管理.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=0;url=商品管理.php>';
         }
         else
         {
             echo '新增失敗!';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=商品管理.php>';
         }
     }
     }
     else
     {
         echo '您無權限觀看此頁面!';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
 
     }
         

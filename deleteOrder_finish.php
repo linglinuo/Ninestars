@@ -19,11 +19,11 @@ if($_SESSION['Name'] != null)
                 echo '刪除成功!';
                 if($_SESSION['Name'] == 'admin')
                 {
-                   echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
                 }
                 else
                 {
-                   echo '<meta http-equiv=REFRESH CONTENT=2;url=訂單管理.php>';
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
                 }
         }
         else
@@ -35,10 +35,10 @@ if($_SESSION['Name'] != null)
         {
                 if($_SESSION['Name'] == 'admin')
                 {
-                   echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
                 }
                 else{
-                   echo '<meta http-equiv=REFRESH CONTENT=2;url=訂單管理.php>';
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
                 }
         }
         else
@@ -70,6 +70,6 @@ if($_SESSION['Name'] != null)
 else
 {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
 }
 ?>

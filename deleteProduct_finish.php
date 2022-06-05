@@ -16,7 +16,7 @@ if($_SESSION['Name'] != null)
         else
         {
                 echo '刪除失敗!';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=deleteProduct.php>';
         }
 }
 else

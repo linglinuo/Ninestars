@@ -22,7 +22,7 @@ $sql3 = "DELETE FROM order_content WHERE order_id='$id'";
 if(mysqli_query($link,$sql3))
 {
     echo "刪除成功3";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
 }
 else
 {
@@ -61,7 +61,7 @@ for($i=0; $i<count($_POST['product-name']); $i++){
         if(mysqli_query($link,$sql5))
         {
             echo "新增成功5";
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
         }
         else
         {
@@ -73,7 +73,7 @@ for($i=0; $i<count($_POST['product-name']); $i++){
     else
     {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=plslogin.php>';
     }
 }
 $sql6 = "UPDATE `order` SET member_name='$mname', order_id='$id', order_totalprice='$totalprice',
@@ -81,7 +81,7 @@ $sql6 = "UPDATE `order` SET member_name='$mname', order_id='$id', order_totalpri
 if(mysqli_query($link,$sql6))
 {
     echo "新增成功6";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
 }
 else
 {
@@ -97,7 +97,7 @@ $sql8 = "UPDATE member SET `order_amount`=`order_amount` + $totalprice, `member_
 if(mysqli_query($link,$sql7))
 {
     echo "新增成功7";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
 }
 else
 {
@@ -107,7 +107,7 @@ else
 if((mysqli_query($link,$sql8)))
 {
     echo "新增成功8";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
 }
 else
 {
@@ -124,6 +124,7 @@ if(mysqli_query($link,$sql9))
         else
         {
                 echo '新增失敗!9';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
         }
 
 $sql10 = "UPDATE `member` SET `member_level`='中級' WHERE `order_amount`<= 10000;";

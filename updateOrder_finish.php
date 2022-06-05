@@ -92,7 +92,7 @@ else
 
 $sql7 ="UPDATE member SET `order_amount`=`order_amount`- $t_price  
         WHERE `member_name`= ( SELECT member_name FROM `order` WHERE order_id = '$id');";
-$sql8 = "UPDATE member SET `order_amount`=`order_amount` + $totalprice  
+$sql8 = "UPDATE member SET `order_amount`=`order_amount` + $totalprice, `member_level`='中級'  
         WHERE `member_name`= ( SELECT member_name FROM `order` WHERE order_id = '$id');";
 if(mysqli_query($link,$sql7))
 {
@@ -113,4 +113,37 @@ else
 {
     echo '新增失敗!';
     echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+}
+
+$sql9 = "UPDATE `member` SET `member_level`='高級' WHERE `order_amount`>10000;";
+if(mysqli_query($link,$sql9))
+{
+                echo '成功9';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+        }
+        else
+        {
+                echo '新增失敗!9';
+        }
+
+$sql10 = "UPDATE `member` SET `member_level`='中級' WHERE `order_amount`<= 10000;";
+if(mysqli_query($link,$sql10))
+{
+    echo '成功10';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+}
+else
+{
+    echo '新增失敗!10';
+}
+
+$sql11 = "UPDATE `member` SET `member_level`='初級' WHERE `order_amount`= 0;";
+if(mysqli_query($link,$sql11))
+{
+    echo '成功11';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+}
+else
+{
+    echo '新增失敗!11';
 }

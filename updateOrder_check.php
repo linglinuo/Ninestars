@@ -173,7 +173,6 @@
         if($_SESSION['Name']== 'admin')
         {
           $loading = "orderForManager.php";
-          echo '<meta http-equiv=REFRESH CONTENT=2;url=orderForManager.php>';
         }
         else
         {

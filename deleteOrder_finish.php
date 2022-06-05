@@ -45,6 +45,27 @@ if($_SESSION['Name'] != null)
         {
                 echo '刪除失敗!';
         }
+        $sql10 = "UPDATE `member` SET `member_level`='中級' WHERE `order_amount`<= 10000;";
+        if(mysqli_query($link,$sql10))
+        {
+        echo '成功10';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+        }
+        else
+        {
+        echo '新增失敗!10';
+        }
+
+        $sql11 = "UPDATE `member` SET `member_level`='初級' WHERE `order_amount`= 0;";
+        if(mysqli_query($link,$sql11))
+        {
+        echo '成功11';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+        }
+        else
+        {
+        echo '新增失敗!11';
+        }
 }
 else
 {

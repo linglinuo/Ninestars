@@ -69,7 +69,7 @@ else
     echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
 }
 
-$sql5 ="UPDATE member SET `order_amount`=`order_amount`+ $totalprice 
+$sql5 ="UPDATE member SET `order_amount`=`order_amount`+ $totalprice, `member_level`='中級' 
         WHERE `member_name`= ( SELECT member_name FROM `order` WHERE order_id = '$id');";
 if(mysqli_query($link,$sql5))
 {
@@ -80,4 +80,15 @@ else
 {
     echo '新增失敗!';
     echo '<meta http-equiv=REFRESH CONTENT=2;url=first.php>';
+}
+
+$sql6 = "UPDATE `member` SET `member_level`='高級' WHERE `order_amount`>10000;";
+if(mysqli_query($link,$sql6))
+{
+    echo '成功6';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+}
+else
+{
+    echo '新增失敗!6';
 }

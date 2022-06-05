@@ -27,12 +27,12 @@
 
         /* Constractor */
 
-        function smtp($relay_host = "", $smtp_port = 465, $auth = false, $user, $pass) 
+        function __construct($relay_host = "", $smtp_port = 465, $auth = false, $user, $pass) 
         {
             $this->debug = false;
 
             $this->smtp_port = $smtp_port;
-
+            //echo "aaaa".$relay_host;
             $this->relay_host = $relay_host;
 
             $this->time_out = 30; //is used in fsockopen()
@@ -53,8 +53,8 @@
 
         function sendmail($to, $from, $subject = "", $body = "", $mailtype, $cc = "", $bcc = "", $additional_headers = "") 
         {
-            echo $to;
-            echo 'get_address';
+            //echo $to;
+            //echo 'get_address';
             $mail_from = $this->get_address($from);
 
             $body = str_replace("(^|(\r\n))(.)", "1.3", $body);
@@ -88,7 +88,7 @@
             $header .= "message-ID: <" . date("YmdHis", $sec) . "." . ($msec * 1000000) . "." . $mail_from . ">\r\n";
             $TO = explode(",", $to);
             print_r($TO) ;
-            echo "TO";
+            //echo "TO";
 
             if ($cc != "") 
             {
@@ -105,7 +105,7 @@
             foreach ($TO as $rcpt_to) 
             {
                 $rcpt_to = $this->get_address($rcpt_to);
-                echo 'smtp_sockopen';
+                //echo 'smtp_sockopen';
                 if (!$this->smtp_sockopen($rcpt_to)) 
                 {
                     $this->log_write("Error: Cannot send email to " . $rcpt_to . "\n");
@@ -114,7 +114,7 @@
 
                     continue;
                 }
-                echo 'smtp_send';
+                //echo 'smtp_send';
                 if ($this->smtp_send($this->host_name, $mail_from, $rcpt_to, $header, $body)) 
                 {
                     $this->log_write("E-mail has been sent to <" . $rcpt_to . ">\n");
@@ -191,14 +191,16 @@
 
         function smtp_sockopen($address) 
         {
+            //echo "ddddd".$this->relay_host;
+            print_r($this);
             if ($this->relay_host == "") 
             {
-                echo 'smtp_sockopen_mx';
+                //echo 'smtp_sockopen_mx';
                 return $this->smtp_sockopen_mx($address);
             }
             else
             {
-                echo 'smtp_sockopen_relay';
+                //echo 'smtp_sockopen_relay';
                 return $this->smtp_sockopen_relay();
             }
         }
@@ -221,7 +223,6 @@
             $this->log_write("Connected to relay host " . $this->relay_host . "\n");
 
             return true;
-        ;
         }
 
         function smtp_sockopen_mx($address) 
@@ -280,24 +281,24 @@
 
         function smtp_ok() 
         {
-            echo $this->sock;
-            echo '<br/>';
+            //echo $this->sock;
+            //echo '<br/>';
             $response = str_replace("\r\n", "", fgets($this->sock, 512));
 
             $this->smtp_debug($response . "\n");
-            echo '\n';
-            echo $response;
+            //echo '\n';
+            //echo $response;
             print_r($response);
-            echo '\n';
-            echo preg_match("/[^23]/", $response);
-            echo '\n';
+            //echo '\n';
+            //echo preg_match("/[^23]/", $response);
+            //echo '\n';
             if (!preg_match("/^[23]/", $response)) 
             {
-                // echo $this->sock;
-                // echo '//';
+                // //echo $this->sock;
+                // //echo '//';
                 fputs($this->sock, "QUIT\r\n");
-                // echo $this->sock;
-                // echo '//';
+                // //echo $this->sock;
+                // //echo '//';
                 fgets($this->sock, 512); //problem
                 $this->log_write("Error: Remote host returned " . $response . "\n");
                 //echo "Error: Remote host returned " . $response . "\n";
@@ -309,8 +310,8 @@
 
         function smtp_putcmd($cmd, $arg = "") 
         {
-            echo $arg;
-            echo '<br/>';
+            //echo $arg;
+            //echo '<br/>';
             if ($arg != "") 
             {
                 if ($cmd == "")
@@ -323,10 +324,10 @@
             fputs($this->sock, $cmd . "\r\n");
 
             $this->smtp_debug("> " . $cmd . "\n");
-            echo $cmd;
-            echo '<br/>';
-            echo $this->sock;
-            echo '<br/>';
+            //echo $cmd;
+            //echo '<br/>';
+            //echo $this->sock;
+            //echo '<br/>';
             return $this->smtp_ok();
         }
 
@@ -387,7 +388,7 @@
         {
             if ($this->debug) 
             {
-                echo $message . "
+                //echo $message . "
                 ;";
             }
         }

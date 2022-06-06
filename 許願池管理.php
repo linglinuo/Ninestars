@@ -19,7 +19,11 @@
     // 送出查詢的SQL指令
     if ($result = mysqli_query($link, "SELECT * FROM wish WHERE (`member_name` LIKE '%$search%') OR (`wish_content` LIKE '%$search%') OR (`wish_time` LIKE '%$search%')")) {
     while ($row = mysqli_fetch_assoc($result)) {
-    $data .= "<tr><th scope=\"row\">$row[member_name]</th><td>$row[wish_content]</td><td>$row[wish_time]</td></tr>";
+    $data .= "<tr>
+    <th scope=\"row\">$row[member_name]</th>
+    <td>$row[wish_content]</td>
+    <td>$row[wish_time]</td>
+    </tr>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }
@@ -149,7 +153,7 @@
                 
               <!--右側-->
               <div class="col-sm-9">
-                <table class="table">
+              <table class="table">
                 <tr>
                   <td class="pt-3" valign="middle" colspan="3">
                     <h5>許願池管理</h5>

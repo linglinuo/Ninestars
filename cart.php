@@ -127,41 +127,44 @@
     if($_SESSION['Name']!=null){
     echo '
     <section class="inner-page">
-      <div class="container" style="text-align: center; width: 800px">
-        <!--title-->
-        <div id="product-table">
-          <table id="table-product" class="table table-bordered" style="table-layout:fixed">
-            <thead>
-              <tr>
-                <th scope="col"><h5>商品圖片</h5></th>
-                <th scope="col"><h5>商品名</h5></th>
-                <th scope="col"><h5>單價</h5></th>
-                <th scope="col"><h5>數量</h5></th>
-                <th scope="col"><h5>總計</h5></th>
-              </tr>
-            </thead>
-            <tbody>';
-              echo $data;
-        echo  '<th></th>
-              <th scope="col">
-                <h5 class="mt-2">總金額</h5>
-              </th>
-              <th scope="col">
-                <span>$</span>
-                <h2 id="payment" class="fw-bolder" style="display: inline;">';
-                echo $total;
-        echo  '</th>
-              <th scope="col">
-                <button type="button" class="btn delete-order">';
-                echo '<a href="updateOrder_check.php?order='.$_GET['order'].'"><h5>修改訂單<h5>';
-        echo  '</button>
-              <th scope="col">
-                <button type="button" class="btn delete-order">';
-                echo '<a href="deleteOrder_finish.php?order='.$_GET['order'].'"><h5>刪除訂單<h5>';
-        echo  '</button>
-              </th>
-            </tbody>
-          </table>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-6 justify-content-center text-center">
+            <div id="product-table">
+              <table id="table-product" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><h5>商品圖片</h5></th>
+                    <th scope="col"><h5>商品名</h5></th>
+                    <th scope="col"><h5>單價</h5></th>
+                    <th scope="col"><h5>數量</h5></th>
+                    <th scope="col"><h5>總計</h5></th>
+                  </tr>
+                </thead>
+                <tbody>';
+                  echo $data;
+            echo  '
+                  <th scope="col" colspan="2">
+                    <h5 class="mt-2">總金額</h5>
+                  </th>
+                  <th scope="col">
+                    <span>$</span>
+                    <h2 id="payment" class="fw-bolder" style="display: inline;">';
+                    echo $total;
+            echo  '</th>
+                  <th scope="col">
+                    <button type="button" class="btn delete-order">';
+                    echo '<a href="updateOrder_check.php?order='.$_GET['order'].'"><h5>修改訂單<h5>';
+            echo  '</button>
+                  <th scope="col">
+                    <button type="button" class="btn delete-order">';
+                    echo '<a href="deleteOrder_finish.php?order='.$_GET['order'].'"><h5>刪除訂單<h5>';
+            echo  '</button>
+                  </th>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </section>';

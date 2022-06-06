@@ -143,46 +143,56 @@
     
 
     <section>
-      <div class="container" style="text-align: center; width: 700px">
-        <img src="img/insert.png">
-        <br><br>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-6 justify-content-center text-center">
+            <img src="img/insert.png">
+            <br><br>
 
-        <table class="table table-bordered" style="table-layout:fixed">
-          <tbody>
-            <tr>
-              <td scope="col">信徒名稱</td>
-              <td scope="col">訂單編號</td>
-              <td scope="col">訂單日期</td>
-            </tr>
-            <?php echo $data;?>
-          </tbody>
-        </table>
+            <table class="table table-bordered" style="table-layout:fixed">
+              <tbody>
+                <tr>
+                  <td scope="col">信徒名稱</td>
+                  <td scope="col">訂單編號</td>
+                  <td scope="col">訂單日期</td>
+                </tr>
+                <?php echo $data;?>
+              </tbody>
+            </table>
 
-        <!--order_content-->
-        <table class="table table-bordered" style="table-layout:fixed">
-          <tbody id="div_upload">
-            <tr>
-              <td scope="col" colspan="3">商品名稱</td>
-              <td scope="col" colspan="3">數量</td>
-              <td scope="col">新增欄位</td>
-            </tr>
-            <?php echo $data2;?>
-          </tbody>
-        </table>
+            <!--order_content-->
+            <table class="table table-bordered" style="table-layout:fixed">
+              <tbody id="div_upload">
+                <tr>
+                  <td scope="col" colspan="3">商品名稱</td>
+                  <td scope="col" colspan="3">數量</td>
+                  <td scope="col">新增欄位</td>
+                </tr>
+                <?php echo $data2;?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <?php
-        if($_SESSION['Name']== 'admin')
-        {
-          $loading = "orderForManager.php";
-        }
-        else
-        {
-          $loading = "訂單管理.php";
-          
-        }
-        echo "<input type=\"button\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"修改\" 
-        onclick=\"location.href='";
-        echo $loading;
-        echo "'\">";
+          if($_SESSION['Name']== 'admin')
+          {
+            $loading = "orderForManager.php";
+          }
+          else
+          {
+            $loading = "訂單管理.php";
+            
+          }
+          echo "<div class=\"container\">";
+          echo "<div class=\"row justify-content-center\">";
+          echo "<div class=\"col-lg-8 col-sm-6 justify-content-center text-center\">";
+          echo "<input type=\"button\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"修改\" 
+          onclick=\"location.href='";
+          echo $loading;
+          echo "'\">";
+          echo "</div>";
+          echo "</div>";
         ?>
       </div>
     </section><!-- End Portfolio Section -->

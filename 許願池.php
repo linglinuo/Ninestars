@@ -74,9 +74,9 @@ include ("login.php");
 
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg"></div>
     <h3 class="tm-text-primary m-5 text-center">許願池</h3>
-    <div class="container-fluid tm-mt-60">
-        <div class="row tm-mb-50">
-            <div class="col-lg-5 col-12 mb-5 ml-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-12 mb-5 ml-lg-5 justify-content-center text-center">
                 <div class="tm-address-col">
                     <h2 class="tm-text-primary mb-5 text-center">願您能在其中得到力量</h2>
                     <p class="tm-mb-30">人生就像一場戲，因為有緣才相聚。
@@ -117,7 +117,7 @@ include ("login.php");
                     </ul>
                 </div>                
             </div>
-            <div class="col-lg-6 col-12 mb-5">
+            <div class="col-lg-6 col-12 mb-5 justify-content-center text-center">
                 <h2 class="tm-text-primary mb-5 text-center">許願籤</h2>
                 <form id="contact-form" action="wish_finish.php" method="POST" class="tm-contact-form mx-auto">
                     <div class="form-group">

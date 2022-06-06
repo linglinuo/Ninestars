@@ -125,10 +125,14 @@
     <!-- End Breadcrumbs Section -->
 
     <section>
-        <div class="container" style="text-align: center; width: 500px">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-sm-6 justify-content-center text-center">
             <img src="img/update.png">
             <?php echo $data;?>
+          </div>
         </div>
+      </div>
     </section><!-- End Portfolio Section -->
 
   </main><!-- End #main -->

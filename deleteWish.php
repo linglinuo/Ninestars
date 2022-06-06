@@ -97,23 +97,27 @@
     <section class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center mt-5">
-            <h2>刪除會員</h2>
+            <h2>刪除願望</h2>
           </div>
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
 
     <section>
-        <div class="container" style="text-align: center; width: 500px">
-            <img src="img/delete.png">
+        <div class="container">
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                     echo "<form name=\"form\" method=\"post\" action=\"deleteWish_finish.php\">";
-                     echo "<h5 class=\"mt-4\">要刪除願望的信徒</h5><br>";
-                     echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"id3\"><br>";
-                     echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"刪除\"></button>";
-                     echo "</form>";
+                  echo "<div class=\"row justify-content-center\">";
+                    echo "<div class=\"col-lg-6 col-sm-6 justify-content-center text-center\">";
+                      echo "<form name=\"form\" method=\"post\" action=\"deleteWish_finish.php\">";
+                        echo "<img src=\"img/delete.png\">";
+                        echo "<h5 class=\"mt-4\">要刪除願望的信徒</h5><br>";
+                        echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"id3\"><br>";
+                        echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"刪除\"></button>";
+                      echo "</form>";
+                    echo "</div>";
+                  echo "</div>";
                 }
                 else
                 {

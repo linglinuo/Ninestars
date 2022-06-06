@@ -104,18 +104,22 @@
     <!-- End Breadcrumbs Section -->
 
     <section>
-        <div class="container" style="text-align: center; width: 500px">
-            <img src="img/wish.png">
+        <div class="container">
             <?php
                 if($_SESSION['Name'] != null)
                 {
-                    echo "<form name=\"form\" method=\"post\" action=\"insertWish_finish.php\">";
-                    echo "<h5 class=\"mt-4\">信徒名稱</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"member_name\"><br>";
-                    echo "<h5 class=\"mt-4\">許願池</h5>";
-                    echo "<input type=\"text\" class=\"input form-control\" name=\"wish_content\"><br>";
-                    echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"></button>";
-                    echo "</form>";
+                  echo "<div class=\"row justify-content-center\">";
+                    echo "<div class=\"col-lg-6 col-sm-6 justify-content-center text-center\">";
+                      echo "<form name=\"form\" method=\"post\" action=\"insertWish_finish.php\">";
+                        echo "<img src=\"img/wish.png\">";
+                        echo "<h5 class=\"mt-4\">信徒名稱</h5>";
+                        echo "<input type=\"text\" class=\"input form-control\" name=\"member_name\"><br>";
+                        echo "<h5 class=\"mt-4\">許願池</h5>";
+                        echo "<input type=\"text\" class=\"input form-control\" name=\"wish_content\"><br>";
+                        echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"></button>";
+                      echo "</form>";
+                    echo "</div";
+                    echo "</div";
                 }
                 else
                 {

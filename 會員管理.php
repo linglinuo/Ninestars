@@ -20,7 +20,13 @@
     // 送出查詢的SQL指令
     if ($result = mysqli_query($link, "SELECT * FROM member WHERE (`member_name` LIKE '%$search%') OR (`member_email` LIKE '%$search%') OR (`member_password` LIKE '%$search%') OR (`member_level` LIKE '%$search%')")) {
     while ($row = mysqli_fetch_assoc($result)) {
-    $data .= "<tr><th scope=\"row\">$row[member_name]</th><td>$row[member_email]</td><td>$row[member_password]</td><td>$row[member_level]</td></tr>";
+    $data .= "
+      <tr>
+      <td>$row[member_name]</td>
+      <td>$row[member_email]</td>
+      <td>$row[member_password]</td>
+      <td>$row[member_level]</td>
+      </tr>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體
     }
@@ -111,11 +117,9 @@
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
         <div class="container">
-  
           <div class="d-flex justify-content-between align-items-center">
             <h2>管理中心</h2>
           </div>
-  
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
@@ -184,7 +188,7 @@
                 </tr>
               </table>
 
-                <!--member table start-->
+              <!--member table start-->
                 <div id="member-table">
                   <table id="table-member" class="table table-bordered">
                     <thead>
@@ -195,11 +199,11 @@
                         <th scope="col">會員等級</th>
                       </tr>
                     </thead>';
-                    echo $data;
-                    echo '
+                      echo $data;
+                      echo '
                   </table>
+                   <!--product table end-->
                 </div>
-                <!--member table end-->
               </div>
             </div>
           </div>

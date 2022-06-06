@@ -152,31 +152,35 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <div class="container" style="text-align: center; width: 500px">
-      <form enctype="multipart/form-data" method="post">
-        <img src="img/insert.png">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-sm-6 justify-content-center text-center">
+          <form enctype="multipart/form-data" method="post">
+            <img src="img/insert.png">        
+              <h5 class="mt-4">商品圖片</h5>
+                <input type="hidden" name="MAX_FILE_SIZE" value="1024000">
+                <input type="file" name="Myfile">
+                <label for="Myfile" class="error"></label>
+              <h5 class="mt-4">商品名稱</h5>
+                <input type="text" class="input form-control" name="pname"><br>
+              <h5 class="mt-4">分類</h5>
+              <div class="level">
+                <label class="radio-inline"><input type="radio" name="pcategory"  value="1" checked>御守</label>
+                <label class="radio-inline"><input type="radio" name="pcategory"  value="2">佛具</label>
+                <label class="radio-inline"><input type="radio" name="pcategory"  value="3">紀念品</label>
+              </div>
+              <h5 class="mt-4">價格</h5>
+                <input type="text" class="input form-control" name="pprice"><br>
+              <h5 class="mt-4">種類</h5>
+                <input type="text" class="input form-control" name="ptype"><br>
+              <h5 class="mt-4">敘述</h5>
+                <input type="text" class="input form-control" name="pintro"><br>
+                
+              <input type="submit" name="button" class="btn btn-new" id="sub_btn" value="新增">
+          </form>
+        </div>
+      </div>
       
-          <h5 class="mt-4">商品圖片</h5>
-            <input type="hidden" name="MAX_FILE_SIZE" value="1024000">
-            <input type="file" name="Myfile">
-            <label for="Myfile" class="error"></label>
-          <h5 class="mt-4">商品名稱</h5>
-            <input type="text" class="input form-control" name="pname"><br>
-          <h5 class="mt-4">分類</h5>
-          <div class="level">
-            <label class="radio-inline"><input type="radio" name="pcategory"  value="1" checked>御守</label>
-            <label class="radio-inline"><input type="radio" name="pcategory"  value="2">佛具</label>
-            <label class="radio-inline"><input type="radio" name="pcategory"  value="3">紀念品</label>
-          </div>
-          <h5 class="mt-4">價格</h5>
-            <input type="text" class="input form-control" name="pprice"><br>
-          <h5 class="mt-4">種類</h5>
-            <input type="text" class="input form-control" name="ptype"><br>
-          <h5 class="mt-4">敘述</h5>
-            <input type="text" class="input form-control" name="pintro"><br>
-            
-          <input type="submit" name="button" class="btn btn-new" id="sub_btn" value="新增">
-      </form>
     </div>
 
   </main><!-- End #main -->

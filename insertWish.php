@@ -17,7 +17,7 @@
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
-      padding: 1px;
+      padding: 5px;
     }
     .new-product{
       background-color: #eb5d1e;
@@ -110,12 +110,12 @@
                 {
                   echo "<div class=\"row justify-content-center\">";
                     echo "<div class=\"col-lg-6 col-sm-6 justify-content-center text-center\">";
-                      echo "<form name=\"form\" method=\"post\" action=\"insertWish_finish.php\">";
+                      echo "<form id=\"insertWish\" name=\"form\" method=\"post\" action=\"insertWish_finish.php\">";
                         echo "<img src=\"img/wish.png\">";
-                        echo "<h5 class=\"mt-4\">信徒名稱</h5>";
-                        echo "<input type=\"text\" class=\"input form-control\" name=\"member_name\"><br>";
-                        echo "<h5 class=\"mt-4\">許願池</h5>";
-                        echo "<input type=\"text\" class=\"input form-control\" name=\"wish_content\"><br>";
+                        echo "<h5 class=\"mt-4\">信徒名稱<label for=\"member_name\" class=\"error\"></label></h5>";
+                        echo "<input type=\"text\" class=\"input form-control\" name=\"member_name\">";
+                        echo "<h5 class=\"mt-4\">許願池<label for=\"wish_content\" class=\"error\"></label></h5>";
+                        echo "<input type=\"text\" class=\"input form-control\" name=\"wish_content\">";
                         echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"></button>";
                       echo "</form>";
                     echo "</div";
@@ -150,6 +150,33 @@
     include ("verify.html");
   ?>
   <!--verify end-->
+
+  <script>
+    $(document).ready(function($) {
+    $("#insertWish").validate({
+          submitHandler: function(form) {
+          //alert("success!");
+          form.submit();
+        },
+        rules: {
+          member_name: {
+            required: true
+          },
+          wish_content: {
+            required: true,
+          }
+        },
+        messages: {
+          member_name: {
+            required: "必填"
+          },
+          wish_content: {
+            required: "必填"
+          }
+        }
+    });
+  });
+  </script>
 
 </body>
 

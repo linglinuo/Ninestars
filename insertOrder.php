@@ -104,10 +104,13 @@
     <!-- End Breadcrumbs Section -->
                 
     <section>
-        <div class="container" style="text-align: center; width: 700px">
+        <div class="container">
             <?php
                 if($_SESSION['Name'] == 'admin')
                 {
+                  echo "<div class=\"row justify-content-center\">";
+                  echo "<div class=\"col-lg-6 col-sm-6 justify-content-center text-center\">";
+
                     echo "<h5 class=\"mt-4\">信徒名稱</h5>";
                     echo "<input type=\"text\" class=\"input form-control\" id=\"member_name\"><br>";
 
@@ -129,6 +132,8 @@
                     echo "
                       <input type=\"button\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"新增\"
                       onclick=\"location.href='orderForManager.php'\">";
+                  echo "</div>";
+                  echo "</div>";
                 }
                 else
                 {

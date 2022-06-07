@@ -19,18 +19,18 @@
     if ($result = mysqli_query($link, "SELECT * FROM products WHERE product_name='$name';")) {
     while ($row = mysqli_fetch_assoc($result)) {
     $data .= "
-    <form name=\"form\" method=\"post\" action=\"updateProduct_finish.php\">
+    <form id=\"updateProduct\" name=\"form\" method=\"post\" action=\"updateProduct_finish.php\">
       <h5 class=\"mt-4\">商品圖片</h5>
         <img src=\"$row[product_picture]\" width=\"200px\">
-      <h5 class=\"mt-4\">商品名稱</h5>
+      <h5 class=\"mt-4\">商品名稱<label for=\"p-name\" class=\"error\"></label></h5>
         <input type=\"text\" class=\"input form-control\" name=\"p-name\" value=\"$row[product_name]\"><br>
-      <h5 class=\"mt-4\">商品分類</h5>  
+      <h5 class=\"mt-4\">商品分類<label for=\"p-categories\" class=\"error\"></label></h5>  
         <input type=\"text\" class=\"input form-control\" name=\"p-categories\" value=\"$row[product_categories]\"><br>
-      <h5 class=\"mt-4\">商品單價</h5>
+      <h5 class=\"mt-4\">商品單價<label for=\"p-price\" class=\"error\"></label></h5>
         <input type=\"text\" class=\"input form-control\" name=\"p-price\" value=\"$row[product_price]\"><br>
-      <h5 class=\"mt-4\">商品種類</h5>
+      <h5 class=\"mt-4\">商品種類<label for=\"p-type\" class=\"error\"></label></h5>
         <input type=\"text\" class=\"input form-control\" name=\"p-type\" value=\"$row[product_type]\"><br>
-      <h5 class=\"mt-4\">商品敘述</h5>
+      <h5 class=\"mt-4\">商品敘述<label for=\"p-instruction\" class=\"error\"></label></h5>
         <input type=\"text\" class=\"input form-control\" name=\"p-instruction\" value=\"$row[product_instruction]\"><br>
       <input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"確認\">
     </form>";
@@ -46,7 +46,7 @@
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
-      padding: 1px;
+      padding: 5px;
     }
     .new-product{
       background-color: #eb5d1e;
@@ -163,6 +163,51 @@
     include ("verify.html");
   ?>
   <!--verify end-->
+
+  <script>
+  $(document).ready(function($) {
+    $("#updateProduct").validate({
+          submitHandler: function(form) {
+          //alert("success!");
+          form.submit();
+        },
+        rules: {
+          "p-name": {
+            required: true
+          },
+          "p-categories": {
+            required: true
+          },
+          "p-price": {
+            required: true
+          },
+          "p-type": {
+            required: true
+          },
+          "p-instruction": {
+            required: true
+          }
+        },
+        messages: {
+          "p-name": {
+            required: "必填"
+          },
+          "p-categories": {
+            required: "必填"
+          },
+          "p-price": {
+            required: "必填"
+          },
+          "p-type": {
+            required: "必填"
+          },
+          "p-instruction": {
+            required: "必填"
+          }
+        }
+    });
+  });
+  </script>
 
 </body>
 

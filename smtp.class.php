@@ -388,9 +388,10 @@
         {
             if ($this->debug) 
             {
-                //echo $message . "
+                echo $message . "
                 ;";
             }
+            
         }
     }
 ?>

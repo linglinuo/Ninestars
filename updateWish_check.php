@@ -19,10 +19,10 @@
     if ($result = mysqli_query($link, "SELECT * FROM wish WHERE member_name='$name';")) {
     while ($row = mysqli_fetch_assoc($result)) {
     $data .= "
-    <form name=\"form\" method=\"post\" action=\"updateWish_finish.php\">
-      <h5 class=\"mt-4\">信徒名稱</h5>
+    <form id=\"updateWish\" name=\"form\" method=\"post\" action=\"updateWish_finish.php\">
+      <h5 class=\"mt-4\">信徒名稱<label for=\"name\" class=\"error\"></label></h5>
         <input type=\"text\" class=\"input form-control\" name=\"name\" value=\"$row[member_name]\"><br>
-      <h5 class=\"mt-4\">許願內容</h5>
+      <h5 class=\"mt-4\">許願內容<label for=\"wish\" class=\"error\"></label></h5>
         <input type=\"text\" class=\"input form-control\" name=\"wish\" value=\"$row[wish_content]\"><br>
       <input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"確認\">
     </form>";
@@ -38,7 +38,7 @@
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
-      padding: 1px;
+      padding: 5px;
     }
     .new-product{
       background-color: #eb5d1e;
@@ -155,6 +155,33 @@
     include ("verify.html");
   ?>
   <!--verify end-->
+
+  <script>
+  $(document).ready(function($) {
+    $("#updateWish").validate({
+          submitHandler: function(form) {
+          //alert("success!");
+          form.submit();
+        },
+        rules: {
+          name: {
+            required: true
+          },
+          wish: {
+            required: true
+          }
+        },
+        messages: {
+          name: {
+            required: "必填"
+          },
+          wish: {
+            required: "必填"
+          },
+        }
+    });
+  });
+  </script>
 
 </body>
 

@@ -71,7 +71,7 @@
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
-      padding: 1px;
+      padding: 5px;
     }
     .btn-new{
       background-color: #eb5d1e;
@@ -155,28 +155,32 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 col-sm-6 justify-content-center text-center">
-          <form enctype="multipart/form-data" method="post">
+          <form id="insertProduct" enctype="multipart/form-data" method="post">
             <img src="img/insert.png">        
-              <h5 class="mt-4">商品圖片</h5>
-                <input type="hidden" name="MAX_FILE_SIZE" value="1024000">
-                <input type="file" name="Myfile">
-                <label for="Myfile" class="error"></label>
-              <h5 class="mt-4">商品名稱</h5>
-                <input type="text" class="input form-control" name="pname"><br>
-              <h5 class="mt-4">分類</h5>
-              <div class="level">
-                <label class="radio-inline"><input type="radio" name="pcategory"  value="1" checked>御守</label>
-                <label class="radio-inline"><input type="radio" name="pcategory"  value="2">佛具</label>
-                <label class="radio-inline"><input type="radio" name="pcategory"  value="3">紀念品</label>
-              </div>
-              <h5 class="mt-4">價格</h5>
-                <input type="text" class="input form-control" name="pprice"><br>
-              <h5 class="mt-4">種類</h5>
-                <input type="text" class="input form-control" name="ptype"><br>
-              <h5 class="mt-4">敘述</h5>
-                <input type="text" class="input form-control" name="pintro"><br>
+            <h5 class="mt-4">商品圖片<label for="Myfile" class="error"></label></h5>
+            <input type="hidden" name="MAX_FILE_SIZE" value="1024000">
+            <input type="file" name="Myfile">
+
+            <h5 class="mt-4">商品名稱<label for="pname" class="error"></label></h5>            
+            <input type="text" class="input form-control" name="pname">
+              
+            <h5 class="mt-4">分類<label for="pcategory" class="error"></label></h5>            
+            <div class="level">
+              <label class="radio-inline"><input type="radio" name="pcategory"  value="1">御守</label>
+              <label class="radio-inline"><input type="radio" name="pcategory"  value="2">佛具</label>
+              <label class="radio-inline"><input type="radio" name="pcategory"  value="3">紀念品</label>
+            </div>
+
+            <h5 class="mt-4">價格<label for="pprice" class="error"></label></h5>
+            <input type="text" class="input form-control" name="pprice">
+              
+            <h5 class="mt-4">種類<label for="ptype" class="error"></label></h5>
+            <input type="text" class="input form-control" name="ptype">
+
+            <h5 class="mt-4">敘述<label for="pintro" class="error"></label></h5>
+            <input type="text" class="input form-control" name="pintro">              
                 
-              <input type="submit" name="button" class="btn btn-new" id="sub_btn" value="新增">
+            <input type="submit" name="button" class="btn btn-new" id="sub_btn" value="新增">
           </form>
         </div>
       </div>
@@ -203,6 +207,64 @@
     include ("verify.html");
   ?>
   <!--verify end-->
+
+  <script>
+    $(document).ready(function($) {
+    //for select
+    $.validator.addMethod("notEqualsto", function(value, element, arg) {
+        return arg != value;
+    }, "您尚未選擇!");
+
+    $("#insertProduct").validate({
+          submitHandler: function(form) {
+          //alert("success!");
+          form.submit();
+        },
+        rules: {
+          Myfile: {
+            required: true
+          },
+          pname: {
+            required: true,
+          },
+          pprice: {
+            required: true,
+          },
+          ptype: {
+            required: true,
+          },
+          pintro: {
+            required: true
+          },
+            //checkbox若使用相同名稱
+          "pcategory": {
+            required: true,
+          }
+        },
+        messages: {
+          Myfile: {
+            required: "必填"
+          },
+          pname: {
+            required: "必填"
+          },
+          pprice: {
+            required: "必填"
+          },
+          ptype: {
+            required: "必填"
+          },
+          pintro: {
+            required: "必填"
+          },
+            //checkbox若使用相同名稱
+          "pcategory": {
+            required: "必填"
+          }
+        }
+    });
+  });
+  </script>
 </body>
 
 </html>

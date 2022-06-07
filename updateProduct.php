@@ -17,7 +17,7 @@
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
-      padding: 1px;
+      padding: 5px;
     }
     .new-product{
       background-color: #eb5d1e;
@@ -110,10 +110,10 @@
                 {
                   echo "<div class=\"row justify-content-center\">";
                     echo "<div class=\"col-lg-6 col-sm-6 justify-content-center text-center\">";
-                      echo "<form name=\"form\" method=\"post\" action=\"updateProduct_check.php\">";
+                      echo "<form id=\"updateProduct\" name=\"form\" method=\"post\" action=\"updateProduct_check.php\">";
                         echo "<img src=\"img/update.png\">";
-                        echo "<h5 class=\"mt-4\">要修改的商品名稱</h5><br>";
-                        echo "<input type=\"text\" class=\"input form-control\" placeholder=\"商品名稱\" name=\"name\"><br>";
+                        echo "<h5 class=\"mt-4\">要修改的商品名稱<label for=\"name\" class=\"error\"></label></h5>";
+                        echo "<input type=\"text\" class=\"input form-control\" placeholder=\"商品名稱\" name=\"name\">";
                         echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"查看\"></button>";
                       echo "</form>";
                     echo "</div";
@@ -149,6 +149,26 @@
   ?>
   <!--verify end-->
 
+  <script>
+  $(document).ready(function($) {
+    $("#updateProduct").validate({
+          submitHandler: function(form) {
+          //alert("success!");
+          form.submit();
+        },
+        rules: {
+          name: {
+            required: true
+          },
+        },
+        messages: {
+          name: {
+            required: "必填"
+          }
+        }
+    });
+  });
+  </Script>
 </body>
 
 </html>

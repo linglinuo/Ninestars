@@ -17,7 +17,7 @@
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
-      padding: 1px;
+      padding: 5px;
     }
     .new-product{
       background-color: #eb5d1e;
@@ -110,9 +110,9 @@
                 {
                   echo "<div class=\"row justify-content-center\">";
                     echo "<div class=\"col-lg-6 col-sm-6 justify-content-center text-center\">";
-                      echo "<form name=\"form\" method=\"post\" action=\"updateMember_check.php\">";
+                      echo "<form id=\"updateMember\" name=\"form\" method=\"post\" action=\"updateMember_check.php\">";
                         echo "<img src=\"img/delete.png\">";
-                        echo "<h5 class=\"mt-4\">要修改的信徒名稱</h5><br>";
+                        echo "<h5 class=\"mt-4\">要修改的信徒名稱<label for=\"name\" class=\"error\"></label></</h5>";
                         echo "<input type=\"text\" class=\"input form-control\" placeholder=\"信徒名稱\" name=\"name\"><br>";
                         echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"查看\"></button>";
                       echo "</form>";
@@ -148,6 +148,27 @@
     include ("verify.html");
   ?>
   <!--verify end-->
+  <script>
+  $(document).ready(function($) {
+    $("#updateMember").validate({
+          submitHandler: function(form) {
+          //alert("success!");
+          form.submit();
+        },
+        rules: {
+          name: {
+            required: true
+          }
+        },
+        messages: {
+          name: {
+            required: "必填"
+          }
+        }
+    });
+  });
+  </script>
+  
 
 </body>
 

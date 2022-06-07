@@ -17,7 +17,7 @@
       font-weight: normal;
       font-family: "微軟正黑體";
       display: inline;
-      padding: 1px;
+      padding: 5px;
     }
     .new-product{
       background-color: #eb5d1e;
@@ -110,10 +110,10 @@
                 {
                   echo "<div class=\"row justify-content-center\">";
                     echo "<div class=\"col-lg-6 col-sm-6 justify-content-center text-center\">";
-                      echo "<form name=\"form\" method=\"post\" action=\"deleteProduct_finish.php\">";
+                      echo "<form id=\"deleteProduct\" name=\"form\" method=\"post\" action=\"deleteProduct_finish.php\">";
                         echo "<img src=\"img/delete.png\">";
-                        echo "<h5 class=\"mt-4\">要刪除的商品</h5><br>";
-                        echo "<input type=\"text\" class=\"input form-control\" placeholder=\"商品名稱\" name=\"p-name\"><br>";
+                        echo "<h5 class=\"mt-4\">要刪除的商品<label for=\"p-name\" class=\"error\"></label></h5>";
+                        echo "<input type=\"text\" class=\"input form-control\" placeholder=\"商品名稱\" name=\"p-name\">";
                         echo "<input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"刪除\"></button>";
                       echo "</form>";
                     echo "</div>";
@@ -148,6 +148,26 @@
   ?>
   <!--verify end-->
 
+  <script>
+  $(document).ready(function($) {
+    $("#deleteProduct").validate({
+          submitHandler: function(form) {
+          //alert("success!");
+          form.submit();
+        },
+        rules: {
+          "p-name": {
+            required: true
+          },
+        },
+        messages: {
+          "p-name": {
+            required: "必填"
+          }
+        }
+    });
+  });
+  </Script>
 </body>
 
 </html>

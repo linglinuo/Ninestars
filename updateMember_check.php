@@ -11,7 +11,8 @@
     echo $sourcejs;
   ?>
 
-  <?php
+  <?
+    $data='';
     include("mysql_connect.inc.php");
     $name = $_POST['name'];
 

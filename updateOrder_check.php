@@ -46,6 +46,7 @@
     echo $pageloader ;
   ?>
   <?php
+    $data='';
     include("mysql_connect.inc.php");
     $name = $_POST['name'];
         

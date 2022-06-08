@@ -12,6 +12,7 @@
     ?>
     <!--籤詩-->
     <?php
+    $data='';
     include("mysql_connect.inc.php");
     
     // 送出查詢的SQL指令
@@ -112,14 +113,7 @@ include ("login.php");
 ?>
 <!--login end-->
 
-    <div class="tm-hero d-flex justify-content-center align-items-center mt-5" data-parallax="scroll" data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form">
-            <input class="form-control tm-search-input text-left" type="search" placeholder="搜尋" aria-label="Search" style="margin-top: 0px;">
-            <button class="btn btn-outline-success tm-search-btn" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-    </div>
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg"></div>
 
     <?php echo $data;?><!--商品-->
 

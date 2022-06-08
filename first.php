@@ -83,6 +83,8 @@
     }
   </style> 
   <?php
+  $data='';
+  $data2='';
   include("mysql_connect.inc.php");
   
   // 送出查詢的SQL指令

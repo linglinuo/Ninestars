@@ -13,6 +13,7 @@
   
   <!--商品管理-->
   <?php
+  $data='';
   $search='';
   if(isset($_GET['search'])){ $search = $_GET['search']; }
     include("mysql_connect.inc.php");

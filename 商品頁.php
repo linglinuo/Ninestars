@@ -15,6 +15,7 @@ session_start();
   ?>
   <!--商品-->
   <?php
+  $data='';
   include("mysql_connect.inc.php");
   
   // 送出查詢的SQL指令

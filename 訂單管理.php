@@ -11,6 +11,7 @@
     echo $sourcejs;
   ?>
     <?php
+    $data='';
     //商品管理
     include("mysql_connect.inc.php");
     $name = $_SESSION['Name'];

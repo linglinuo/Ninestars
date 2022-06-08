@@ -102,15 +102,11 @@
             <h5 class="mt-4">輸入電子郵箱找回密碼</h5><br>
             <input type="text" class="input form-control" name="email3" id="email3">
             <span id="chkmsg"></span> <br>
-            <input type="submit" name="button" class="btn btn-new" id="sub_btn3" value="提交並至信箱收件">
+            <input type="submit" name="button" class="btn btn-new" id="sub_btn3" value="提交並至信箱收件" onclick="location.href='first.php'">
         </div>
     </section><!-- End Portfolio Section -->
 
-  </main><!-- End #main -->
-<!-- <p><strong>輸入您註冊的電子郵箱，找回密碼：</strong></p> 
-<p><input type="text" class="input" name="email3" id="email3"><span id="chkmsg"></span></p> 
-<p><input type="button" class="btn" id="sub_btn3" value="submit"></p> -->
-
+  </main>
   <!-- ======= Footer ======= -->
   <?php
   include ("footer.html");

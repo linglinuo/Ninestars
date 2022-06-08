@@ -70,19 +70,19 @@
           <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
           <li><a class="nav-link scrollto" href="index.php">介紹</a></li>
           <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
-          <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
-          <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
-          <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
+          <li><a class="nav-link scrollto" href="pray.php">求籤</a></li>
+          <li><a class="nav-link scrollto" href="fortune.php">解籤</a></li>
+          <li><a class="nav-link scrollto" href="wish.php">許願池</a></li>
           <?php
             if (isset($_SESSION['Name'])) {
               if($_SESSION["Name"] == 'admin')
               {
-                echo '<li><a class="nav-link scrollto active" href="商品管理.php">管理中心</a></li>';
+                echo '<li><a class="nav-link scrollto active" href="manageProduct.php">管理中心</a></li>';
                 echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
               }
               else
               {
-                echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                echo '<li><a class="nav-link scrollto" href="manageOrder.php">訂單查詢</a></li>';
                 echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
               }
             } else {
@@ -123,16 +123,16 @@
                   <div class="col-sm-3">
                       <table class="table table-bordered" style="table-layout:fixed">
                           <tr>
-                            <th><button id="product-manager"><a href="商品管理.php"><h5>商品管理</h5></button></th>
+                            <th><button id="product-manager"><a href="manageProduct.php"><h5>商品管理</h5></button></th>
                           </tr>
                           <tr>
                             <th>
-                              <button id="member-manager"><h5><a href="會員管理.php">會員管理</a></h5></button>
+                              <button id="member-manager"><h5><a href="manageMember.php">會員管理</a></h5></button>
                             </th>
                           </tr>
                           <tr>
                             <th>
-                              <button id="wish-manager"><h5><a href="許願池管理.php">許願池管理</a></h5></button>
+                              <button id="wish-manager"><h5><a href="manageWish.php">許願池管理</a></h5></button>
                             </th>
                           </tr>
                           <tr>

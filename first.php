@@ -164,18 +164,18 @@
           <li><a class="nav-link scrollto" href="#about">介紹</a></li>
           <li><a class="nav-link scrollto" href="#store">小舖</a></li>
           <li><a class="nav-link scrollto" href="#pray">求籤</a></li>
-          <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
+          <li><a class="nav-link scrollto" href="fortune.php">解籤</a></li>
           <li><a class="nav-link scrollto" href="#wish">許願池</a></li>
           <?php
             if (isset($_SESSION['Name'])) {
                 if($_SESSION["Name"] == 'admin')
                 {
-                  echo '<li><a class="nav-link scrollto" href="商品管理.php">管理中心</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageProduct.php">管理中心</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 else
                 {
-                  echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageOrder.php">訂單查詢</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 } else {
@@ -308,7 +308,7 @@
             <img src="gif/燈籠left-01.png" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-4 d-flex align-items-center justify-content-center about-img">
-            <a href="求籤.php" class="btn-get-started scrollto">
+            <a href="pray.php" class="btn-get-started scrollto">
               <img src="gif/求籤.gif" class="img-fluid" alt="" data-aos="zoom-in">
             </a>
           </div>
@@ -336,7 +336,7 @@
                         <td class="sentence">
                           <h3 class="py-2">絲扇淒許願池<br></h3>
                           <h5 class="pt-2">希望在這邊你能勇敢大聲地說出你的願望</h5>
-                          <h5 class="pt-3 align-content-center"><a href="許願池.php" class="btn-get-started scrollto enterwish">前往許願</a></h5>
+                          <h5 class="pt-3 align-content-center"><a href="wish.php" class="btn-get-started scrollto enterwish">前往許願</a></h5>
                         </td>
                       </tr>
                     </table>

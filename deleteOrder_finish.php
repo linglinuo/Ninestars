@@ -23,7 +23,7 @@ if($_SESSION['Name'] != null)
                 }
                 else
                 {
-                   echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
                 }
         }
         else
@@ -38,7 +38,7 @@ if($_SESSION['Name'] != null)
                    echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
                 }
                 else{
-                   echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
                 }
         }
         else
@@ -49,7 +49,7 @@ if($_SESSION['Name'] != null)
         if(mysqli_query($link,$sql10))
         {
         echo '成功10';
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
         }
         else
         {
@@ -60,7 +60,7 @@ if($_SESSION['Name'] != null)
         if(mysqli_query($link,$sql11))
         {
         echo '成功11';
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
         }
         else
         {

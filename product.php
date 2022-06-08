@@ -150,9 +150,9 @@ session_start();
           <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
           <li><a class="nav-link scrollto" href="first.php">介紹</a></li>
           <li><a class="nav-link scrollto active" href="store-page.php">小舖</a></li>
-          <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
-          <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
-          <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
+          <li><a class="nav-link scrollto" href="pray.php">求籤</a></li>
+          <li><a class="nav-link scrollto" href="fortune.php">解籤</a></li>
+          <li><a class="nav-link scrollto" href="wish.php">許願池</a></li>
           <li>
           <?php
             if (isset($_SESSION['Name'])) {
@@ -161,7 +161,7 @@ session_start();
                   echo '<li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <i class="fas fa-shopping-cart my-cart-icon"></i>
                   <span class="badge badge-notify my-cart-badge"></span></a></li>';
-                  echo '<li><a class="nav-link scrollto" href="商品管理.php">管理中心</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageProduct.php">管理中心</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 else
@@ -169,7 +169,7 @@ session_start();
                   echo '<li><a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <i class="fas fa-shopping-cart my-cart-icon"></i>
                   <span class="badge badge-notify my-cart-badge"></span></a></li>';
-                  echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageOrder.php">訂單查詢</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 } else {

@@ -25,12 +25,12 @@ for($i=0;$i<count($_POST['product_name']);$i++)
         {
                 echo $sql;
                 echo '成功1';
-                echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
         }
         else
         {
                 echo '新增失敗!1';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=商品頁.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=product.php>';
         }
 
 };
@@ -39,7 +39,7 @@ $sql2 = "insert into `order` (member_name, order_id, order_totalprice, order_tim
         if(mysqli_query($link,$sql2))
         {
                 echo '成功2';
-                echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
         }
         else
         {
@@ -49,7 +49,7 @@ $sql3 = "UPDATE `member` SET `order_amount`=`order_amount`+$total,`member_level`
         if(mysqli_query($link,$sql3))
         {
                 echo '成功3';
-                echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
         }
         else
         {
@@ -59,7 +59,7 @@ $sql4 = "UPDATE `member` SET `member_level`='高級' WHERE `order_amount`>10000;
         if(mysqli_query($link,$sql4))
         {
                 echo '成功4';
-                echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
         }
         else
         {

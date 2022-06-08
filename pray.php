@@ -41,19 +41,19 @@
           <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
           <li><a class="nav-link scrollto" href="first.php">介紹</a></li>
           <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
-          <li><a class="nav-link scrollto active" href="求籤.php">求籤</a></li>
-          <li><a class="nav-link scrollto" href="解籤1.php">解籤</a></li>
-          <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
+          <li><a class="nav-link scrollto active" href="pray.php">求籤</a></li>
+          <li><a class="nav-link scrollto" href="fortune.php">解籤</a></li>
+          <li><a class="nav-link scrollto" href="wish.php">許願池</a></li>
           <?php
             if (isset($_SESSION['Name'])) {
                 if($_SESSION["Name"] == 'admin')
                 {
-                  echo '<li><a class="nav-link scrollto" href="商品管理.php">管理中心</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageProduct.php">管理中心</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 else
                 {
-                  echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageOrder.php">訂單查詢</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 } else {
@@ -100,7 +100,7 @@ include ("login.php");
                 var _result = $("#result").empty();
                 var _list = [];
                 $fortune=Math.floor(1+Math.random() * 99);
-                _result.append('<div id="input1" class="col-xl-12 col-lg-5 col-md-6 col-sm-12 text-center\"><img type="image" src="img/求籤3.gif" alt="Image" class="img-fluid draw"  width="500"></div><div class="m-3">恭喜抽中第' + $fortune + '支籤~</div><div class="text-center"><a href="籤詩.php?id='+$fortune+'" class="btn btn-primary tm-btn-big">前往解籤</a></div>');
+                _result.append('<div id="input1" class="col-xl-12 col-lg-5 col-md-6 col-sm-12 text-center\"><img type="image" src="img/求籤3.gif" alt="Image" class="img-fluid draw"  width="500"></div><div class="m-3">恭喜抽中第' + $fortune + '支籤~</div><div class="text-center"><a href="fortune_poem.php?id='+$fortune+'" class="btn btn-primary tm-btn-big">前往解籤</a></div>');
                 });
             });
         </script>

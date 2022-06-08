@@ -19,7 +19,7 @@
     // 送出查詢的SQL指令
     if ($result = mysqli_query($link, "SELECT * FROM `fortune poems` WHERE (`poem_no` LIKE '%$search%') OR (`poem_id` LIKE '%$search%')")) {
     while ($row = mysqli_fetch_assoc($result)) {
-      $data .= "<div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5\"><figure class=\"effect-ming tm-video-item\"><img src=\"img\image_a_small\淺草金龍山觀音寺一百籤$row[poem_url]a.jpg\" alt=\"Image\" class=\"img-fluid\"><figcaption class=\"d-flex align-items-center justify-content-center\"><h2>$row[poem_no]</h2><a href=\"籤詩.php?id=$row[poem_id]\">View more</a></figcaption></figure></div>";
+      $data .= "<div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5\"><figure class=\"effect-ming tm-video-item\"><img src=\"img\image_a_small\淺草金龍山觀音寺一百籤$row[poem_url]a.jpg\" alt=\"Image\" class=\"img-fluid\"><figcaption class=\"d-flex align-items-center justify-content-center\"><h2>$row[poem_no]</h2><a href=\"fortune_poem.php?id=$row[poem_id]\">View more</a></figcaption></figure></div>";
     }
     mysqli_free_result($result); 
     }
@@ -56,19 +56,19 @@
           <li><a class="nav-link scrollto" href="index.php">首頁</a></li>
           <li><a class="nav-link scrollto" href="first.php">介紹</a></li>
           <li><a class="nav-link scrollto" href="store-page.php">小舖</a></li>
-          <li><a class="nav-link scrollto" href="求籤.php">求籤</a></li>
-          <li><a class="nav-link scrollto active" href="解籤1.php">解籤</a></li>
-          <li><a class="nav-link scrollto" href="許願池.php">許願池</a></li>
+          <li><a class="nav-link scrollto" href="pray.php">求籤</a></li>
+          <li><a class="nav-link scrollto active" href="fortune.php">解籤</a></li>
+          <li><a class="nav-link scrollto" href="wish.php">許願池</a></li>
           <?php
             if (isset($_SESSION['Name'])) {
                 if($_SESSION["Name"] == 'admin')
                 {
-                  echo '<li><a class="nav-link scrollto" href="商品管理.php">管理中心</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageProduct.php">管理中心</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 else
                 {
-                  echo '<li><a class="nav-link scrollto" href="訂單管理.php">訂單查詢</a></li>';
+                  echo '<li><a class="nav-link scrollto" href="manageOrder.php">訂單查詢</a></li>';
                   echo '<li><a href="logout.php">'.$_SESSION['Name'].'   登出</a></li>';
                 }
                 } else {

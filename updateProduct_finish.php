@@ -19,7 +19,7 @@ if(isset($_POST['p-name']))
     if(mysqli_query($link,$sql))
     {
         echo "修改成功";
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=商品管理.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=manageProduct.php>';
     }
     else
     {

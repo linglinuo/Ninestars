@@ -15,7 +15,7 @@ if($name != null && $message != null)
         if(mysqli_query($link,$sql))
         {
             echo '新增成功';    
-            echo '<meta http-equiv=REFRESH CONTENT=0;url=許願池管理.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=0;url=manageWish.php>';
         }
         else
         {

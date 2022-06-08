@@ -13,7 +13,7 @@ if($_SESSION['Name'] != null)
         if(mysqli_query($link,$sql) && mysqli_query($link,$sql1) && mysqli_query($link,$sql2))
         {
                 echo '刪除成功!';
-                echo '<meta http-equiv=REFRESH CONTENT=0;url=會員管理.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=manageMember.php>';
         }
         else
         {

@@ -119,7 +119,7 @@ $sql9 = "UPDATE `member` SET `member_level`='高級' WHERE `order_amount`>10000;
 if(mysqli_query($link,$sql9))
 {
                 echo '成功9';
-                echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
         }
         else
         {
@@ -131,7 +131,7 @@ $sql10 = "UPDATE `member` SET `member_level`='中級' WHERE `order_amount`<= 100
 if(mysqli_query($link,$sql10))
 {
     echo '成功10';
-    echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
 }
 else
 {
@@ -142,7 +142,7 @@ $sql11 = "UPDATE `member` SET `member_level`='初級' WHERE `order_amount`= 0;";
 if(mysqli_query($link,$sql11))
 {
     echo '成功11';
-    echo '<meta http-equiv=REFRESH CONTENT=0;url=訂單管理.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
 }
 else
 {

@@ -47,6 +47,7 @@
   ?>
   <?php
     $data='';
+    $data2='';
     include("mysql_connect.inc.php");
     $name = $_POST['name'];
         

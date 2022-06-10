@@ -48,8 +48,13 @@ if($_SESSION['Name'] != null)
         $sql10 = "UPDATE `member` SET `member_level`='中級' WHERE `order_amount`<= 10000;";
         if(mysqli_query($link,$sql10))
         {
-        echo '成功10';
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
+                if($_SESSION['Name'] == 'admin')
+                {
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
+                }
+                else{
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
+                }
         }
         else
         {
@@ -59,8 +64,13 @@ if($_SESSION['Name'] != null)
         $sql11 = "UPDATE `member` SET `member_level`='初級' WHERE `order_amount`= 0;";
         if(mysqli_query($link,$sql11))
         {
-        echo '成功11';
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
+                if($_SESSION['Name'] == 'admin')
+                {
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=orderForManager.php>';
+                }
+                else{
+                   echo '<meta http-equiv=REFRESH CONTENT=0;url=manageOrder.php>';
+                }
         }
         else
         {

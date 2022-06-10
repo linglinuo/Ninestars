@@ -11,7 +11,7 @@
     echo $sourcejs;
   ?>
 
-  <?
+  <?php
     $data='';
     include("mysql_connect.inc.php");
     $name = $_POST['name'];
@@ -21,13 +21,13 @@
     while ($row = mysqli_fetch_assoc($result)) {
     $data .= "
     <form id=\"updateMember\" name=\"form\" method=\"post\" action=\"updateMember_finish.php\">
-        <h5 class=\"mt-4\">信徒名稱<label for=\"m-name\" class=\"error\"></label></h5>
+      <h5 class=\"mt-4\">信徒名稱<label for=\"m-name\" class=\"error\"></label></h5>
         <input type=\"text\" class=\"input form-control\" name=\"m-name\" value=\"$row[member_name]\"><br>
-        <h5 class=\"mt-4\">email<label for=\"m-email\" class=\"error\"></label></h5>  
+      <h5 class=\"mt-4\">email<label for=\"m-email\" class=\"error\"></label></h5>  
         <input type=\"email\" class=\"input form-control\" name=\"m-email\" value=\"$row[member_email]\"><br>
-        <h5 class=\"mt-4\">密碼<label for=\"m-pwd\" class=\"error\"></label></h5>
+      <h5 class=\"mt-4\">密碼<label for=\"m-pwd\" class=\"error\"></label></h5>
         <input type=\"password\" class=\"input form-control\" name=\"m-pwd\" value=\"$row[member_password]\"><br>
-        <input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"確認\">
+      <input type=\"submit\" name=\"button\" class=\"btn btn-new\" id=\"sub_btn\" value=\"確認\">
     </form>";
     }
     mysqli_free_result($result); // 釋放佔用的記憶體

@@ -231,7 +231,7 @@
               '</div>' +
               '<div class="modal-footer">' +
                 '<button type="button"  class="btn btn-default jquery-close-modal" data-dismiss="modal" >關閉</button>' +
-                '<a href="訂單管理.php"><button type="button" class="btn btn-primary gobuyit ' + classCheckoutCart + '">去買單</button></a>' +
+                '<a href="manageOrder.php"><button type="button" class="btn btn-primary gobuyit ' + classCheckoutCart + '">去買單</button></a>' +
               '</div>' +
             '</div>' +
           '</div>' +
